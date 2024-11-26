@@ -16,7 +16,7 @@ public class menu extends javax.swing.JFrame {
     public menu() {
         initComponents();
         setLocationRelativeTo(null);
-        
+        setResizable(false);
     }
 
     /**
@@ -29,6 +29,7 @@ public class menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        jMenu1 = new javax.swing.JMenu();
         menu_background = new javax.swing.JPanel();
         home_icon = new javax.swing.JLabel();
         menulist = new javax.swing.JLabel();
@@ -45,6 +46,8 @@ public class menu extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -269,6 +272,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel menu_background;
     private javax.swing.JLabel menulist;
     private javax.swing.JPanel sachmoicapnhat;

@@ -62,7 +62,6 @@ public class menu extends javax.swing.JFrame {
         logoutbutton.setText("LOG OUT");
 
         home_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        home_icon.setIcon(new javax.swing.ImageIcon("E:\\home.png")); // NOI18N
 
         userbutton.setForeground(new java.awt.Color(242, 242, 242));
         userbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

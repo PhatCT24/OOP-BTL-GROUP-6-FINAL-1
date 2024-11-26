@@ -53,6 +53,11 @@ public class login extends javax.swing.JFrame {
         username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         username.setText("Username");
 
+        username_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                username_FieldActionPerformed(evt);
+            }
+        });
         username_Field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 username_FieldKeyPressed(evt);
@@ -224,6 +229,10 @@ public class login extends javax.swing.JFrame {
             }
         } 
     }//GEN-LAST:event_password_FieldKeyPressed
+
+    private void username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_username_FieldActionPerformed
 
     /**
      * @param args the command line arguments

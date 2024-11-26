@@ -113,6 +113,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="username_Field">
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="username_FieldActionPerformed"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="username_FieldKeyPressed"/>
           </Events>
         </Component>

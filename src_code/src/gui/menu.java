@@ -57,7 +57,18 @@ public class menu extends javax.swing.JFrame {
         LatestUpdates = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         AddBooks = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        Bookname_Field = new javax.swing.JTextField();
+        Book_Name = new javax.swing.JLabel();
+        Category = new javax.swing.JLabel();
+        Publisher = new javax.swing.JLabel();
+        Author = new javax.swing.JLabel();
+        Publisher_Field = new javax.swing.JTextField();
+        Category_Field = new javax.swing.JTextField();
+        Author_Field = new javax.swing.JTextField();
+        AddBookbutton = new javax.swing.JButton();
+        Volume = new javax.swing.JLabel();
+        Volume_Field = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         RemoveBooks = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         FindBooks = new javax.swing.JPanel();
@@ -74,6 +85,10 @@ public class menu extends javax.swing.JFrame {
         RemoveUsers = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
 
+        BookPopUpMenu.setBackground(new java.awt.Color(102, 0, 0));
+        BookPopUpMenu.setForeground(new java.awt.Color(242, 242, 242));
+
+        AddBook.setBackground(new java.awt.Color(102, 0, 0));
         AddBook.setText("Add a book");
         AddBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,23 +333,127 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("main", LatestUpdates);
 
-        jLabel5.setText("Add Books");
+        Bookname_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bookname_FieldActionPerformed(evt);
+            }
+        });
+
+        Book_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Book_Name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Book_Name.setText("Name");
+
+        Category.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Category.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Category.setText("Category");
+
+        Publisher.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Publisher.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Publisher.setText("Publisher");
+
+        Author.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Author.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Author.setText("Author");
+
+        Publisher_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Publisher_FieldActionPerformed(evt);
+            }
+        });
+
+        Category_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Category_FieldActionPerformed(evt);
+            }
+        });
+
+        Author_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Author_FieldActionPerformed(evt);
+            }
+        });
+
+        AddBookbutton.setBackground(new java.awt.Color(102, 0, 0));
+        AddBookbutton.setForeground(new java.awt.Color(242, 242, 242));
+        AddBookbutton.setText("ADD");
+        AddBookbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBookbuttonActionPerformed(evt);
+            }
+        });
+
+        Volume.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Volume.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Volume.setText("Volume");
+
+        Volume_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volume_FieldActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ADD BOOK");
 
         javax.swing.GroupLayout AddBooksLayout = new javax.swing.GroupLayout(AddBooks);
         AddBooks.setLayout(AddBooksLayout);
         AddBooksLayout.setHorizontalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddBooksLayout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(jLabel5)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddBooksLayout.createSequentialGroup()
+                        .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AddBooksLayout.createSequentialGroup()
+                            .addComponent(Book_Name)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AddBooksLayout.createSequentialGroup()
+                            .addComponent(Category)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(34, 34, 34)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Publisher))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70))
+            .addGroup(AddBooksLayout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddBooksLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel5)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Book_Name)
+                    .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Publisher)
+                    .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Author)
+                    .addComponent(Category)
+                    .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Volume)
+                    .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("add books", AddBooks);
@@ -512,7 +631,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(design_by, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(content_menubackgroundLayout.createSequentialGroup()
-                .addComponent(MenuMainScreen)
+                .addComponent(MenuMainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
         content_menubackgroundLayout.setVerticalGroup(
@@ -593,6 +712,30 @@ public class menu extends javax.swing.JFrame {
         MenuMainScreen.setSelectedComponent(LatestUpdates);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
+    private void Bookname_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bookname_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bookname_FieldActionPerformed
+
+    private void Publisher_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Publisher_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Publisher_FieldActionPerformed
+
+    private void Category_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Category_FieldActionPerformed
+
+    private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Author_FieldActionPerformed
+
+    private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddBookbuttonActionPerformed
+
+    private void Volume_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volume_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Volume_FieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -630,13 +773,20 @@ public class menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AddBook;
+    private javax.swing.JButton AddBookbutton;
     private javax.swing.JPanel AddBooks;
     private javax.swing.JMenuItem AddBorrow;
     private javax.swing.JPanel AddBorrows;
     private javax.swing.JMenuItem AddUser;
     private javax.swing.JPanel AddUsers;
+    private javax.swing.JLabel Author;
+    private javax.swing.JTextField Author_Field;
     private javax.swing.JPopupMenu BookPopUpMenu;
+    private javax.swing.JLabel Book_Name;
+    private javax.swing.JTextField Bookname_Field;
     private javax.swing.JPopupMenu BorrowPopUpMenu;
+    private javax.swing.JLabel Category;
+    private javax.swing.JTextField Category_Field;
     private javax.swing.JMenuItem FindBook;
     private javax.swing.JPanel FindBooks;
     private javax.swing.JMenuItem FindUser;
@@ -644,6 +794,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton HomeButton;
     private javax.swing.JPanel LatestUpdates;
     private javax.swing.JTabbedPane MenuMainScreen;
+    private javax.swing.JLabel Publisher;
+    private javax.swing.JTextField Publisher_Field;
     private javax.swing.JMenuItem RemoveBook;
     private javax.swing.JPanel RemoveBooks;
     private javax.swing.JMenuItem RemoveBorrow;
@@ -659,6 +811,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem UpdateUser;
     private javax.swing.JPanel UpdateUsers;
     private javax.swing.JPopupMenu UserPopUpMenu;
+    private javax.swing.JLabel Volume;
+    private javax.swing.JTextField Volume_Field;
     private javax.swing.JPanel content_menubackground;
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
@@ -666,9 +820,9 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

@@ -87,6 +87,7 @@ public class menu extends javax.swing.JFrame {
 
         BookPopUpMenu.setBackground(new java.awt.Color(102, 0, 0));
         BookPopUpMenu.setForeground(new java.awt.Color(242, 242, 242));
+        BookPopUpMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         AddBook.setBackground(new java.awt.Color(102, 0, 0));
         AddBook.setText("Add a book");

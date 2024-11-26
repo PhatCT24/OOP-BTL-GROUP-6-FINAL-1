@@ -16,8 +16,10 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,10 +142,11 @@ public class login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void loginbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbuttonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                dispose();
                 try{
                 if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
@@ -169,6 +172,7 @@ public class login extends javax.swing.JFrame {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             try{
                 if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                    dispose();
                     new menu().setVisible(true);
                 }
                 else{
@@ -186,6 +190,7 @@ public class login extends javax.swing.JFrame {
             try{
                 if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
                     new menu().setVisible(true);
+                    dispose();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);

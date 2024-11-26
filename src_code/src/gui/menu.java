@@ -15,6 +15,8 @@ public class menu extends javax.swing.JFrame {
      */
     public menu() {
         initComponents();
+        setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -28,12 +30,12 @@ public class menu extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         menu_background = new javax.swing.JPanel();
-        rentbutton = new javax.swing.JLabel();
-        booksbutton = new javax.swing.JLabel();
-        logoutbutton = new javax.swing.JLabel();
         home_icon = new javax.swing.JLabel();
-        userbutton = new javax.swing.JLabel();
         menulist = new javax.swing.JLabel();
+        ToLogOut = new javax.swing.JButton();
+        ToBorrowTicketMenu = new javax.swing.JButton();
+        ToUserMenu = new javax.swing.JButton();
+        ToBookMenu = new javax.swing.JButton();
         content_menubackground = new javax.swing.JPanel();
         design_by = new javax.swing.JPanel();
         group_6 = new javax.swing.JLabel();
@@ -49,43 +51,57 @@ public class menu extends javax.swing.JFrame {
 
         menu_background.setBackground(new java.awt.Color(102, 0, 0));
 
-        rentbutton.setForeground(new java.awt.Color(242, 242, 242));
-        rentbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rentbutton.setText("RENT");
-
-        booksbutton.setForeground(new java.awt.Color(242, 242, 242));
-        booksbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        booksbutton.setText("BOOKS");
-
-        logoutbutton.setForeground(new java.awt.Color(242, 242, 242));
-        logoutbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoutbutton.setText("LOG OUT");
-
         home_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        userbutton.setForeground(new java.awt.Color(242, 242, 242));
-        userbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userbutton.setText("USERS");
 
         menulist.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         menulist.setForeground(new java.awt.Color(242, 242, 242));
         menulist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menulist.setText("MENU LIST");
 
+        ToLogOut.setBackground(new java.awt.Color(102, 0, 0));
+        ToLogOut.setForeground(new java.awt.Color(255, 255, 255));
+        ToLogOut.setText("LOG OUT");
+        ToLogOut.setBorderPainted(false);
+        ToLogOut.setContentAreaFilled(false);
+        ToLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToLogOutActionPerformed(evt);
+            }
+        });
+
+        ToBorrowTicketMenu.setBackground(new java.awt.Color(102, 0, 0));
+        ToBorrowTicketMenu.setForeground(new java.awt.Color(255, 255, 255));
+        ToBorrowTicketMenu.setText("BORROW");
+        ToBorrowTicketMenu.setBorder(null);
+        ToBorrowTicketMenu.setContentAreaFilled(false);
+
+        ToUserMenu.setBackground(new java.awt.Color(102, 0, 0));
+        ToUserMenu.setForeground(new java.awt.Color(255, 255, 255));
+        ToUserMenu.setText("USERS");
+        ToUserMenu.setBorder(null);
+        ToUserMenu.setContentAreaFilled(false);
+        ToUserMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToUserMenuActionPerformed(evt);
+            }
+        });
+
+        ToBookMenu.setBackground(new java.awt.Color(102, 0, 0));
+        ToBookMenu.setForeground(new java.awt.Color(255, 255, 255));
+        ToBookMenu.setText("BOOKS");
+        ToBookMenu.setBorder(null);
+        ToBookMenu.setContentAreaFilled(false);
+
         javax.swing.GroupLayout menu_backgroundLayout = new javax.swing.GroupLayout(menu_background);
         menu_background.setLayout(menu_backgroundLayout);
         menu_backgroundLayout.setHorizontalGroup(
             menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rentbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-            .addComponent(booksbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(logoutbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(home_icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(menulist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(menu_backgroundLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(userbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(ToLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ToUserMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ToBookMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu_backgroundLayout.setVerticalGroup(
             menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,16 +110,13 @@ public class menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menulist, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(booksbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(rentbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(logoutbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_backgroundLayout.createSequentialGroup()
-                    .addContainerGap(178, Short.MAX_VALUE)
-                    .addComponent(userbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(172, 172, 172)))
+                .addComponent(ToBookMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ToUserMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(ToLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(menu_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 390));
@@ -199,6 +212,15 @@ public class menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ToUserMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUserMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToUserMenuActionPerformed
+
+    private void ToLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToLogOutActionPerformed
+        dispose();
+        new login().setVisible(true);
+    }//GEN-LAST:event_ToLogOutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,7 +257,10 @@ public class menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel booksbutton;
+    private javax.swing.JButton ToBookMenu;
+    private javax.swing.JButton ToBorrowTicketMenu;
+    private javax.swing.JButton ToLogOut;
+    private javax.swing.JButton ToUserMenu;
     private javax.swing.JPanel content_menubackground;
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
@@ -244,11 +269,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel logoutbutton;
     private javax.swing.JPanel menu_background;
     private javax.swing.JLabel menulist;
-    private javax.swing.JLabel rentbutton;
     private javax.swing.JPanel sachmoicapnhat;
-    private javax.swing.JLabel userbutton;
     // End of variables declaration//GEN-END:variables
 }

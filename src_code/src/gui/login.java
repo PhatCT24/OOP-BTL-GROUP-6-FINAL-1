@@ -37,6 +37,7 @@ public class login extends javax.swing.JFrame {
         loginbutton = new javax.swing.JButton();
         libary_icon = new javax.swing.JLabel();
         password_Field = new javax.swing.JPasswordField();
+        loginicon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         img = new javax.swing.JLabel();
 
@@ -82,6 +83,8 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+        loginicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/login-icon.png"))); // NOI18N
+
         javax.swing.GroupLayout loginsideLayout = new javax.swing.GroupLayout(loginside);
         loginside.setLayout(loginsideLayout);
         loginsideLayout.setHorizontalGroup(
@@ -100,7 +103,10 @@ public class login extends javax.swing.JFrame {
                         .addGap(78, 78, 78)
                         .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(libary_icon))))
+                            .addGroup(loginsideLayout.createSequentialGroup()
+                                .addComponent(libary_icon)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(loginicon)))))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         loginsideLayout.setVerticalGroup(
@@ -109,8 +115,10 @@ public class login extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(welcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(libary_icon)
-                .addGap(24, 24, 24)
+                .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(libary_icon)
+                    .addComponent(loginicon))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,10 +128,12 @@ public class login extends javax.swing.JFrame {
                 .addComponent(password_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(loginbutton)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         getContentPane().add(loginside, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 330));
+
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/login-background.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -135,7 +145,7 @@ public class login extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(img, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+            .addComponent(img, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 400, 330));
@@ -165,7 +175,20 @@ public class login extends javax.swing.JFrame {
 
     
     private void loginbuttonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginbuttonKeyPressed
-   
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+                if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                    dispose();
+                    new menu().setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        } 
     }//GEN-LAST:event_loginbuttonKeyPressed
 
     private void username_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_username_FieldKeyPressed
@@ -242,6 +265,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel libary_icon;
     private javax.swing.JButton loginbutton;
+    private javax.swing.JLabel loginicon;
     private javax.swing.JPanel loginside;
     private javax.swing.JLabel password;
     private javax.swing.JPasswordField password_Field;

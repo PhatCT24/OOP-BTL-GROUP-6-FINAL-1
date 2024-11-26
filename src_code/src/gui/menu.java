@@ -28,26 +28,132 @@ public class menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jMenu1 = new javax.swing.JMenu();
+        BookPopUpMenu = new javax.swing.JPopupMenu();
+        AddBook = new javax.swing.JMenuItem();
+        RemoveBook = new javax.swing.JMenuItem();
+        FindBook = new javax.swing.JMenuItem();
+        UpdateBook = new javax.swing.JMenuItem();
+        UserPopUpMenu = new javax.swing.JPopupMenu();
+        AddUser = new javax.swing.JMenuItem();
+        RemoveUser = new javax.swing.JMenuItem();
+        FindUser = new javax.swing.JMenuItem();
+        UpdateUser = new javax.swing.JMenuItem();
+        BorrowPopUpMenu = new javax.swing.JPopupMenu();
+        AddBorrow = new javax.swing.JMenuItem();
+        RemoveBorrow = new javax.swing.JMenuItem();
         menu_background = new javax.swing.JPanel();
         home_icon = new javax.swing.JLabel();
-        menulist = new javax.swing.JLabel();
         ToLogOut = new javax.swing.JButton();
         ToBorrowTicketMenu = new javax.swing.JButton();
         ToUserMenu = new javax.swing.JButton();
         ToBookMenu = new javax.swing.JButton();
+        HomeButton = new javax.swing.JButton();
         content_menubackground = new javax.swing.JPanel();
         design_by = new javax.swing.JPanel();
         group_6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        sachmoicapnhat = new javax.swing.JPanel();
+        MenuMainScreen = new javax.swing.JTabbedPane();
+        LatestUpdates = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        AddBooks = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        RemoveBooks = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        FindBooks = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        AddUsers = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        FindUsers = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        UpdateUsers = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        UpdateBooks = new javax.swing.JPanel();
+        AddBorrows = new javax.swing.JPanel();
+        RemoveBorrows = new javax.swing.JPanel();
+        RemoveUsers = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
 
-        jLabel2.setText("jLabel2");
+        AddBook.setText("Add a book");
+        AddBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBookActionPerformed(evt);
+            }
+        });
+        BookPopUpMenu.add(AddBook);
 
-        jMenu1.setText("jMenu1");
+        RemoveBook.setText("Remove a book");
+        RemoveBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveBookActionPerformed(evt);
+            }
+        });
+        BookPopUpMenu.add(RemoveBook);
+
+        FindBook.setText("Find a book");
+        FindBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindBookActionPerformed(evt);
+            }
+        });
+        BookPopUpMenu.add(FindBook);
+
+        UpdateBook.setText("Update a book's info");
+        UpdateBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBookActionPerformed(evt);
+            }
+        });
+        BookPopUpMenu.add(UpdateBook);
+
+        AddUser.setText("Add an user");
+        AddUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddUserActionPerformed(evt);
+            }
+        });
+        UserPopUpMenu.add(AddUser);
+
+        RemoveUser.setText("Remove an user");
+        RemoveUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveUserActionPerformed(evt);
+            }
+        });
+        UserPopUpMenu.add(RemoveUser);
+
+        FindUser.setText("Find an user");
+        FindUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindUserActionPerformed(evt);
+            }
+        });
+        UserPopUpMenu.add(FindUser);
+
+        UpdateUser.setText("Update an user's info");
+        UpdateUser.setToolTipText("");
+        UpdateUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateUserActionPerformed(evt);
+            }
+        });
+        UserPopUpMenu.add(UpdateUser);
+
+        AddBorrow.setText("Add a borrow ticket");
+        AddBorrow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBorrowActionPerformed(evt);
+            }
+        });
+        BorrowPopUpMenu.add(AddBorrow);
+
+        RemoveBorrow.setText("Remove a borrow ticket");
+        RemoveBorrow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveBorrowActionPerformed(evt);
+            }
+        });
+        BorrowPopUpMenu.add(RemoveBorrow);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,11 +161,6 @@ public class menu extends javax.swing.JFrame {
         menu_background.setBackground(new java.awt.Color(102, 0, 0));
 
         home_icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        menulist.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        menulist.setForeground(new java.awt.Color(242, 242, 242));
-        menulist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        menulist.setText("MENU LIST");
 
         ToLogOut.setBackground(new java.awt.Color(102, 0, 0));
         ToLogOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,6 +178,11 @@ public class menu extends javax.swing.JFrame {
         ToBorrowTicketMenu.setText("BORROW");
         ToBorrowTicketMenu.setBorder(null);
         ToBorrowTicketMenu.setContentAreaFilled(false);
+        ToBorrowTicketMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToBorrowTicketMenuActionPerformed(evt);
+            }
+        });
 
         ToUserMenu.setBackground(new java.awt.Color(102, 0, 0));
         ToUserMenu.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,13 +200,32 @@ public class menu extends javax.swing.JFrame {
         ToBookMenu.setText("BOOKS");
         ToBookMenu.setBorder(null);
         ToBookMenu.setContentAreaFilled(false);
+        ToBookMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToBookMenuActionPerformed(evt);
+            }
+        });
+
+        HomeButton.setBackground(new java.awt.Color(102, 0, 0));
+        HomeButton.setForeground(new java.awt.Color(255, 255, 255));
+        HomeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/menu-icon.png"))); // NOI18N
+        HomeButton.setBorder(null);
+        HomeButton.setContentAreaFilled(false);
+        HomeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomeButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menu_backgroundLayout = new javax.swing.GroupLayout(menu_background);
         menu_background.setLayout(menu_backgroundLayout);
         menu_backgroundLayout.setHorizontalGroup(
             menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(home_icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(menulist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(menu_backgroundLayout.createSequentialGroup()
+                .addComponent(home_icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(HomeButton)
+                .addGap(38, 38, 38))
             .addComponent(ToLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
             .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ToUserMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -109,16 +234,18 @@ public class menu extends javax.swing.JFrame {
         menu_backgroundLayout.setVerticalGroup(
             menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menu_backgroundLayout.createSequentialGroup()
-                .addComponent(home_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menulist, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(menu_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(home_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menu_backgroundLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(HomeButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(ToBookMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(ToUserMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(ToLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -154,9 +281,6 @@ public class menu extends javax.swing.JFrame {
             .addGroup(design_byLayout.createSequentialGroup()
                 .addGroup(design_byLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(design_byLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(group_6, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
-                    .addGroup(design_byLayout.createSequentialGroup()
                         .addGroup(design_byLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(design_byLayout.createSequentialGroup()
                                 .addGap(22, 22, 22)
@@ -164,39 +288,232 @@ public class menu extends javax.swing.JFrame {
                             .addGroup(design_byLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addComponent(jLabel4)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 24, Short.MAX_VALUE))
+                    .addGroup(design_byLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(group_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout sachmoicapnhatLayout = new javax.swing.GroupLayout(sachmoicapnhat);
-        sachmoicapnhat.setLayout(sachmoicapnhatLayout);
-        sachmoicapnhatLayout.setHorizontalGroup(
-            sachmoicapnhatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 158, Short.MAX_VALUE)
+        MenuMainScreen.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("LATEST UPDATES");
+
+        javax.swing.GroupLayout LatestUpdatesLayout = new javax.swing.GroupLayout(LatestUpdates);
+        LatestUpdates.setLayout(LatestUpdatesLayout);
+        LatestUpdatesLayout.setHorizontalGroup(
+            LatestUpdatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LatestUpdatesLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
-        sachmoicapnhatLayout.setVerticalGroup(
-            sachmoicapnhatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+        LatestUpdatesLayout.setVerticalGroup(
+            LatestUpdatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LatestUpdatesLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 326, Short.MAX_VALUE))
         );
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setText("LASTEST UPDATES");
+        MenuMainScreen.addTab("main", LatestUpdates);
+
+        jLabel5.setText("Add Books");
+
+        javax.swing.GroupLayout AddBooksLayout = new javax.swing.GroupLayout(AddBooks);
+        AddBooks.setLayout(AddBooksLayout);
+        AddBooksLayout.setHorizontalGroup(
+            AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddBooksLayout.createSequentialGroup()
+                .addGap(233, 233, 233)
+                .addComponent(jLabel5)
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+        AddBooksLayout.setVerticalGroup(
+            AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddBooksLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(jLabel5)
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("add books", AddBooks);
+
+        jLabel6.setText("Remove Books");
+
+        javax.swing.GroupLayout RemoveBooksLayout = new javax.swing.GroupLayout(RemoveBooks);
+        RemoveBooks.setLayout(RemoveBooksLayout);
+        RemoveBooksLayout.setHorizontalGroup(
+            RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoveBooksLayout.createSequentialGroup()
+                .addGap(217, 217, 217)
+                .addComponent(jLabel6)
+                .addContainerGap(222, Short.MAX_VALUE))
+        );
+        RemoveBooksLayout.setVerticalGroup(
+            RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoveBooksLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(jLabel6)
+                .addContainerGap(232, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("remove books", RemoveBooks);
+
+        jLabel7.setText("Find Books");
+
+        javax.swing.GroupLayout FindBooksLayout = new javax.swing.GroupLayout(FindBooks);
+        FindBooks.setLayout(FindBooksLayout);
+        FindBooksLayout.setHorizontalGroup(
+            FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FindBooksLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(jLabel7)
+                .addContainerGap(235, Short.MAX_VALUE))
+        );
+        FindBooksLayout.setVerticalGroup(
+            FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FindBooksLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jLabel7)
+                .addContainerGap(220, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("find books", FindBooks);
+
+        jLabel8.setText("Add Users");
+
+        javax.swing.GroupLayout AddUsersLayout = new javax.swing.GroupLayout(AddUsers);
+        AddUsers.setLayout(AddUsersLayout);
+        AddUsersLayout.setHorizontalGroup(
+            AddUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddUsersLayout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(jLabel8)
+                .addContainerGap(242, Short.MAX_VALUE))
+        );
+        AddUsersLayout.setVerticalGroup(
+            AddUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddUsersLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jLabel8)
+                .addContainerGap(240, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("add users", AddUsers);
+
+        jLabel10.setText("Find Users");
+
+        javax.swing.GroupLayout FindUsersLayout = new javax.swing.GroupLayout(FindUsers);
+        FindUsers.setLayout(FindUsersLayout);
+        FindUsersLayout.setHorizontalGroup(
+            FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindUsersLayout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(236, 236, 236))
+        );
+        FindUsersLayout.setVerticalGroup(
+            FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FindUsersLayout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jLabel10)
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("find users", FindUsers);
+
+        jLabel11.setText("update users");
+
+        javax.swing.GroupLayout UpdateUsersLayout = new javax.swing.GroupLayout(UpdateUsers);
+        UpdateUsers.setLayout(UpdateUsersLayout);
+        UpdateUsersLayout.setHorizontalGroup(
+            UpdateUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateUsersLayout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(jLabel11)
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+        UpdateUsersLayout.setVerticalGroup(
+            UpdateUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateUsersLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel11)
+                .addContainerGap(225, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("update users", UpdateUsers);
+
+        javax.swing.GroupLayout UpdateBooksLayout = new javax.swing.GroupLayout(UpdateBooks);
+        UpdateBooks.setLayout(UpdateBooksLayout);
+        UpdateBooksLayout.setHorizontalGroup(
+            UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 517, Short.MAX_VALUE)
+        );
+        UpdateBooksLayout.setVerticalGroup(
+            UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("update books", UpdateBooks);
+
+        javax.swing.GroupLayout AddBorrowsLayout = new javax.swing.GroupLayout(AddBorrows);
+        AddBorrows.setLayout(AddBorrowsLayout);
+        AddBorrowsLayout.setHorizontalGroup(
+            AddBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 517, Short.MAX_VALUE)
+        );
+        AddBorrowsLayout.setVerticalGroup(
+            AddBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("add borrow", AddBorrows);
+
+        javax.swing.GroupLayout RemoveBorrowsLayout = new javax.swing.GroupLayout(RemoveBorrows);
+        RemoveBorrows.setLayout(RemoveBorrowsLayout);
+        RemoveBorrowsLayout.setHorizontalGroup(
+            RemoveBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 517, Short.MAX_VALUE)
+        );
+        RemoveBorrowsLayout.setVerticalGroup(
+            RemoveBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("remove borrw", RemoveBorrows);
+
+        jLabel9.setText("Remove Users");
+
+        javax.swing.GroupLayout RemoveUsersLayout = new javax.swing.GroupLayout(RemoveUsers);
+        RemoveUsers.setLayout(RemoveUsersLayout);
+        RemoveUsersLayout.setHorizontalGroup(
+            RemoveUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoveUsersLayout.createSequentialGroup()
+                .addGap(226, 226, 226)
+                .addComponent(jLabel9)
+                .addContainerGap(217, Short.MAX_VALUE))
+        );
+        RemoveUsersLayout.setVerticalGroup(
+            RemoveUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoveUsersLayout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(jLabel9)
+                .addContainerGap(224, Short.MAX_VALUE))
+        );
+
+        MenuMainScreen.addTab("remove users", RemoveUsers);
 
         javax.swing.GroupLayout content_menubackgroundLayout = new javax.swing.GroupLayout(content_menubackground);
         content_menubackground.setLayout(content_menubackgroundLayout);
         content_menubackgroundLayout.setHorizontalGroup(
             content_menubackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(content_menubackgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sachmoicapnhat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(content_menubackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(content_menubackgroundLayout.createSequentialGroup()
                 .addComponent(design_by, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(content_menubackgroundLayout.createSequentialGroup()
+                .addComponent(MenuMainScreen)
+                .addContainerGap())
         );
         content_menubackgroundLayout.setVerticalGroup(
             content_menubackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,25 +521,77 @@ public class menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(design_by, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addGap(4, 4, 4)
-                .addComponent(sachmoicapnhat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addComponent(MenuMainScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(content_menubackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 520, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Side bar
     private void ToUserMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToUserMenuActionPerformed
-        // TODO add your handling code here:
+        UserPopUpMenu.show(ToUserMenu, WIDTH + 139, WIDTH);
     }//GEN-LAST:event_ToUserMenuActionPerformed
 
     private void ToLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToLogOutActionPerformed
         dispose();
         new login().setVisible(true);
     }//GEN-LAST:event_ToLogOutActionPerformed
+
+    private void ToBookMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBookMenuActionPerformed
+        BookPopUpMenu.show(ToBookMenu, WIDTH + 139, WIDTH);
+    }//GEN-LAST:event_ToBookMenuActionPerformed
+
+    private void ToBorrowTicketMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBorrowTicketMenuActionPerformed
+        BorrowPopUpMenu.show(ToBorrowTicketMenu, WIDTH + 139, WIDTH);
+    }//GEN-LAST:event_ToBorrowTicketMenuActionPerformed
+
+    
+    // pop up menu options action    
+    private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
+        MenuMainScreen.setSelectedComponent(AddBooks);
+    }//GEN-LAST:event_AddBookActionPerformed
+
+    private void RemoveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookActionPerformed
+        MenuMainScreen.setSelectedComponent(RemoveBooks);
+    }//GEN-LAST:event_RemoveBookActionPerformed
+
+    private void FindBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookActionPerformed
+        MenuMainScreen.setSelectedComponent(FindBooks);
+    }//GEN-LAST:event_FindBookActionPerformed
+
+    private void UpdateBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookActionPerformed
+        MenuMainScreen.setSelectedComponent(RemoveBooks);
+    }//GEN-LAST:event_UpdateBookActionPerformed
+
+    private void AddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserActionPerformed
+        MenuMainScreen.setSelectedComponent(AddUsers);
+    }//GEN-LAST:event_AddUserActionPerformed
+
+    private void RemoveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserActionPerformed
+        MenuMainScreen.setSelectedComponent(RemoveUsers);
+    }//GEN-LAST:event_RemoveUserActionPerformed
+
+    private void FindUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindUserActionPerformed
+        MenuMainScreen.setSelectedComponent(FindUsers);
+    }//GEN-LAST:event_FindUserActionPerformed
+
+    private void UpdateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserActionPerformed
+        MenuMainScreen.setSelectedComponent(UpdateUsers);
+    }//GEN-LAST:event_UpdateUserActionPerformed
+
+    private void AddBorrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBorrowActionPerformed
+        MenuMainScreen.setSelectedComponent(AddBorrows);
+    }//GEN-LAST:event_AddBorrowActionPerformed
+
+    private void RemoveBorrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBorrowActionPerformed
+        MenuMainScreen.setSelectedComponent(RemoveBorrows);
+    }//GEN-LAST:event_RemoveBorrowActionPerformed
+
+    private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
+        MenuMainScreen.setSelectedComponent(LatestUpdates);
+    }//GEN-LAST:event_HomeButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,21 +629,50 @@ public class menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AddBook;
+    private javax.swing.JPanel AddBooks;
+    private javax.swing.JMenuItem AddBorrow;
+    private javax.swing.JPanel AddBorrows;
+    private javax.swing.JMenuItem AddUser;
+    private javax.swing.JPanel AddUsers;
+    private javax.swing.JPopupMenu BookPopUpMenu;
+    private javax.swing.JPopupMenu BorrowPopUpMenu;
+    private javax.swing.JMenuItem FindBook;
+    private javax.swing.JPanel FindBooks;
+    private javax.swing.JMenuItem FindUser;
+    private javax.swing.JPanel FindUsers;
+    private javax.swing.JButton HomeButton;
+    private javax.swing.JPanel LatestUpdates;
+    private javax.swing.JTabbedPane MenuMainScreen;
+    private javax.swing.JMenuItem RemoveBook;
+    private javax.swing.JPanel RemoveBooks;
+    private javax.swing.JMenuItem RemoveBorrow;
+    private javax.swing.JPanel RemoveBorrows;
+    private javax.swing.JMenuItem RemoveUser;
+    private javax.swing.JPanel RemoveUsers;
     private javax.swing.JButton ToBookMenu;
     private javax.swing.JButton ToBorrowTicketMenu;
     private javax.swing.JButton ToLogOut;
     private javax.swing.JButton ToUserMenu;
+    private javax.swing.JMenuItem UpdateBook;
+    private javax.swing.JPanel UpdateBooks;
+    private javax.swing.JMenuItem UpdateUser;
+    private javax.swing.JPanel UpdateUsers;
+    private javax.swing.JPopupMenu UserPopUpMenu;
     private javax.swing.JPanel content_menubackground;
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel menu_background;
-    private javax.swing.JLabel menulist;
-    private javax.swing.JPanel sachmoicapnhat;
     // End of variables declaration//GEN-END:variables
 }

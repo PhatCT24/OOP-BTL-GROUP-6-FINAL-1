@@ -74,7 +74,7 @@ public class menu extends javax.swing.JFrame {
         Quantity = new javax.swing.JLabel();
         Quantity_Field = new javax.swing.JTextField();
         ID_Field = new javax.swing.JTextField();
-        Category1 = new javax.swing.JLabel();
+        ID = new javax.swing.JLabel();
         RemoveBooks = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ID_BOOK = new javax.swing.JLabel();
@@ -436,9 +436,9 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        Category1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Category1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Category1.setText("ID");
+        ID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ID.setText("ID");
 
         javax.swing.GroupLayout AddBooksLayout = new javax.swing.GroupLayout(AddBooks);
         AddBooks.setLayout(AddBooksLayout);
@@ -461,7 +461,7 @@ public class menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
-                                .addComponent(Category1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
@@ -493,7 +493,7 @@ public class menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Category1)
+                    .addComponent(ID)
                     .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Book_Name))
                 .addGap(18, 18, 18)
@@ -984,6 +984,13 @@ public class menu extends javax.swing.JFrame {
         String volume = Volume_Field.getText();
         int quantity = Integer.parseInt(Quantity_Field.getText());
         Books newBook = new Books(id,name, category, publisher, author, volume, quantity);
+        ID_Field.setText("");
+        Bookname_Field.setText(""); 
+        Category_Field.setText(""); 
+        Publisher_Field.setText(""); 
+        Author_Field.setText(""); 
+        Volume_Field.setText(""); 
+        Quantity_Field.setText("");
     }//GEN-LAST:event_AddBookbuttonActionPerformed
 
     private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed
@@ -1061,7 +1068,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel CCCD;
     private javax.swing.JTextField CCCD_Field;
     private javax.swing.JLabel Category;
-    private javax.swing.JLabel Category1;
     private javax.swing.JTextField Category_Field;
     private javax.swing.JLabel Contact_number;
     private javax.swing.JTextField Contactnumber_Field;
@@ -1072,6 +1078,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel Gender;
     private javax.swing.JTextField Gender_Field;
     private javax.swing.JButton HomeButton;
+    private javax.swing.JLabel ID;
     private javax.swing.JLabel ID_BOOK;
     private javax.swing.JTextField ID_Field;
     private javax.swing.JLabel ID_User;

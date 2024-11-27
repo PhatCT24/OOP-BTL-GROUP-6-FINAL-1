@@ -482,7 +482,7 @@
                                           <Component id="Publisher_Field" min="-2" pref="123" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="Category1" min="-2" pref="56" max="-2" attributes="0"/>
+                                          <Component id="ID" min="-2" pref="56" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="ID_Field" min="-2" pref="123" max="-2" attributes="0"/>
                                       </Group>
@@ -527,7 +527,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="ID_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="Category1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Bookname_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="Book_Name" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -669,12 +669,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ID_FieldActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Category1">
+                <Component class="javax.swing.JLabel" name="ID">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
                 </Component>

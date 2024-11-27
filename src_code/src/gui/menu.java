@@ -887,7 +887,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_FindBookActionPerformed
 
     private void UpdateBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookActionPerformed
-        MenuMainScreen.setSelectedComponent(RemoveBooks);
+        MenuMainScreen.setSelectedComponent(UpdateBooks);
     }//GEN-LAST:event_UpdateBookActionPerformed
 
     private void AddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserActionPerformed

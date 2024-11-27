@@ -73,6 +73,8 @@ public class menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Quantity = new javax.swing.JLabel();
         Quantity_Field = new javax.swing.JTextField();
+        ID_Field = new javax.swing.JTextField();
+        Category1 = new javax.swing.JLabel();
         RemoveBooks = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ID_BOOK = new javax.swing.JLabel();
@@ -428,87 +430,90 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        ID_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ID_FieldActionPerformed(evt);
+            }
+        });
+
+        Category1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Category1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Category1.setText("ID");
+
         javax.swing.GroupLayout AddBooksLayout = new javax.swing.GroupLayout(AddBooks);
         AddBooks.setLayout(AddBooksLayout);
         AddBooksLayout.setHorizontalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(AddBooksLayout.createSequentialGroup()
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddBooksLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddBooksLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
                         .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AddBooksLayout.createSequentialGroup()
-                                .addComponent(Book_Name)
-                                .addGap(26, 26, 26)
-                                .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AddBooksLayout.createSequentialGroup()
-                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Category))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
+                                .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(34, 34, 34)
-                        .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(AddBooksLayout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addComponent(Publisher)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(AddBooksLayout.createSequentialGroup()
-                                    .addComponent(Author, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(AddBooksLayout.createSequentialGroup()
+                                .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
+                                .addComponent(Publisher)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
+                                .addComponent(Category1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
                                 .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Quantity_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(AddBooksLayout.createSequentialGroup()
-                        .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(131, 131, 131)))
-                .addGap(70, 70, 70))
-            .addGroup(AddBooksLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Quantity_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(34, 34, 34)
+                        .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddBooksLayout.createSequentialGroup()
+                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Book_Name)
+                                    .addComponent(Category, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(4, 4, 4)
+                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(AddBooksLayout.createSequentialGroup()
+                                .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AddBookbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddBooksLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Category1)
+                    .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Book_Name))
                 .addGap(18, 18, 18)
-                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AddBooksLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AddBooksLayout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Book_Name)
-                                    .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Publisher)
-                                    .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Author)
-                                    .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(14, 14, 14))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Category)
-                                .addGap(18, 18, 18)))
-                        .addGap(92, 92, 92))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBooksLayout.createSequentialGroup()
-                        .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Volume)
-                            .addComponent(Quantity_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Quantity))
-                        .addGap(50, 50, 50)))
-                .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Publisher_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Publisher)
+                    .addComponent(Category)
+                    .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Author)
+                    .addComponent(Author_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Volume)
+                    .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Quantity_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Quantity)
+                    .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(122, 122, 122))
         );
 
         MenuMainScreen.addTab("add books", AddBooks);
@@ -543,7 +548,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(RemoveBookbutton)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         RemoveBooksLayout.setVerticalGroup(
             RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,7 +825,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(UserRemove_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(RemoveUserbutton)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveUsersLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
@@ -930,36 +935,6 @@ public class menu extends javax.swing.JFrame {
         MenuMainScreen.setSelectedComponent(LatestUpdates);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
-    private void Bookname_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bookname_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Bookname_FieldActionPerformed
-
-    private void Publisher_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Publisher_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Publisher_FieldActionPerformed
-
-    private void Category_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Category_FieldActionPerformed
-
-    private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Author_FieldActionPerformed
-
-    private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
-        String name = Bookname_Field.getText();
-        String category = Category_Field.getText();
-        String publisher = Publisher_Field.getText();
-        String author = Author_Field.getText();
-        String volume = Volume_Field.getText();
-        int quantity = Integer.parseInt(Quantity_Field.getText());
-        Books newBook = new Books(name, category, publisher, author, volume, quantity);
-    }//GEN-LAST:event_AddBookbuttonActionPerformed
-
-    private void Volume_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volume_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Volume_FieldActionPerformed
-
     private void Username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Username_FieldActionPerformed
@@ -984,10 +959,6 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CCCD_FieldActionPerformed
 
-    private void Quantity_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quantity_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Quantity_FieldActionPerformed
-
     private void RemoveBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveBookbuttonActionPerformed
@@ -995,6 +966,45 @@ public class menu extends javax.swing.JFrame {
     private void RemoveUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveUserbuttonActionPerformed
+
+    private void Quantity_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quantity_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Quantity_FieldActionPerformed
+
+    private void Volume_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volume_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Volume_FieldActionPerformed
+
+    private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
+        String id = ID_Field.getText();
+        String name = Bookname_Field.getText();
+        String category = Category_Field.getText();
+        String publisher = Publisher_Field.getText();
+        String author = Author_Field.getText();
+        String volume = Volume_Field.getText();
+        int quantity = Integer.parseInt(Quantity_Field.getText());
+        Books newBook = new Books(id,name, category, publisher, author, volume, quantity);
+    }//GEN-LAST:event_AddBookbuttonActionPerformed
+
+    private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Author_FieldActionPerformed
+
+    private void Category_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Category_FieldActionPerformed
+
+    private void Publisher_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Publisher_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Publisher_FieldActionPerformed
+
+    private void Bookname_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bookname_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bookname_FieldActionPerformed
+
+    private void ID_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ID_FieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1051,6 +1061,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel CCCD;
     private javax.swing.JTextField CCCD_Field;
     private javax.swing.JLabel Category;
+    private javax.swing.JLabel Category1;
     private javax.swing.JTextField Category_Field;
     private javax.swing.JLabel Contact_number;
     private javax.swing.JTextField Contactnumber_Field;
@@ -1062,6 +1073,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField Gender_Field;
     private javax.swing.JButton HomeButton;
     private javax.swing.JLabel ID_BOOK;
+    private javax.swing.JTextField ID_Field;
     private javax.swing.JLabel ID_User;
     private javax.swing.JPanel LatestUpdates;
     private javax.swing.JTabbedPane MenuMainScreen;

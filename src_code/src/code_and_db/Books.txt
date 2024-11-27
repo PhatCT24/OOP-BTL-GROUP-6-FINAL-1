@@ -1,3 +1,11 @@
+B001
+Doraemon
+Comic
+KimDong
+Fujiko
+15
+100
+B123
 Doraemon
 Manga
 KimDong

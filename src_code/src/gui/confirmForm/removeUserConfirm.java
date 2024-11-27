@@ -28,7 +28,7 @@ public class removeUserConfirm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         nobutton = new javax.swing.JButton();
-        Yes1 = new javax.swing.JButton();
+        yesbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +42,12 @@ public class removeUserConfirm extends javax.swing.JFrame {
             }
         });
 
-        Yes1.setText("Yes");
+        yesbutton.setText("Yes");
+        yesbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yesbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,7 +60,7 @@ public class removeUserConfirm extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(Yes1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(yesbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addComponent(nobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 15, Short.MAX_VALUE)))
@@ -69,7 +74,7 @@ public class removeUserConfirm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Yes1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(yesbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
@@ -79,6 +84,10 @@ public class removeUserConfirm extends javax.swing.JFrame {
     private void nobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nobuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nobuttonActionPerformed
+
+    private void yesbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yesbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,8 +125,8 @@ public class removeUserConfirm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Yes1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton nobutton;
+    private javax.swing.JButton yesbutton;
     // End of variables declaration//GEN-END:variables
 }

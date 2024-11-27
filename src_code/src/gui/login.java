@@ -100,10 +100,10 @@ public class login extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(username_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(password)
                             .addComponent(username)
                             .addComponent(loginbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(password_Field)))
+                            .addComponent(password_Field)
+                            .addComponent(password)))
                     .addGroup(loginsideLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,14 +161,15 @@ public class login extends javax.swing.JFrame {
     private void loginbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbuttonActionPerformed
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                dispose();
                 try{
                 if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                    dispose();
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
                     new menu().setVisible(true);
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
+                    username_Field.requestFocus();
                 }
             }
                 catch (Exception e){
@@ -188,6 +189,7 @@ public class login extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
+                    username_Field.requestFocus();
                 }
             }
             catch (Exception e){
@@ -205,6 +207,7 @@ public class login extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
+                    username_Field.requestFocus();
                 }
             }
             catch (Exception e){
@@ -222,6 +225,7 @@ public class login extends javax.swing.JFrame {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
+                    username_Field.requestFocus();
                 }
             }
             catch (Exception e){

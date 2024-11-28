@@ -82,6 +82,18 @@ public class menu extends javax.swing.JFrame {
         RemoveBookbutton = new javax.swing.JButton();
         FindBooks = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        FindIDBooks = new javax.swing.JLabel();
+        FindIDBook_Field = new javax.swing.JTextField();
+        FindCategory = new javax.swing.JLabel();
+        FindCategory_Field = new javax.swing.JTextField();
+        FindBookName = new javax.swing.JLabel();
+        FindName_Field = new javax.swing.JTextField();
+        FindAuthor = new javax.swing.JLabel();
+        FindAuthor_Field = new javax.swing.JTextField();
+        FindBookbutton = new javax.swing.JButton();
+        FindTablepanel = new javax.swing.JPanel();
+        FindScrollpane = new javax.swing.JScrollPane();
+        FindTable = new javax.swing.JTable();
         AddUsers = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         Username_Field = new javax.swing.JTextField();
@@ -96,7 +108,17 @@ public class menu extends javax.swing.JFrame {
         CCCD = new javax.swing.JLabel();
         CCCD_Field = new javax.swing.JTextField();
         FindUsers = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        FindUserCCCD = new javax.swing.JLabel();
+        FindUserCCCD_Field = new javax.swing.JTextField();
+        FindGender = new javax.swing.JLabel();
+        FindGender_Field = new javax.swing.JTextField();
+        FindUserName = new javax.swing.JLabel();
+        FindUserName_Field = new javax.swing.JTextField();
+        FindUserbutton = new javax.swing.JButton();
+        FindUserTablepane = new javax.swing.JPanel();
+        FindUserScrollPane = new javax.swing.JScrollPane();
+        FindUserTable = new javax.swing.JTable();
         UpdateUsers = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         UpdateBooks = new javax.swing.JPanel();
@@ -548,7 +570,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(RemoveBookbutton)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         RemoveBooksLayout.setVerticalGroup(
             RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,23 +587,127 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("remove books", RemoveBooks);
 
-        jLabel7.setText("Find Books");
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("FIND BOOKS");
+
+        FindIDBooks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindIDBooks.setText("ID");
+
+        FindCategory.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindCategory.setText("Category");
+
+        FindBookName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindBookName.setText("Name");
+
+        FindAuthor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindAuthor.setText("Author");
+
+        FindAuthor_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindAuthor_FieldActionPerformed(evt);
+            }
+        });
+
+        FindBookbutton.setBackground(new java.awt.Color(102, 0, 0));
+        FindBookbutton.setForeground(new java.awt.Color(242, 242, 242));
+        FindBookbutton.setText("Find");
+
+        FindTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Category", "Publisher", "Author", "Volume", "Quantity"
+            }
+        ));
+        FindTable.setShowVerticalLines(true);
+        FindScrollpane.setViewportView(FindTable);
+
+        javax.swing.GroupLayout FindTablepanelLayout = new javax.swing.GroupLayout(FindTablepanel);
+        FindTablepanel.setLayout(FindTablepanelLayout);
+        FindTablepanelLayout.setHorizontalGroup(
+            FindTablepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FindScrollpane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+        );
+        FindTablepanelLayout.setVerticalGroup(
+            FindTablepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FindScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout FindBooksLayout = new javax.swing.GroupLayout(FindBooks);
         FindBooks.setLayout(FindBooksLayout);
         FindBooksLayout.setHorizontalGroup(
             FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FindBooksLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(26, 26, 26)
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FindCategory)
+                    .addComponent(FindIDBooks))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FindCategory_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindIDBook_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74)
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FindBooksLayout.createSequentialGroup()
+                        .addComponent(FindBookName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(FindBooksLayout.createSequentialGroup()
+                        .addComponent(FindAuthor)
+                        .addGap(7, 7, 7)))
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(FindAuthor_Field)
+                    .addComponent(FindName_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindBooksLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGap(206, 206, 206))
+            .addGroup(FindBooksLayout.createSequentialGroup()
+                .addGap(214, 214, 214)
+                .addComponent(FindBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(FindBooksLayout.createSequentialGroup()
+                .addComponent(FindTablepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         FindBooksLayout.setVerticalGroup(
             FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FindBooksLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addContainerGap()
                 .addComponent(jLabel7)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FindIDBooks)
+                    .addComponent(FindBookName)
+                    .addComponent(FindName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindIDBook_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FindBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FindCategory)
+                    .addComponent(FindCategory_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindAuthor)
+                    .addComponent(FindAuthor_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FindBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FindTablepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("find books", FindBooks);
@@ -718,23 +844,113 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("add users", AddUsers);
 
-        jLabel10.setText("Find Users");
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setText("FIND USERS");
+
+        FindUserCCCD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindUserCCCD.setText("CCCD");
+
+        FindGender.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindGender.setText("Gender");
+
+        FindUserName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindUserName.setText("Name");
+
+        FindUserbutton.setBackground(new java.awt.Color(102, 0, 0));
+        FindUserbutton.setForeground(new java.awt.Color(242, 242, 242));
+        FindUserbutton.setText("Find");
+
+        FindUserTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Gender", "Address", "Contact Number"
+            }
+        ));
+        FindUserTable.setShowVerticalLines(true);
+        FindUserScrollPane.setViewportView(FindUserTable);
+
+        javax.swing.GroupLayout FindUserTablepaneLayout = new javax.swing.GroupLayout(FindUserTablepane);
+        FindUserTablepane.setLayout(FindUserTablepaneLayout);
+        FindUserTablepaneLayout.setHorizontalGroup(
+            FindUserTablepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FindUserScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        FindUserTablepaneLayout.setVerticalGroup(
+            FindUserTablepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindUserTablepaneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(FindUserScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
 
         javax.swing.GroupLayout FindUsersLayout = new javax.swing.GroupLayout(FindUsers);
         FindUsers.setLayout(FindUsersLayout);
         FindUsersLayout.setHorizontalGroup(
             FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FindUsersLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FindUsersLayout.createSequentialGroup()
+                        .addComponent(FindUserCCCD)
+                        .addGap(21, 21, 21)
+                        .addComponent(FindUserCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74)
+                        .addComponent(FindUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FindUsersLayout.createSequentialGroup()
+                        .addComponent(FindGender)
+                        .addGap(12, 12, 12)
+                        .addComponent(FindGender_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, Short.MAX_VALUE))
+            .addComponent(FindUserTablepane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindUsersLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(236, 236, 236))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addGap(207, 207, 207))
         );
         FindUsersLayout.setVerticalGroup(
             FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FindUsersLayout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel10)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FindUserCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(FindUsersLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FindUserCCCD)
+                            .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(FindUserName)
+                                .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(6, 6, 6)
+                .addGroup(FindUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FindUsersLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(FindGender))
+                    .addComponent(FindGender_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FindUserTablepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         MenuMainScreen.addTab("find users", FindUsers);
@@ -748,7 +964,7 @@ public class menu extends javax.swing.JFrame {
             .addGroup(UpdateUsersLayout.createSequentialGroup()
                 .addGap(232, 232, 232)
                 .addComponent(jLabel11)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
         UpdateUsersLayout.setVerticalGroup(
             UpdateUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -825,7 +1041,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(UserRemove_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(RemoveUserbutton)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveUsersLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
@@ -1013,6 +1229,10 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ID_FieldActionPerformed
 
+    private void FindAuthor_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindAuthor_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FindAuthor_FieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1071,9 +1291,31 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField Category_Field;
     private javax.swing.JLabel Contact_number;
     private javax.swing.JTextField Contactnumber_Field;
+    private javax.swing.JLabel FindAuthor;
+    private javax.swing.JTextField FindAuthor_Field;
     private javax.swing.JMenuItem FindBook;
+    private javax.swing.JLabel FindBookName;
+    private javax.swing.JButton FindBookbutton;
     private javax.swing.JPanel FindBooks;
+    private javax.swing.JLabel FindCategory;
+    private javax.swing.JTextField FindCategory_Field;
+    private javax.swing.JLabel FindGender;
+    private javax.swing.JTextField FindGender_Field;
+    private javax.swing.JTextField FindIDBook_Field;
+    private javax.swing.JLabel FindIDBooks;
+    private javax.swing.JTextField FindName_Field;
+    private javax.swing.JScrollPane FindScrollpane;
+    private javax.swing.JTable FindTable;
+    private javax.swing.JPanel FindTablepanel;
     private javax.swing.JMenuItem FindUser;
+    private javax.swing.JLabel FindUserCCCD;
+    private javax.swing.JTextField FindUserCCCD_Field;
+    private javax.swing.JLabel FindUserName;
+    private javax.swing.JTextField FindUserName_Field;
+    private javax.swing.JScrollPane FindUserScrollPane;
+    private javax.swing.JTable FindUserTable;
+    private javax.swing.JPanel FindUserTablepane;
+    private javax.swing.JButton FindUserbutton;
     private javax.swing.JPanel FindUsers;
     private javax.swing.JLabel Gender;
     private javax.swing.JTextField Gender_Field;
@@ -1115,8 +1357,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

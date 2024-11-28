@@ -127,9 +127,9 @@ public class menu extends javax.swing.JFrame {
         CCCDReaderUpdate_Field = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         UpdateUserpanel = new javax.swing.JPanel();
-        ContactNumberUpdaterRadiobutton = new javax.swing.JRadioButton();
-        GenderUpdaterRadiobutton = new javax.swing.JRadioButton();
-        NameUpdaterRadiobutton = new javax.swing.JRadioButton();
+        ContactNumberUpdateRadiobutton = new javax.swing.JRadioButton();
+        GenderUpdateRadiobutton = new javax.swing.JRadioButton();
+        NameUpdateRadiobutton = new javax.swing.JRadioButton();
         UpdateUserInfo_Field = new javax.swing.JTextField();
         UpdateUserInfobutton = new javax.swing.JButton();
         UpdateBooks = new javax.swing.JPanel();
@@ -982,30 +982,30 @@ public class menu extends javax.swing.JFrame {
 
         UpdateUserpanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        ChooseUpdateUserbuttongroup.add(ContactNumberUpdaterRadiobutton);
-        ContactNumberUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ContactNumberUpdaterRadiobutton.setText("Contact number");
-        ContactNumberUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+        ChooseUpdateUserbuttongroup.add(ContactNumberUpdateRadiobutton);
+        ContactNumberUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ContactNumberUpdateRadiobutton.setText("Contact number");
+        ContactNumberUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContactNumberUpdaterRadiobuttonActionPerformed(evt);
+                ContactNumberUpdateRadiobuttonActionPerformed(evt);
             }
         });
 
-        ChooseUpdateUserbuttongroup.add(GenderUpdaterRadiobutton);
-        GenderUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        GenderUpdaterRadiobutton.setText("Gender");
-        GenderUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+        ChooseUpdateUserbuttongroup.add(GenderUpdateRadiobutton);
+        GenderUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        GenderUpdateRadiobutton.setText("Gender");
+        GenderUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GenderUpdaterRadiobuttonActionPerformed(evt);
+                GenderUpdateRadiobuttonActionPerformed(evt);
             }
         });
 
-        ChooseUpdateUserbuttongroup.add(NameUpdaterRadiobutton);
-        NameUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        NameUpdaterRadiobutton.setText("Name");
-        NameUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+        ChooseUpdateUserbuttongroup.add(NameUpdateRadiobutton);
+        NameUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NameUpdateRadiobutton.setText("Name");
+        NameUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameUpdaterRadiobuttonActionPerformed(evt);
+                NameUpdateRadiobuttonActionPerformed(evt);
             }
         });
 
@@ -1032,9 +1032,9 @@ public class menu extends javax.swing.JFrame {
             .addGroup(UpdateUserpanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NameUpdaterRadiobutton)
-                    .addComponent(ContactNumberUpdaterRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GenderUpdaterRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NameUpdateRadiobutton)
+                    .addComponent(ContactNumberUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GenderUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addGroup(UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateUserpanelLayout.createSequentialGroup()
@@ -1048,11 +1048,11 @@ public class menu extends javax.swing.JFrame {
             UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateUserpanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(NameUpdaterRadiobutton)
+                .addComponent(NameUpdateRadiobutton)
                 .addGap(18, 18, 18)
-                .addComponent(ContactNumberUpdaterRadiobutton)
+                .addComponent(ContactNumberUpdateRadiobutton)
                 .addGap(18, 18, 18)
-                .addComponent(GenderUpdaterRadiobutton)
+                .addComponent(GenderUpdateRadiobutton)
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(UpdateUserpanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1530,9 +1530,9 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_UpdateUserInfobuttonActionPerformed
 
-    private void ContactNumberUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberUpdaterRadiobuttonActionPerformed
+    private void ContactNumberUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ContactNumberUpdaterRadiobuttonActionPerformed
+    }//GEN-LAST:event_ContactNumberUpdateRadiobuttonActionPerformed
 
     private void CategoryUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
@@ -1558,13 +1558,13 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PublisherUpdateRadiobuttonActionPerformed
 
-    private void GenderUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderUpdaterRadiobuttonActionPerformed
+    private void GenderUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GenderUpdaterRadiobuttonActionPerformed
+    }//GEN-LAST:event_GenderUpdateRadiobuttonActionPerformed
 
-    private void NameUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameUpdaterRadiobuttonActionPerformed
+    private void NameUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameUpdaterRadiobuttonActionPerformed
+    }//GEN-LAST:event_NameUpdateRadiobuttonActionPerformed
     public JTextField getRemoveID_Field(){
         return removeID_Field;
     }
@@ -1628,7 +1628,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField Category_Field;
     private javax.swing.ButtonGroup ChooseUpdateBookbuttongroup;
     private javax.swing.ButtonGroup ChooseUpdateUserbuttongroup;
-    private javax.swing.JRadioButton ContactNumberUpdaterRadiobutton;
+    private javax.swing.JRadioButton ContactNumberUpdateRadiobutton;
     private javax.swing.JLabel Contact_number;
     private javax.swing.JTextField Contactnumber_Field;
     private javax.swing.JLabel FindAuthor;
@@ -1658,7 +1658,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel FindUserTablepane;
     private javax.swing.JButton FindUserbutton;
     private javax.swing.JLabel Gender;
-    private javax.swing.JRadioButton GenderUpdaterRadiobutton;
+    private javax.swing.JRadioButton GenderUpdateRadiobutton;
     private javax.swing.JTextField Gender_Field;
     private javax.swing.JButton HomeButton;
     private javax.swing.JLabel ID;
@@ -1670,7 +1670,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel LatestUpdates;
     private javax.swing.JTabbedPane MenuMainScreen;
     private javax.swing.JRadioButton NameBookUpdateRadiobutton;
-    private javax.swing.JRadioButton NameUpdaterRadiobutton;
+    private javax.swing.JRadioButton NameUpdateRadiobutton;
     private javax.swing.JLabel Publisher;
     private javax.swing.JRadioButton PublisherUpdateRadiobutton;
     private javax.swing.JTextField Publisher_Field;

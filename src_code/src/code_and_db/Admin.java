@@ -42,7 +42,7 @@ public class Admin {
     }
     public static void ADDBOOKS(Books book) throws IOException{
         try (FileWriter fw = new FileWriter("src/code_and_db/Books.txt", true)){ 
-            fw.write(book.getID() + "\n" + book.getName() + "\n" + book.getCategory() + "\n" + book.getPublisher() + "\n" + book.getAuthor() + "\n" + book.getVolume() + "\n" + book.getQuantity() + "\n");
+            fw.write(book.getID() + "\n" + book.getName() + "\n" + book.getCategory() + "\n" + book.getPublisher() + "\n" + book.getAuthor() + "\n" + book.getQuantity() + "\n");
         } catch (IOException ex) { 
             ex.printStackTrace();//them truong hop neu co book da ton tai r 
             JOptionPane.showMessageDialog(null, "An error occurred while writing to the file.", "Error", JOptionPane.ERROR_MESSAGE); 

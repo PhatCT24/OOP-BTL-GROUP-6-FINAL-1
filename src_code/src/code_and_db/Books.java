@@ -19,16 +19,14 @@ public class Books {
     private String category;
     private String publisher;
     private String author;
-    private String volume;
     private int quantity;
     
-    public Books(String id, String name, String category, String publisher, String author, String volume, int quantity) {
+    public Books(String id, String name, String category, String publisher, String author, int quantity) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.publisher = publisher;
         this.author = author;
-        this.volume = volume;
         this.quantity = quantity;
     }
     public String getID(){
@@ -48,10 +46,6 @@ public class Books {
 
     public String getAuthor() {
         return author;
-    }
-
-    public String getVolume() {
-        return volume;
     }
 
     public int getQuantity() {

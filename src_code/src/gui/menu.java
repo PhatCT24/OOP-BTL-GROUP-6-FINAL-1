@@ -4,8 +4,12 @@
  */
 package gui;
 
+import code_and_db.Admin;
 import code_and_db.Books;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author DELL
@@ -1197,21 +1201,30 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Volume_FieldActionPerformed
 
     private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
-        String id = ID_Field.getText();
-        String name = Bookname_Field.getText();
-        String category = Category_Field.getText();
-        String publisher = Publisher_Field.getText();
-        String author = Author_Field.getText();
-        String volume = Volume_Field.getText();
-        int quantity = Integer.parseInt(Quantity_Field.getText());
-        Books newBook = new Books(id,name, category, publisher, author, volume, quantity);
-        ID_Field.setText("");
-        Bookname_Field.setText(""); 
-        Category_Field.setText(""); 
-        Publisher_Field.setText(""); 
-        Author_Field.setText(""); 
-        Volume_Field.setText(""); 
-        Quantity_Field.setText("");
+        try {
+            if (ID_Field.getText().isEmpty() || Bookname_Field.getText().isEmpty() || Category_Field.getText().isEmpty() || Publisher_Field.getText().isEmpty() || Author_Field.getText().isEmpty() || Volume_Field.getText().isEmpty() || Quantity_Field.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+                ID_Field.requestFocus();
+            }else{
+                String id = ID_Field.getText();
+                String name = Bookname_Field.getText();
+                String category = Category_Field.getText();
+                String publisher = Publisher_Field.getText();
+                String author = Author_Field.getText();
+                String volume = Volume_Field.getText();
+                int quantity = Integer.parseInt(Quantity_Field.getText());
+                Books newBook = new Books(id,name, category, publisher, author, volume, quantity);
+                Admin.ADDBOOKS(newBook);
+                ID_Field.setText("");
+                Bookname_Field.setText(""); 
+                Category_Field.setText(""); 
+                Publisher_Field.setText(""); 
+                Author_Field.setText(""); 
+                Volume_Field.setText(""); 
+                Quantity_Field.setText("");
+            }
+        } catch (IOException ex) {
+        }
     }//GEN-LAST:event_AddBookbuttonActionPerformed
 
     private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed

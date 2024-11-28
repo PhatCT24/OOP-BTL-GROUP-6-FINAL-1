@@ -8,7 +8,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
 
-import code_and_db.Account;
+import code_and_db.Admin;
 public class login extends javax.swing.JFrame {
 
     /**
@@ -162,7 +162,7 @@ public class login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try{
-                if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
                     new menu().setVisible(true);
@@ -183,7 +183,7 @@ public class login extends javax.swing.JFrame {
     private void loginbuttonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginbuttonKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             try{
-                if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
                 }
@@ -201,7 +201,7 @@ public class login extends javax.swing.JFrame {
     private void username_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_username_FieldKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             try{
-                if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
                 }
@@ -219,7 +219,7 @@ public class login extends javax.swing.JFrame {
     private void password_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_password_FieldKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             try{
-                if (Account.checklogin(username_Field.getText(), new String(password_Field.getPassword()))){
+                if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     new menu().setVisible(true);
                     dispose();
                 }

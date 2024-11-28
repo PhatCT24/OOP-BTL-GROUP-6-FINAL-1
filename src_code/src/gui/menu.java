@@ -955,23 +955,24 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("find users", FindUsers);
 
-        jLabel11.setText("update users");
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setText("UPDATE USERS");
 
         javax.swing.GroupLayout UpdateUsersLayout = new javax.swing.GroupLayout(UpdateUsers);
         UpdateUsers.setLayout(UpdateUsersLayout);
         UpdateUsersLayout.setHorizontalGroup(
             UpdateUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateUsersLayout.createSequentialGroup()
-                .addGap(232, 232, 232)
+                .addGap(192, 192, 192)
                 .addComponent(jLabel11)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         UpdateUsersLayout.setVerticalGroup(
             UpdateUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateUsersLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel11)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("update users", UpdateUsers);

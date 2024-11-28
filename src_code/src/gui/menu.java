@@ -43,9 +43,6 @@ public class menu extends javax.swing.JFrame {
         RemoveReader = new javax.swing.JMenuItem();
         FindReader = new javax.swing.JMenuItem();
         UpdateReader = new javax.swing.JMenuItem();
-        TicketPopUpMenu = new javax.swing.JPopupMenu();
-        AddTicket = new javax.swing.JMenuItem();
-        RemoveTicket = new javax.swing.JMenuItem();
         ChooseUpdateUserbuttongroup = new javax.swing.ButtonGroup();
         ChooseUpdateBookbuttongroup = new javax.swing.ButtonGroup();
         menu_background = new javax.swing.JPanel();
@@ -145,8 +142,17 @@ public class menu extends javax.swing.JFrame {
         AuthorUpdateRadiobutton = new javax.swing.JRadioButton();
         PublisherUpdateRadiobutton = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
-        AddBorrows = new javax.swing.JPanel();
-        RemoveBorrows = new javax.swing.JPanel();
+        BorrowTicket = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        CCCDTicket = new javax.swing.JLabel();
+        BookIDTicket_Field = new javax.swing.JTextField();
+        BookIDTicket = new javax.swing.JLabel();
+        CCCDTicket_Field = new javax.swing.JTextField();
+        TicketBorrowPanel = new javax.swing.JPanel();
+        TicketBorrowScrollPane = new javax.swing.JScrollPane();
+        TicketBorrowTable = new javax.swing.JTable();
+        ReturnBookbutton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         RemoveReaders = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         ID_User = new javax.swing.JLabel();
@@ -222,22 +228,6 @@ public class menu extends javax.swing.JFrame {
             }
         });
         ReaderPopUpMenu.add(UpdateReader);
-
-        AddTicket.setText("Add a borrow ticket");
-        AddTicket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddTicketActionPerformed(evt);
-            }
-        });
-        TicketPopUpMenu.add(AddTicket);
-
-        RemoveTicket.setText("Remove a borrow ticket");
-        RemoveTicket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemoveTicketActionPerformed(evt);
-            }
-        });
-        TicketPopUpMenu.add(RemoveTicket);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1259,31 +1249,127 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("update books", UpdateBooks);
 
-        javax.swing.GroupLayout AddBorrowsLayout = new javax.swing.GroupLayout(AddBorrows);
-        AddBorrows.setLayout(AddBorrowsLayout);
-        AddBorrowsLayout.setHorizontalGroup(
-            AddBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel14.setText("BORROW TICKET");
+
+        CCCDTicket.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CCCDTicket.setText("CCCD");
+
+        BookIDTicket_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookIDTicket_FieldActionPerformed(evt);
+            }
+        });
+
+        BookIDTicket.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        BookIDTicket.setText("Book_ID");
+
+        CCCDTicket_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CCCDTicket_FieldActionPerformed(evt);
+            }
+        });
+
+        TicketBorrowTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "CCCD", "ID", "Borrow_date", "Return_date", "Status"
+            }
+        ));
+        TicketBorrowTable.setShowVerticalLines(true);
+        TicketBorrowScrollPane.setViewportView(TicketBorrowTable);
+
+        javax.swing.GroupLayout TicketBorrowPanelLayout = new javax.swing.GroupLayout(TicketBorrowPanel);
+        TicketBorrowPanel.setLayout(TicketBorrowPanelLayout);
+        TicketBorrowPanelLayout.setHorizontalGroup(
+            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TicketBorrowScrollPane)
         );
-        AddBorrowsLayout.setVerticalGroup(
-            AddBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+        TicketBorrowPanelLayout.setVerticalGroup(
+            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TicketBorrowScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
         );
 
-        MenuMainScreen.addTab("add borrow", AddBorrows);
+        ReturnBookbutton.setBackground(new java.awt.Color(102, 0, 0));
+        ReturnBookbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ReturnBookbutton.setForeground(new java.awt.Color(242, 242, 242));
+        ReturnBookbutton.setText("Return");
 
-        javax.swing.GroupLayout RemoveBorrowsLayout = new javax.swing.GroupLayout(RemoveBorrows);
-        RemoveBorrows.setLayout(RemoveBorrowsLayout);
-        RemoveBorrowsLayout.setHorizontalGroup(
-            RemoveBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+        jButton3.setBackground(new java.awt.Color(102, 0, 0));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(242, 242, 242));
+        jButton3.setText("Borrow");
+
+        javax.swing.GroupLayout BorrowTicketLayout = new javax.swing.GroupLayout(BorrowTicket);
+        BorrowTicket.setLayout(BorrowTicketLayout);
+        BorrowTicketLayout.setHorizontalGroup(
+            BorrowTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TicketBorrowPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BorrowTicketLayout.createSequentialGroup()
+                .addGroup(BorrowTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(BorrowTicketLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14))
+                    .addGroup(BorrowTicketLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(CCCDTicket)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CCCDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addComponent(BookIDTicket)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BookIDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BorrowTicketLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ReturnBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
         );
-        RemoveBorrowsLayout.setVerticalGroup(
-            RemoveBorrowsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+        BorrowTicketLayout.setVerticalGroup(
+            BorrowTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BorrowTicketLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(BorrowTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CCCDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CCCDTicket)
+                    .addComponent(BookIDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookIDTicket))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TicketBorrowPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(BorrowTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ReturnBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
-        MenuMainScreen.addTab("remove borrw", RemoveBorrows);
+        MenuMainScreen.addTab("add borrow", BorrowTicket);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText("REMOVE READERS");
@@ -1372,7 +1458,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ToBookMenuActionPerformed
 
     private void ToBorrowTicketMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBorrowTicketMenuActionPerformed
-        TicketPopUpMenu.show(ToBorrowTicketMenu, WIDTH + 139, WIDTH);
+        MenuMainScreen.setSelectedComponent(BorrowTicket);
     }//GEN-LAST:event_ToBorrowTicketMenuActionPerformed
 
     
@@ -1408,14 +1494,6 @@ public class menu extends javax.swing.JFrame {
     private void UpdateReaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateReaderActionPerformed
         MenuMainScreen.setSelectedComponent(UpdateReaders);
     }//GEN-LAST:event_UpdateReaderActionPerformed
-
-    private void AddTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTicketActionPerformed
-        MenuMainScreen.setSelectedComponent(AddBorrows);
-    }//GEN-LAST:event_AddTicketActionPerformed
-
-    private void RemoveTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTicketActionPerformed
-        MenuMainScreen.setSelectedComponent(RemoveBorrows);
-    }//GEN-LAST:event_RemoveTicketActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         MenuMainScreen.setSelectedComponent(LatestUpdates);
@@ -1565,6 +1643,14 @@ public class menu extends javax.swing.JFrame {
     private void NameUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NameUpdateRadiobuttonActionPerformed
+
+    private void BookIDTicket_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDTicket_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookIDTicket_FieldActionPerformed
+
+    private void CCCDTicket_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCDTicket_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CCCDTicket_FieldActionPerformed
     public JTextField getRemoveID_Field(){
         return removeID_Field;
     }
@@ -1608,20 +1694,23 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem AddBook;
     private javax.swing.JButton AddBookbutton;
     private javax.swing.JPanel AddBooks;
-    private javax.swing.JPanel AddBorrows;
     private javax.swing.JMenuItem AddReader;
     private javax.swing.JPanel AddReaders;
-    private javax.swing.JMenuItem AddTicket;
     private javax.swing.JButton AddUserbutton;
     private javax.swing.JLabel Author;
     private javax.swing.JRadioButton AuthorUpdateRadiobutton;
     private javax.swing.JTextField Author_Field;
+    private javax.swing.JLabel BookIDTicket;
+    private javax.swing.JTextField BookIDTicket_Field;
     private javax.swing.JPopupMenu BookPopUpMenu;
     private javax.swing.JLabel Book_Name;
     private javax.swing.JTextField Bookname_Field;
+    private javax.swing.JPanel BorrowTicket;
     private javax.swing.JLabel CCCD;
     private javax.swing.JLabel CCCDReaderUpdate;
     private javax.swing.JTextField CCCDReaderUpdate_Field;
+    private javax.swing.JLabel CCCDTicket;
+    private javax.swing.JTextField CCCDTicket_Field;
     private javax.swing.JTextField CCCD_Field;
     private javax.swing.JLabel Category;
     private javax.swing.JRadioButton CategoryUpdateRadiobutton;
@@ -1681,12 +1770,13 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem RemoveBook;
     private javax.swing.JButton RemoveBookbutton;
     private javax.swing.JPanel RemoveBooks;
-    private javax.swing.JPanel RemoveBorrows;
     private javax.swing.JMenuItem RemoveReader;
     private javax.swing.JPanel RemoveReaders;
-    private javax.swing.JMenuItem RemoveTicket;
     private javax.swing.JButton RemoveUserbutton;
-    private javax.swing.JPopupMenu TicketPopUpMenu;
+    private javax.swing.JButton ReturnBookbutton;
+    private javax.swing.JPanel TicketBorrowPanel;
+    private javax.swing.JScrollPane TicketBorrowScrollPane;
+    private javax.swing.JTable TicketBorrowTable;
     private javax.swing.JButton ToBookMenu;
     private javax.swing.JButton ToBorrowTicketMenu;
     private javax.swing.JButton ToCustomerMenu;
@@ -1708,11 +1798,13 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

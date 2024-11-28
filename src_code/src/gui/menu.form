@@ -905,6 +905,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Find"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FindBookbuttonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="FindTablepanel">
 

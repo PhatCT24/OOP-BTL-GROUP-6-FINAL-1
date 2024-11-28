@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
  * @author TRAN XUAN THANH
  */
 public class Books {
-    public String id;
-    public String name;
-    public String category;
-    public String publisher;
-    public String author;
-    public String volume;
-    public int quantity;
+    String id;
+    String name;
+    String category;
+    String publisher;
+    String author;
+    String volume;
+    int quantity;
     
     public Books(String id, String name, String category, String publisher, String author, String volume, int quantity) {
         this.id = id;

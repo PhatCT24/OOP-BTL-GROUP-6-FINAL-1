@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
  */
 public class Admin {
 
-    
     private String username;
     private String password;
 

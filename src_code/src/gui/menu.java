@@ -615,6 +615,11 @@ public class menu extends javax.swing.JFrame {
         FindBookbutton.setBackground(new java.awt.Color(102, 0, 0));
         FindBookbutton.setForeground(new java.awt.Color(242, 242, 242));
         FindBookbutton.setText("Find");
+        FindBookbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindBookbuttonActionPerformed(evt);
+            }
+        });
 
         FindTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1250,6 +1255,10 @@ public class menu extends javax.swing.JFrame {
     private void FindAuthor_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindAuthor_FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FindAuthor_FieldActionPerformed
+
+    private void FindBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookbuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FindBookbuttonActionPerformed
 
     /**
      * @param args the command line arguments

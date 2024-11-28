@@ -46,6 +46,8 @@ public class menu extends javax.swing.JFrame {
         TicketPopUpMenu = new javax.swing.JPopupMenu();
         AddTicket = new javax.swing.JMenuItem();
         RemoveTicket = new javax.swing.JMenuItem();
+        ChooseUpdateUserbuttongroup = new javax.swing.ButtonGroup();
+        ChooseUpdateBookbuttongroup = new javax.swing.ButtonGroup();
         menu_background = new javax.swing.JPanel();
         home_icon = new javax.swing.JLabel();
         ToLogOut = new javax.swing.JButton();
@@ -121,7 +123,28 @@ public class menu extends javax.swing.JFrame {
         FindUserTable = new javax.swing.JTable();
         UpdateReaders = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        CCCDReaderUpdate = new javax.swing.JLabel();
+        CCCDReaderUpdate_Field = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        UpdateUserpanel = new javax.swing.JPanel();
+        ContactNumberUpdaterRadiobutton = new javax.swing.JRadioButton();
+        GenderUpdaterRadiobutton = new javax.swing.JRadioButton();
+        NameUpdaterRadiobutton = new javax.swing.JRadioButton();
+        UpdateUserInfo_Field = new javax.swing.JTextField();
+        UpdateUserInfobutton = new javax.swing.JButton();
         UpdateBooks = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        IDBookUpdate = new javax.swing.JLabel();
+        IDBookUpdate_Field = new javax.swing.JTextField();
+        UpdateBookpanel = new javax.swing.JPanel();
+        CategoryUpdateRadiobutton = new javax.swing.JRadioButton();
+        QuantityUpdateRadiobutton = new javax.swing.JRadioButton();
+        NameBookUpdateRadiobutton = new javax.swing.JRadioButton();
+        UpdateBookInfo_Field = new javax.swing.JTextField();
+        UpdateBookInfobutton = new javax.swing.JButton();
+        AuthorUpdateRadiobutton = new javax.swing.JRadioButton();
+        PublisherUpdateRadiobutton = new javax.swing.JRadioButton();
+        jLabel13 = new javax.swing.JLabel();
         AddBorrows = new javax.swing.JPanel();
         RemoveBorrows = new javax.swing.JPanel();
         RemoveReaders = new javax.swing.JPanel();
@@ -945,34 +968,293 @@ public class menu extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setText("UPDATE READER'S INFO");
 
+        CCCDReaderUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CCCDReaderUpdate.setText("CCCD");
+
+        CCCDReaderUpdate_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CCCDReaderUpdate_FieldActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Choose the attribute you want to update:");
+
+        UpdateUserpanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        ChooseUpdateUserbuttongroup.add(ContactNumberUpdaterRadiobutton);
+        ContactNumberUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ContactNumberUpdaterRadiobutton.setText("Contact number");
+        ContactNumberUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContactNumberUpdaterRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        ChooseUpdateUserbuttongroup.add(GenderUpdaterRadiobutton);
+        GenderUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        GenderUpdaterRadiobutton.setText("Gender");
+        GenderUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenderUpdaterRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        ChooseUpdateUserbuttongroup.add(NameUpdaterRadiobutton);
+        NameUpdaterRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NameUpdaterRadiobutton.setText("Name");
+        NameUpdaterRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameUpdaterRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        UpdateUserInfo_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateUserInfo_FieldActionPerformed(evt);
+            }
+        });
+
+        UpdateUserInfobutton.setBackground(new java.awt.Color(102, 0, 0));
+        UpdateUserInfobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UpdateUserInfobutton.setForeground(new java.awt.Color(242, 242, 242));
+        UpdateUserInfobutton.setText("Update");
+        UpdateUserInfobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateUserInfobuttonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout UpdateUserpanelLayout = new javax.swing.GroupLayout(UpdateUserpanel);
+        UpdateUserpanel.setLayout(UpdateUserpanelLayout);
+        UpdateUserpanelLayout.setHorizontalGroup(
+            UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateUserpanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NameUpdaterRadiobutton)
+                    .addComponent(ContactNumberUpdaterRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GenderUpdaterRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGroup(UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateUserpanelLayout.createSequentialGroup()
+                        .addComponent(UpdateUserInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateUserpanelLayout.createSequentialGroup()
+                        .addComponent(UpdateUserInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113))))
+        );
+        UpdateUserpanelLayout.setVerticalGroup(
+            UpdateUserpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateUserpanelLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(NameUpdaterRadiobutton)
+                .addGap(18, 18, 18)
+                .addComponent(ContactNumberUpdaterRadiobutton)
+                .addGap(18, 18, 18)
+                .addComponent(GenderUpdaterRadiobutton)
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(UpdateUserpanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(UpdateUserInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(UpdateUserInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+
         javax.swing.GroupLayout UpdateReadersLayout = new javax.swing.GroupLayout(UpdateReaders);
         UpdateReaders.setLayout(UpdateReadersLayout);
         UpdateReadersLayout.setHorizontalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateReadersLayout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(142, 142, 142))
+                .addComponent(UpdateUserpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(UpdateReadersLayout.createSequentialGroup()
+                .addGroup(UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UpdateReadersLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5))
+                    .addGroup(UpdateReadersLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addGroup(UpdateReadersLayout.createSequentialGroup()
+                                .addComponent(CCCDReaderUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CCCDReaderUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         UpdateReadersLayout.setVerticalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UpdateReadersLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jLabel11)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CCCDReaderUpdate)
+                    .addComponent(CCCDReaderUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(UpdateUserpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("update users", UpdateReaders);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setText("Choose the attribute you want to update:");
+
+        IDBookUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        IDBookUpdate.setText("ID");
+
+        IDBookUpdate_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDBookUpdate_FieldActionPerformed(evt);
+            }
+        });
+
+        UpdateBookpanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        ChooseUpdateBookbuttongroup.add(CategoryUpdateRadiobutton);
+        CategoryUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CategoryUpdateRadiobutton.setText("Category");
+        CategoryUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CategoryUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        ChooseUpdateBookbuttongroup.add(QuantityUpdateRadiobutton);
+        QuantityUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        QuantityUpdateRadiobutton.setText("Quantity");
+
+        ChooseUpdateBookbuttongroup.add(NameBookUpdateRadiobutton);
+        NameBookUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NameBookUpdateRadiobutton.setText("Name");
+
+        UpdateBookInfo_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UpdateBookInfo_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBookInfo_FieldActionPerformed(evt);
+            }
+        });
+
+        UpdateBookInfobutton.setBackground(new java.awt.Color(102, 0, 0));
+        UpdateBookInfobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UpdateBookInfobutton.setForeground(new java.awt.Color(242, 242, 242));
+        UpdateBookInfobutton.setText("Update");
+        UpdateBookInfobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateBookInfobuttonActionPerformed(evt);
+            }
+        });
+
+        ChooseUpdateBookbuttongroup.add(AuthorUpdateRadiobutton);
+        AuthorUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        AuthorUpdateRadiobutton.setText("Author");
+        AuthorUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AuthorUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        ChooseUpdateBookbuttongroup.add(PublisherUpdateRadiobutton);
+        PublisherUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        PublisherUpdateRadiobutton.setText("Publisher");
+        PublisherUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PublisherUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout UpdateBookpanelLayout = new javax.swing.GroupLayout(UpdateBookpanel);
+        UpdateBookpanel.setLayout(UpdateBookpanelLayout);
+        UpdateBookpanelLayout.setHorizontalGroup(
+            UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
+                                .addComponent(CategoryUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30))
+                            .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                                .addComponent(NameBookUpdateRadiobutton)
+                                .addGap(107, 107, 107)))
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AuthorUpdateRadiobutton)
+                            .addComponent(PublisherUpdateRadiobutton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
+                        .addComponent(QuantityUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(UpdateBookInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(67, 67, 67))))
+        );
+        UpdateBookpanelLayout.setVerticalGroup(
+            UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AuthorUpdateRadiobutton))
+                        .addGap(30, 30, 30)
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UpdateBookInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PublisherUpdateRadiobutton)))
+                    .addGroup(UpdateBookpanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(NameBookUpdateRadiobutton)
+                        .addGap(27, 27, 27)
+                        .addComponent(CategoryUpdateRadiobutton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(QuantityUpdateRadiobutton)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("UPDATE BOOK'S INFO");
 
         javax.swing.GroupLayout UpdateBooksLayout = new javax.swing.GroupLayout(UpdateBooks);
         UpdateBooks.setLayout(UpdateBooksLayout);
         UpdateBooksLayout.setHorizontalGroup(
             UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGroup(UpdateBooksLayout.createSequentialGroup()
+                .addGroup(UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, UpdateBooksLayout.createSequentialGroup()
+                            .addGap(161, 161, 161)
+                            .addComponent(IDBookUpdate)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(IDBookUpdate_Field))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, UpdateBooksLayout.createSequentialGroup()
+                            .addGap(173, 173, 173)
+                            .addComponent(jLabel13)))
+                    .addGroup(UpdateBooksLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UpdateBookpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         UpdateBooksLayout.setVerticalGroup(
             UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBooksLayout.createSequentialGroup()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(UpdateBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IDBookUpdate)
+                    .addComponent(IDBookUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(UpdateBookpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("update books", UpdateBooks);
@@ -1235,6 +1517,54 @@ public class menu extends javax.swing.JFrame {
     private void FindBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FindBookbuttonActionPerformed
+
+    private void CCCDReaderUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCDReaderUpdate_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CCCDReaderUpdate_FieldActionPerformed
+
+    private void UpdateUserInfo_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfo_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateUserInfo_FieldActionPerformed
+
+    private void UpdateUserInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateUserInfobuttonActionPerformed
+
+    private void ContactNumberUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberUpdaterRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContactNumberUpdaterRadiobuttonActionPerformed
+
+    private void CategoryUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryUpdateRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CategoryUpdateRadiobuttonActionPerformed
+
+    private void UpdateBookInfo_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookInfo_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateBookInfo_FieldActionPerformed
+
+    private void UpdateBookInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookInfobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateBookInfobuttonActionPerformed
+
+    private void IDBookUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDBookUpdate_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDBookUpdate_FieldActionPerformed
+
+    private void AuthorUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AuthorUpdateRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AuthorUpdateRadiobuttonActionPerformed
+
+    private void PublisherUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PublisherUpdateRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PublisherUpdateRadiobuttonActionPerformed
+
+    private void GenderUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderUpdaterRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GenderUpdaterRadiobuttonActionPerformed
+
+    private void NameUpdaterRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameUpdaterRadiobuttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameUpdaterRadiobuttonActionPerformed
     public JTextField getRemoveID_Field(){
         return removeID_Field;
     }
@@ -1284,14 +1614,21 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem AddTicket;
     private javax.swing.JButton AddUserbutton;
     private javax.swing.JLabel Author;
+    private javax.swing.JRadioButton AuthorUpdateRadiobutton;
     private javax.swing.JTextField Author_Field;
     private javax.swing.JPopupMenu BookPopUpMenu;
     private javax.swing.JLabel Book_Name;
     private javax.swing.JTextField Bookname_Field;
     private javax.swing.JLabel CCCD;
+    private javax.swing.JLabel CCCDReaderUpdate;
+    private javax.swing.JTextField CCCDReaderUpdate_Field;
     private javax.swing.JTextField CCCD_Field;
     private javax.swing.JLabel Category;
+    private javax.swing.JRadioButton CategoryUpdateRadiobutton;
     private javax.swing.JTextField Category_Field;
+    private javax.swing.ButtonGroup ChooseUpdateBookbuttongroup;
+    private javax.swing.ButtonGroup ChooseUpdateUserbuttongroup;
+    private javax.swing.JRadioButton ContactNumberUpdaterRadiobutton;
     private javax.swing.JLabel Contact_number;
     private javax.swing.JTextField Contactnumber_Field;
     private javax.swing.JLabel FindAuthor;
@@ -1321,17 +1658,24 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel FindUserTablepane;
     private javax.swing.JButton FindUserbutton;
     private javax.swing.JLabel Gender;
+    private javax.swing.JRadioButton GenderUpdaterRadiobutton;
     private javax.swing.JTextField Gender_Field;
     private javax.swing.JButton HomeButton;
     private javax.swing.JLabel ID;
+    private javax.swing.JLabel IDBookUpdate;
+    private javax.swing.JTextField IDBookUpdate_Field;
     private javax.swing.JLabel ID_BOOK;
     private javax.swing.JTextField ID_Field;
     private javax.swing.JLabel ID_User;
     private javax.swing.JPanel LatestUpdates;
     private javax.swing.JTabbedPane MenuMainScreen;
+    private javax.swing.JRadioButton NameBookUpdateRadiobutton;
+    private javax.swing.JRadioButton NameUpdaterRadiobutton;
     private javax.swing.JLabel Publisher;
+    private javax.swing.JRadioButton PublisherUpdateRadiobutton;
     private javax.swing.JTextField Publisher_Field;
     private javax.swing.JLabel Quantity;
+    private javax.swing.JRadioButton QuantityUpdateRadiobutton;
     private javax.swing.JTextField Quantity_Field;
     private javax.swing.JPopupMenu ReaderPopUpMenu;
     private javax.swing.JMenuItem RemoveBook;
@@ -1348,9 +1692,15 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JButton ToCustomerMenu;
     private javax.swing.JButton ToLogOut;
     private javax.swing.JMenuItem UpdateBook;
+    private javax.swing.JTextField UpdateBookInfo_Field;
+    private javax.swing.JButton UpdateBookInfobutton;
+    private javax.swing.JPanel UpdateBookpanel;
     private javax.swing.JPanel UpdateBooks;
     private javax.swing.JMenuItem UpdateReader;
     private javax.swing.JPanel UpdateReaders;
+    private javax.swing.JTextField UpdateUserInfo_Field;
+    private javax.swing.JButton UpdateUserInfobutton;
+    private javax.swing.JPanel UpdateUserpanel;
     private javax.swing.JTextField UserRemove_Field;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField Username_Field;
@@ -1359,11 +1709,14 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

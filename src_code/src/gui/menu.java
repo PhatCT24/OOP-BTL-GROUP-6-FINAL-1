@@ -7,9 +7,8 @@ package gui;
 import code_and_db.Admin;
 import code_and_db.Books;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 /**
  *
  * @author DELL
@@ -82,8 +81,9 @@ public class menu extends javax.swing.JFrame {
         RemoveBooks = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ID_BOOK = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        removeID_Field = new javax.swing.JTextField();
         RemoveBookbutton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         FindBooks = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         FindIDBooks = new javax.swing.JLabel();
@@ -499,18 +499,18 @@ public class menu extends javax.swing.JFrame {
                             .addGroup(AddBooksLayout.createSequentialGroup()
                                 .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Book_Name)
-                                    .addComponent(Category, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(4, 4, 4)
+                                    .addComponent(Category))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Bookname_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Category_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(AddBooksLayout.createSequentialGroup()
                                 .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(AddBookbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Volume_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,6 +559,17 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 256, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout RemoveBooksLayout = new javax.swing.GroupLayout(RemoveBooks);
         RemoveBooks.setLayout(RemoveBooksLayout);
         RemoveBooksLayout.setHorizontalGroup(
@@ -567,14 +578,18 @@ public class menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(187, 187, 187))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveBooksLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
+            .addGroup(RemoveBooksLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
                 .addComponent(ID_BOOK)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(removeID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(RemoveBookbutton)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(RemoveBooksLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         RemoveBooksLayout.setVerticalGroup(
             RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,10 +598,11 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(20, 20, 20)
                 .addGroup(RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ID_BOOK)
                     .addComponent(RemoveBookbutton))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("remove books", RemoveBooks);
@@ -1190,7 +1206,18 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_CCCD_FieldActionPerformed
 
     private void RemoveBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbuttonActionPerformed
-        // TODO add your handling code here:
+        try{
+            int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this book from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (confirm == JOptionPane.YES_OPTION){
+                Admin.REMOVEBOOKS(removeID_Field.getText());
+                removeID_Field.setText("");
+            }
+            else{
+                removeID_Field.requestFocus();
+            }
+        }catch (IOException e){
+            
+        }
     }//GEN-LAST:event_RemoveBookbuttonActionPerformed
 
     private void RemoveUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserbuttonActionPerformed
@@ -1220,6 +1247,7 @@ public class menu extends javax.swing.JFrame {
                 int quantity = Integer.parseInt(Quantity_Field.getText());
                 Books newBook = new Books(id,name, category, publisher, author, volume, quantity);
                 Admin.ADDBOOKS(newBook);
+                JOptionPane.showMessageDialog(null, "Book added to the library's database!","AddBook", JOptionPane.INFORMATION_MESSAGE);
                 ID_Field.setText("");
                 Bookname_Field.setText(""); 
                 Category_Field.setText(""); 
@@ -1259,7 +1287,9 @@ public class menu extends javax.swing.JFrame {
     private void FindBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FindBookbuttonActionPerformed
-
+    public JTextField getRemoveID_Field(){
+        return removeID_Field;
+    }
     /**
      * @param args the command line arguments
      */
@@ -1289,6 +1319,7 @@ public class menu extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new menu().setVisible(true);
             }
@@ -1393,7 +1424,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu_background;
+    private javax.swing.JTextField removeID_Field;
     // End of variables declaration//GEN-END:variables
 }

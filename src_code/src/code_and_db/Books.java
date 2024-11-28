@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
  * @author TRAN XUAN THANH
  */
 public class Books {
-    String id;
-    String name;
-    String category;
-    String publisher;
-    String author;
-    String volume;
-    int quantity;
+    private String id;
+    private String name;
+    private String category;
+    private String publisher;
+    private String author;
+    private String volume;
+    private int quantity;
     
     public Books(String id, String name, String category, String publisher, String author, String volume, int quantity) {
         this.id = id;
@@ -30,6 +30,32 @@ public class Books {
         this.author = author;
         this.volume = volume;
         this.quantity = quantity;
-        JOptionPane.showMessageDialog(null, "Book added to the library's database!","AddBook", JOptionPane.INFORMATION_MESSAGE);
     }
+    public String getID(){
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getVolume() {
+        return volume;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+    
 }

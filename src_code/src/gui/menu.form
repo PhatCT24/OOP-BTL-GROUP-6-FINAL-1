@@ -56,67 +56,67 @@
         </MenuItem>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPopupMenu" name="UserPopUpMenu">
+    <Container class="javax.swing.JPopupMenu" name="ReaderPopUpMenu">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <MenuItem class="javax.swing.JMenuItem" name="AddCustomer">
+        <MenuItem class="javax.swing.JMenuItem" name="AddReader">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Add a customer"/>
+            <Property name="text" type="java.lang.String" value="Add a reader"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCustomerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddReaderActionPerformed"/>
           </Events>
         </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="RemoveCustomer">
+        <MenuItem class="javax.swing.JMenuItem" name="RemoveReader">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Remove a customer"/>
+            <Property name="text" type="java.lang.String" value="Remove a reader"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveCustomerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveReaderActionPerformed"/>
           </Events>
         </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="FindCustomer">
+        <MenuItem class="javax.swing.JMenuItem" name="FindReader">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Find a customer"/>
+            <Property name="text" type="java.lang.String" value="Find a reader"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FindCustomerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FindReaderActionPerformed"/>
           </Events>
         </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="UpdateCustomer">
+        <MenuItem class="javax.swing.JMenuItem" name="UpdateReader">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Update an customer&apos;s info"/>
+            <Property name="text" type="java.lang.String" value="Update a reader&apos;s info"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateCustomerActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateReaderActionPerformed"/>
           </Events>
         </MenuItem>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPopupMenu" name="BorrowPopUpMenu">
+    <Container class="javax.swing.JPopupMenu" name="TicketPopUpMenu">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <MenuItem class="javax.swing.JMenuItem" name="AddBorrow">
+        <MenuItem class="javax.swing.JMenuItem" name="AddTicket">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add a borrow ticket"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddBorrowActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddTicketActionPerformed"/>
           </Events>
         </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="RemoveBorrow">
+        <MenuItem class="javax.swing.JMenuItem" name="RemoveTicket">
           <Properties>
             <Property name="text" type="java.lang.String" value="Remove a borrow ticket"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveBorrowActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveTicketActionPerformed"/>
           </Events>
         </MenuItem>
       </SubComponents>
@@ -225,7 +225,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="BORROW"/>
+            <Property name="text" type="java.lang.String" value="TICKET"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -243,7 +243,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CUSTOMERS"/>
+            <Property name="text" type="java.lang.String" value="READERS"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -1016,7 +1016,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="AddCustomers">
+            <Container class="javax.swing.JPanel" name="AddReaders">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="add users">
@@ -1117,7 +1117,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="ADD CUSTOMER"/>
+                    <Property name="text" type="java.lang.String" value="ADD READER"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Username_Field">
@@ -1206,7 +1206,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="FindCustomers">
+            <Container class="javax.swing.JPanel" name="FindReaders">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="find users">
@@ -1220,35 +1220,32 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="FindUserTablepane" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="FindUserCCCD" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
-                                          <Component id="FindUserCCCD_Field" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
-                                          <Component id="FindUserName" min="-2" pref="56" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="FindGender" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                          <Component id="FindGender_Field" min="-2" pref="124" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="FindUserbutton" min="-2" pref="124" max="-2" attributes="0"/>
-                                      <Component id="FindUserName_Field" min="-2" pref="124" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="FindUserCCCD" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                                  <Component id="FindUserCCCD_Field" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
+                                  <Component id="FindUserName" min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FindGender" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                  <Component id="FindGender_Field" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="FindUserbutton" min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="FindUserName_Field" min="-2" pref="124" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace pref="44" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1294,7 +1291,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="FIND CUSTOMER"/>
+                    <Property name="text" type="java.lang.String" value="FIND READER"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindUserCCCD">
@@ -1416,7 +1413,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="UpdateCustomers">
+            <Container class="javax.swing.JPanel" name="UpdateReaders">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="update users">
@@ -1429,7 +1426,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="144" max="32767" attributes="0"/>
+                          <EmptySpace pref="167" max="32767" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
                       </Group>
@@ -1451,7 +1448,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="UPDATE CUSTOMERS INFO"/>
+                    <Property name="text" type="java.lang.String" value="UPDATE READER&apos;S INFO"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1522,7 +1519,7 @@
                 </DimensionLayout>
               </Layout>
             </Container>
-            <Container class="javax.swing.JPanel" name="RemoveCustomers">
+            <Container class="javax.swing.JPanel" name="RemoveReaders">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="remove users">
@@ -1572,7 +1569,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="REMOVE CUSTOMER"/>
+                    <Property name="text" type="java.lang.String" value="REMOVE READERS"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="ID_User">

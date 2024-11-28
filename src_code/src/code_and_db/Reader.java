@@ -8,6 +8,6 @@ package code_and_db;
  *
  * @author TRAN XUAN THANH
  */
-public class Customer {
+public class Reader {
     
 }

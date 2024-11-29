@@ -1548,21 +1548,32 @@ public class menu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
                 ID_Field.requestFocus();
             }else{
+                int ok = 0;
                 String id = ID_Field.getText();
                 String name = Bookname_Field.getText();
                 String category = Category_Field.getText();
                 String publisher = Publisher_Field.getText();
                 String author = Author_Field.getText();
                 int quantity = Integer.parseInt(Quantity_Field.getText());
-                Books newBook = new Books(id,name, category, publisher, author, quantity);
-                Admin.ADDBOOKS(newBook);
-                JOptionPane.showMessageDialog(null, "Book added to the library's database!","AddBook", JOptionPane.INFORMATION_MESSAGE);
-                ID_Field.setText("");
-                Bookname_Field.setText(""); 
-                Category_Field.setText(""); 
-                Publisher_Field.setText(""); 
-                Author_Field.setText(""); 
-                Quantity_Field.setText("");
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(id)){
+                        JOptionPane.showMessageDialog(null, "There's already a book with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                        ID_Field.requestFocus();
+                        ok++;
+                        break;
+                    }
+                }
+                if (ok == 0){
+                    Books newBook = new Books(id,name, category, publisher, author, quantity);
+                    Admin.ADDBOOKS(newBook);
+                    JOptionPane.showMessageDialog(null, "Book added to the library's database!","AddBook", JOptionPane.INFORMATION_MESSAGE);
+                    ID_Field.setText("");
+                    Bookname_Field.setText(""); 
+                    Category_Field.setText(""); 
+                    Publisher_Field.setText(""); 
+                    Author_Field.setText(""); 
+                    Quantity_Field.setText("");
+                }
             }
         } catch (IOException ex) {
         }

@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 import code_and_db.Admin;
+import code_and_db.Books;
 public class login extends javax.swing.JFrame {
 
     /**
@@ -165,6 +166,7 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
+                    Books.autoaddBooks();
                     new menu().setVisible(true);
                 }
                 else{
@@ -186,6 +188,7 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
+                    Books.autoaddBooks();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -204,6 +207,7 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
+                    Books.autoaddBooks();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -222,6 +226,7 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     new menu().setVisible(true);
                     dispose();
+                    Books.autoaddBooks();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);

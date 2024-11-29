@@ -41,7 +41,8 @@ public class Admin {
         return false;
     }
     public static void ADDBOOKS(Books book) throws IOException{
-        try (FileWriter fw = new FileWriter("src/code_and_db/Books.txt", true)){ 
+        try (FileWriter fw = new FileWriter("src/code_and_db/Books.txt", true)){
+            Books.AddToStorage(book);
             fw.write(book.getID() + "\n" + book.getName() + "\n" + book.getCategory() + "\n" + book.getPublisher() + "\n" + book.getAuthor() + "\n" + book.getQuantity() + "\n");
         } catch (IOException ex) { 
             ex.printStackTrace();//them truong hop neu co book da ton tai r 

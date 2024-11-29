@@ -5,7 +5,10 @@
 package code_and_db;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -20,6 +23,17 @@ public class Books {
     private String publisher;
     private String author;
     private int quantity;
+    
+    private static ArrayList<Books> books = new ArrayList<>();
+   
+    public static void autoaddBooks() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("src/code_and_db/Books.txt"));
+        String id;
+        while ((id = br.readLine()) != null) {
+            Books book = new Books(id,br.readLine(),br.readLine(), br.readLine(), br.readLine(),Integer.parseInt(br.readLine()));
+            books.add(book);
+        }
+    }
     
     public Books(String id, String name, String category, String publisher, String author, int quantity) {
         this.id = id;
@@ -51,5 +65,10 @@ public class Books {
     public int getQuantity() {
         return quantity;
     }
-    
+    public static ArrayList<Books> storage(){
+        return books;
+    }
+    public static void AddToStorage(Books book){
+        books.add(book);
+    }
 }

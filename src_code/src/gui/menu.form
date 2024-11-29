@@ -1693,9 +1693,6 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="CategoryUpdateRadiobutton">
                       <Properties>
-                        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="default"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="ChooseUpdateBookbuttongroup"/>
                         </Property>
@@ -1710,9 +1707,6 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="QuantityUpdateRadiobutton">
                       <Properties>
-                        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="default"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="ChooseUpdateBookbuttongroup"/>
                         </Property>
@@ -1724,9 +1718,6 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="NameBookUpdateRadiobutton">
                       <Properties>
-                        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="default"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="ChooseUpdateBookbuttongroup"/>
                         </Property>
@@ -1765,9 +1756,6 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="AuthorUpdateRadiobutton">
                       <Properties>
-                        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="default"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="ChooseUpdateBookbuttongroup"/>
                         </Property>
@@ -1782,9 +1770,6 @@
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="PublisherUpdateRadiobutton">
                       <Properties>
-                        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="default"/>
-                        </Property>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="ChooseUpdateBookbuttongroup"/>
                         </Property>

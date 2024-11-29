@@ -56,7 +56,7 @@ public class Admin {
             ArrayList<String> lines = new ArrayList<>(); 
             String line; 
             boolean deleteNextLines = false; //check xem có thể xóa sách được không. True = có, False = không
-            int linesToDelete = 6; //data của mỗi quyển sách chiếm 6 dòng để xóa, không tính id
+            int linesToDelete = 5; //data của mỗi quyển sách chiếm 6 dòng để xóa, không tính id
             while ((line = br.readLine()) != null) { //đọc cho đến hết file
                 if (line.trim().equals(id)) { //tìm id sách
                     deleteNextLines = true; //có thể xóa sách
@@ -73,8 +73,15 @@ public class Admin {
                 bw.write(l); 
                 bw.newLine(); 
             } bw.close();
-            if (deleteNextLines == true) //check xem có sách trong database để xóa không
+            if (deleteNextLines == true){//check xem có sách trong database để xóa không
             JOptionPane.showMessageDialog(null, "Book removed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            for (Books b : Books.storage()){
+                if (b.getID().equals(id)){
+                    Books.storage().remove(b);
+                    break;
+                    }
+                }
+            }
             else //sách không tồn tại trong db
             JOptionPane.showMessageDialog(null, "Book does not exist", "Error", JOptionPane.ERROR_MESSAGE); 
         } catch (IOException ex ) {

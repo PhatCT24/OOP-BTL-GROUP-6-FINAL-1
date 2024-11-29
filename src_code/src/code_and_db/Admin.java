@@ -81,8 +81,10 @@ public class Admin {
             JOptionPane.showMessageDialog(null, "An error occurred while trying to delete the book", "Error", JOptionPane.ERROR_MESSAGE); 
         } 
     }
-    public static void FINDBOOKS(){
-        
+    public static ArrayList<Books> FINDBOOKS(String id, String name, String category, String author){
+        return Books.storage().stream().filter(
+                
+        );
     }
     public static void UPDATEBOOKS(){
         

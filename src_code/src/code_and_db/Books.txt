@@ -28,6 +28,36 @@ Fiction
 Little, Brown and Company
 J.D. Salinger
 8
+006
+1984
+Fiction
+Secker & Warburg
+George Orwell
+15
+007
+The Hobbit
+Fantasy
+George Allen & Unwin
+J.R.R. Tolkien
+20
+008
+The Lean Startup
+Business
+Crown Publishing Group
+Eric Ries
+12
+009
+The Power of Habit
+Self-help
+Random House
+Charles Duhigg
+10
+010
+The Alchemist
+Fiction
+HarperOne
+Paulo Coelho
+18
 B456
 Doraemon
 Comic

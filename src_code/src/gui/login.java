@@ -10,6 +10,7 @@ import javax.swing.*;
 
 import code_and_db.Admin;
 import code_and_db.Books;
+import java.io.File;
 public class login extends javax.swing.JFrame {
 
     /**
@@ -101,10 +102,10 @@ public class login extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(username_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(username)
                             .addComponent(loginbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
                             .addComponent(password_Field)
-                            .addComponent(password)))
+                            .addComponent(password)
+                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(loginsideLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(loginsideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

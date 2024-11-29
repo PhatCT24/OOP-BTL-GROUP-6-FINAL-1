@@ -9,6 +9,7 @@ import code_and_db.Books;
 import java.io.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author DELL
@@ -506,7 +507,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddBooksLayout.createSequentialGroup()
                         .addGap(207, 207, 207)
                         .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,7 +579,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(removeID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(RemoveBookbutton)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(RemoveBooksLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -630,6 +631,7 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        FindTable.setAutoCreateRowSorter(true);
         FindTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -664,7 +666,7 @@ public class menu extends javax.swing.JFrame {
         );
         FindTablepanelLayout.setVerticalGroup(
             FindTablepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FindScrollpane, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(FindScrollpane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout FindBooksLayout = new javax.swing.GroupLayout(FindBooks);
@@ -798,7 +800,7 @@ public class menu extends javax.swing.JFrame {
                         .addComponent(Username)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Username_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddReadersLayout.createSequentialGroup()
                         .addComponent(Contact_number)
@@ -920,7 +922,7 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindReadersLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12)
@@ -1337,7 +1339,7 @@ public class menu extends javax.swing.JFrame {
                         .addComponent(CCCDTicket)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CCCDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addComponent(BookIDTicket)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BookIDTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1397,7 +1399,7 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(UserRemove_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addComponent(RemoveUserbutton)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveReadersLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9)
@@ -1473,6 +1475,20 @@ public class menu extends javax.swing.JFrame {
 
     private void FindBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookActionPerformed
         MenuMainScreen.setSelectedComponent(FindBooks);
+        DefaultTableModel bookTable = new DefaultTableModel(
+        new Object[]{"ID", "Name", "Category", "Publisher", "Author", "Quantity"}, 0
+    );
+        for (Books b : Books.storage()) {
+        bookTable.addRow(new Object[]{
+            b.getID(),
+            b.getName(),
+            b.getCategory(),
+            b.getPublisher(),
+            b.getAuthor(),
+            b.getQuantity()
+        });
+    }
+    FindTable.setModel(bookTable);      
     }//GEN-LAST:event_FindBookActionPerformed
 
     private void UpdateBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookActionPerformed
@@ -1554,7 +1570,7 @@ public class menu extends javax.swing.JFrame {
                 String category = Category_Field.getText();
                 String publisher = Publisher_Field.getText();
                 String author = Author_Field.getText();
-                int quantity = Integer.parseInt(Quantity_Field.getText());
+                String quantity = Quantity_Field.getText();
                 for (Books b : Books.storage()){
                     if (b.getID().equals(id)){
                         JOptionPane.showMessageDialog(null, "There's already a book with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);

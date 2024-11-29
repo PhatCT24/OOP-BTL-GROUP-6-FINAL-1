@@ -30,18 +30,18 @@ public class Books {
         BufferedReader br = new BufferedReader(new FileReader("src/code_and_db/Books.txt"));
         String id;
         while ((id = br.readLine()) != null) {
-            Books book = new Books(id,br.readLine(),br.readLine(), br.readLine(), br.readLine(),Integer.parseInt(br.readLine()));
+            Books book = new Books(id,br.readLine(),br.readLine(), br.readLine(), br.readLine(),br.readLine());
             books.add(book);
         }
     }
     
-    public Books(String id, String name, String category, String publisher, String author, int quantity) {
+    public Books(String id, String name, String category, String publisher, String author, String quantity) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.publisher = publisher;
         this.author = author;
-        this.quantity = quantity;
+        this.quantity = Integer.parseInt(quantity);
     }
     public String getID(){
         return id;

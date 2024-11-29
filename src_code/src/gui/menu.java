@@ -7,6 +7,7 @@ package gui;
 import code_and_db.Admin;
 import code_and_db.Books;
 import java.io.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -1620,7 +1621,30 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_FindAuthor_FieldActionPerformed
 
     private void FindBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindBookbuttonActionPerformed
-        // TODO add your handling code here:
+        String id = FindIDBook_Field.getText();
+        String category = FindCategory_Field.getText();
+        String name = FindName_Field.getText();
+        String author = FindAuthor_Field.getText();
+        
+        id = id.isEmpty() ? null : id;
+        category = category.isEmpty() ? null : category;
+        name = name.isEmpty() ? null : name;
+        author = author.isEmpty() ? null : author;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Books> filteredBooks = Admin.FINDBOOKS(id, name, category, author);
+        DefaultTableModel model = (DefaultTableModel) FindTable.getModel();
+        model.setRowCount(0);
+        for (Books book : filteredBooks) {
+        model.addRow(new Object[]{
+            book.getID(),
+            book.getName(),
+            book.getCategory(),
+            book.getPublisher(),
+            book.getAuthor(),
+            book.getQuantity()
+        });
+    }        
+        
     }//GEN-LAST:event_FindBookbuttonActionPerformed
 
     private void CCCDReaderUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCDReaderUpdate_FieldActionPerformed

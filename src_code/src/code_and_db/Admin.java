@@ -16,6 +16,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 import gui.menu;
+import java.util.stream.Collectors;
 /**
  *
  * @author TRAN XUAN THANH
@@ -81,11 +82,16 @@ public class Admin {
             JOptionPane.showMessageDialog(null, "An error occurred while trying to delete the book", "Error", JOptionPane.ERROR_MESSAGE); 
         } 
     }
-    public static ArrayList<Books> FINDBOOKS(String id, String name, String category, String author){
-        return Books.storage().stream().filter(
-                
-        );
-    }
+    public static ArrayList<Books> FINDBOOKS(String id, String name, String category, String author) {
+    return (ArrayList<Books>) Books.storage().stream() //Books.storage() là db, stream() để duyệt qua cả ArrayList, filter là lọc, collect để chuyển về filter thu được dưới dạng list
+        .filter(book -> 
+            (id == null || book.getID().equalsIgnoreCase(id)) && //equalsIgnoreCase để tránh trường hợp ID trong DB và ID nhập vào filter khác nhau về uppercase và lowercase
+            (name == null || book.getName().toLowerCase().contains(name.toLowerCase())) &&
+            (category == null || book.getCategory().toLowerCase().contains(category.toLowerCase())) &&
+            (author == null || book.getAuthor().toLowerCase().contains(author.toLowerCase())) //chuyển hết về lowercase để tránh trường hợp giống của ID, contains() check xem có sự giống nhau giữa thuộc tính trong db và filter
+        )
+        .collect(Collectors.toList());
+}
     public static void UPDATEBOOKS(){
         
     }

@@ -530,9 +530,6 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="Bookname_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bookname_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Book_Name">
                   <Properties>
@@ -571,19 +568,10 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Publisher_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Publisher_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Category_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Category_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Author_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Author_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddBookbutton">
                   <Properties>
@@ -618,14 +606,8 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Quantity_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Quantity_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ID_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ID_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="ID">
                   <Properties>
@@ -843,6 +825,10 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FindIDBook_Field">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FindIDBook_FieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindIDBook_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindCategory">
                   <Properties>
@@ -853,6 +839,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FindCategory_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindCategory_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindBookName">
                   <Properties>
@@ -863,6 +852,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FindName_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindName_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindAuthor">
                   <Properties>
@@ -875,6 +867,7 @@
                 <Component class="javax.swing.JTextField" name="FindAuthor_Field">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FindAuthor_FieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindAuthor_FieldKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="FindBookbutton">
@@ -1062,9 +1055,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Username_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Username_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Username">
                   <Properties>
@@ -1085,9 +1075,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Gender_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Gender_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Contact_number">
                   <Properties>
@@ -1099,9 +1086,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Contactnumber_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Contactnumber_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddUserbutton">
                   <Properties>
@@ -1127,9 +1111,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CCCD_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CCCD_FieldActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1409,9 +1390,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CCCDReaderUpdate_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CCCDReaderUpdate_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -1519,9 +1497,6 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="UpdateUserInfo_Field">
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateUserInfo_FieldActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="UpdateUserInfobutton">
                       <Properties>
@@ -1719,6 +1694,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Quantity"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuantityUpdateRadiobuttonActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="NameBookUpdateRadiobutton">
                       <Properties>
@@ -1730,6 +1708,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Name"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameBookUpdateRadiobuttonActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="UpdateBookInfo_Field">
                       <Properties>
@@ -1737,9 +1718,6 @@
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateBookInfo_FieldActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="UpdateBookInfobutton">
                       <Properties>
@@ -1881,9 +1859,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="BookIDTicket_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BookIDTicket_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="BookIDTicket">
                   <Properties>
@@ -1894,9 +1869,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CCCDTicket_Field">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CCCDTicket_FieldActionPerformed"/>
-                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="TicketBorrowPanel">
 

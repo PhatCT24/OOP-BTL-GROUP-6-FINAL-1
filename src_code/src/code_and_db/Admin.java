@@ -43,20 +43,22 @@ public class Admin {
     }
     public static void ADDBOOKS(Books book) throws IOException{
         try (FileWriter fw = new FileWriter("src/code_and_db/Books.txt", true)){
-            Books.AddToStorage(book);
+            Books.AddToStorage(book); //thêm vào csdl là một ArrayList
             fw.write(book.getID() + "\n" + book.getName() + "\n" + book.getCategory() + "\n" + book.getPublisher() + "\n" + book.getAuthor() + "\n" + book.getQuantity() + "\n");
+            fw.flush();// viết vào file data của sách
         } catch (IOException ex) { 
-            ex.printStackTrace();//them truong hop neu co book da ton tai r 
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "An error occurred while writing to the file.", "Error", JOptionPane.ERROR_MESSAGE); 
         }
     }
-    public static void REMOVEBOOKS(String id) throws IOException { 
+    public static boolean REMOVEBOOKS(String id) throws IOException { //xóa thông tin sách khỏi file
+        boolean deleteNextLines = false;
         try { 
             BufferedReader br = new BufferedReader(new FileReader("src/code_and_db/Books.txt")); 
             ArrayList<String> lines = new ArrayList<>(); 
             String line; 
-            boolean deleteNextLines = false; //check xem có thể xóa sách được không. True = có, False = không
-            int linesToDelete = 5; //data của mỗi quyển sách chiếm 6 dòng để xóa, không tính id
+             //check xem có thể xóa sách được không. True = có, False = không
+            int linesToDelete = 5; //data của mỗi quyển sách chiếm 5 dòng để xóa, không tính id
             while ((line = br.readLine()) != null) { //đọc cho đến hết file
                 if (line.trim().equals(id)) { //tìm id sách
                     deleteNextLines = true; //có thể xóa sách
@@ -69,25 +71,23 @@ public class Admin {
                 lines.add(line); //thêm những dòng data của sách khác không được xóa
             } br.close(); 
             BufferedWriter bw = new BufferedWriter(new FileWriter("src/code_and_db/Books.txt")); 
-            for (String l : lines) { //cả hàm BufferredWriter dùng để viết lại vào file data của các sách không bị xóa
+            for (String l : lines) { //cả hàm BufferredWriter dùng để viết lại vào file data của các sách không bị xóa đã được lưu trong ArrayList<String> lines
                 bw.write(l); 
                 bw.newLine(); 
             } bw.close();
             if (deleteNextLines == true){//check xem có sách trong database để xóa không
-            JOptionPane.showMessageDialog(null, "Book removed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            for (Books b : Books.storage()){
+                for (Books b : Books.storage()){
                 if (b.getID().equals(id)){
                     Books.storage().remove(b);
-                    break;
+                    break; //xóa khỏi arraylist
                     }
                 }
-            }
-            else //sách không tồn tại trong db
-            JOptionPane.showMessageDialog(null, "Book does not exist", "Error", JOptionPane.ERROR_MESSAGE); 
+            }            
         } catch (IOException ex ) {
             new menu().getRemoveID_Field().requestFocus();
             JOptionPane.showMessageDialog(null, "An error occurred while trying to delete the book", "Error", JOptionPane.ERROR_MESSAGE); 
-        } 
+        }
+        return deleteNextLines;
     }
     public static ArrayList<Books> FINDBOOKS(String id, String name, String category, String author) {
     return (ArrayList<Books>) Books.storage().stream() //Books.storage() là db, stream() để duyệt qua cả ArrayList, filter là lọc, collect để chuyển về filter thu được dưới dạng list
@@ -98,21 +98,36 @@ public class Admin {
             (author == null || book.getAuthor().toLowerCase().contains(author.toLowerCase())) //chuyển hết về lowercase để tránh trường hợp giống của ID, contains() check xem có sự giống nhau giữa thuộc tính trong db và filter
         )
         .collect(Collectors.toList());
-}
-    public static void UPDATEBOOKS(){
-        
     }
-    public static void ADDCUSTOMERS(){
-        
+    public static void UPDATEBOOKS(String id, String query, String updated_info) throws IOException{
+        Books filteredBook = Books.storage().stream().filter(book -> {
+            return book.getID().equals(id);
+        }).findFirst().orElse(null);
+        String newID = filteredBook.getID();
+        String newName = filteredBook.getName();
+        String newCategory = filteredBook.getCategory();
+        String newPublisher = filteredBook.getPublisher();
+        String newAuthor = filteredBook.getAuthor();
+        int newQuantity = filteredBook.getQuantity();
+        if (query.equals("name")){
+            REMOVEBOOKS(filteredBook.getID());
+            ADDBOOKS(new Books(newID, updated_info, newCategory, newPublisher, newAuthor, String.valueOf(newQuantity)));
+        }
+        else if (query.equals("category")){
+            REMOVEBOOKS(filteredBook.getID());
+            ADDBOOKS(new Books(newID, newName, updated_info, newPublisher, newAuthor, String.valueOf(newQuantity)));
+        }
+        else if (query.equals("quantity")){
+            REMOVEBOOKS(filteredBook.getID());
+            ADDBOOKS(new Books(newID, newName, newCategory, newPublisher, newAuthor, updated_info));
+        }
+        else if (query.equals("author")){
+            REMOVEBOOKS(filteredBook.getID());
+            ADDBOOKS(new Books(newID, newName, newCategory, newPublisher, updated_info, String.valueOf(newQuantity)));
+        }
+        else if (query.equals("publisher")){
+            REMOVEBOOKS(filteredBook.getID());
+            ADDBOOKS(new Books(newID, newName, newCategory, updated_info, newAuthor, String.valueOf(newQuantity)));
+        }
     }
-    public static void REMOVECUSTOMERS(){
-        
-    }
-    public static void FINDCUSTOMERS(){
-        
-    }
-    public static void UPDATEUSERS(){
-        
-    }
-    
-}
+}              

@@ -6,8 +6,11 @@ package gui;
 
 import code_and_db.Admin;
 import code_and_db.Books;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -394,12 +397,6 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("main", LatestUpdates);
 
-        Bookname_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bookname_FieldActionPerformed(evt);
-            }
-        });
-
         Book_Name.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Book_Name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Book_Name.setText("Name");
@@ -415,24 +412,6 @@ public class menu extends javax.swing.JFrame {
         Author.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Author.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Author.setText("Author");
-
-        Publisher_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Publisher_FieldActionPerformed(evt);
-            }
-        });
-
-        Category_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Category_FieldActionPerformed(evt);
-            }
-        });
-
-        Author_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Author_FieldActionPerformed(evt);
-            }
-        });
 
         AddBookbutton.setBackground(new java.awt.Color(102, 0, 0));
         AddBookbutton.setForeground(new java.awt.Color(242, 242, 242));
@@ -450,18 +429,6 @@ public class menu extends javax.swing.JFrame {
         Quantity.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Quantity.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Quantity.setText("Quantity");
-
-        Quantity_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Quantity_FieldActionPerformed(evt);
-            }
-        });
-
-        ID_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ID_FieldActionPerformed(evt);
-            }
-        });
 
         ID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -608,11 +575,34 @@ public class menu extends javax.swing.JFrame {
         FindIDBooks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         FindIDBooks.setText("ID");
 
+        FindIDBook_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindIDBook_FieldActionPerformed(evt);
+            }
+        });
+        FindIDBook_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindIDBook_FieldKeyPressed(evt);
+            }
+        });
+
         FindCategory.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         FindCategory.setText("Category");
 
+        FindCategory_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindCategory_FieldKeyPressed(evt);
+            }
+        });
+
         FindBookName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         FindBookName.setText("Name");
+
+        FindName_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindName_FieldKeyPressed(evt);
+            }
+        });
 
         FindAuthor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         FindAuthor.setText("Author");
@@ -620,6 +610,11 @@ public class menu extends javax.swing.JFrame {
         FindAuthor_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FindAuthor_FieldActionPerformed(evt);
+            }
+        });
+        FindAuthor_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindAuthor_FieldKeyPressed(evt);
             }
         });
 
@@ -737,12 +732,6 @@ public class menu extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setText("ADD READER");
 
-        Username_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Username_FieldActionPerformed(evt);
-            }
-        });
-
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Username.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Username.setText("Name");
@@ -751,21 +740,9 @@ public class menu extends javax.swing.JFrame {
         Gender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Gender.setText("Gender");
 
-        Gender_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Gender_FieldActionPerformed(evt);
-            }
-        });
-
         Contact_number.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Contact_number.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Contact_number.setText("Contact Number");
-
-        Contactnumber_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Contactnumber_FieldActionPerformed(evt);
-            }
-        });
 
         AddUserbutton.setBackground(new java.awt.Color(102, 0, 0));
         AddUserbutton.setForeground(new java.awt.Color(242, 242, 242));
@@ -779,12 +756,6 @@ public class menu extends javax.swing.JFrame {
         CCCD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CCCD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         CCCD.setText("CCCD");
-
-        CCCD_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CCCD_FieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout AddReadersLayout = new javax.swing.GroupLayout(AddReaders);
         AddReaders.setLayout(AddReadersLayout);
@@ -965,12 +936,6 @@ public class menu extends javax.swing.JFrame {
         CCCDReaderUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CCCDReaderUpdate.setText("CCCD");
 
-        CCCDReaderUpdate_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CCCDReaderUpdate_FieldActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Choose the attribute you want to update:");
 
@@ -1000,12 +965,6 @@ public class menu extends javax.swing.JFrame {
         NameUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NameUpdateRadiobuttonActionPerformed(evt);
-            }
-        });
-
-        UpdateUserInfo_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateUserInfo_FieldActionPerformed(evt);
             }
         });
 
@@ -1122,17 +1081,22 @@ public class menu extends javax.swing.JFrame {
         ChooseUpdateBookbuttongroup.add(QuantityUpdateRadiobutton);
         QuantityUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         QuantityUpdateRadiobutton.setText("Quantity");
+        QuantityUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuantityUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
 
         ChooseUpdateBookbuttongroup.add(NameBookUpdateRadiobutton);
         NameBookUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NameBookUpdateRadiobutton.setText("Name");
-
-        UpdateBookInfo_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        UpdateBookInfo_Field.addActionListener(new java.awt.event.ActionListener() {
+        NameBookUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateBookInfo_FieldActionPerformed(evt);
+                NameBookUpdateRadiobuttonActionPerformed(evt);
             }
         });
+
+        UpdateBookInfo_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         UpdateBookInfobutton.setBackground(new java.awt.Color(102, 0, 0));
         UpdateBookInfobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1259,20 +1223,8 @@ public class menu extends javax.swing.JFrame {
         CCCDTicket.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CCCDTicket.setText("CCCD");
 
-        BookIDTicket_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BookIDTicket_FieldActionPerformed(evt);
-            }
-        });
-
         BookIDTicket.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         BookIDTicket.setText("Book_ID");
-
-        CCCDTicket_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CCCDTicket_FieldActionPerformed(evt);
-            }
-        });
 
         TicketBorrowTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1480,6 +1432,11 @@ public class menu extends javax.swing.JFrame {
         DefaultTableModel bookTable = new DefaultTableModel(
         new Object[]{"ID", "Name", "Category", "Publisher", "Author", "Quantity"}, 0
     );
+        Collections.sort(Books.storage(), new Comparator<Books>(){
+            public int compare(Books b1, Books b2){
+                return b1.getID().compareTo(b2.getID());
+            }
+        });
         for (Books b : Books.storage()) {
         bookTable.addRow(new Object[]{
             b.getID(),
@@ -1517,31 +1474,22 @@ public class menu extends javax.swing.JFrame {
         MenuMainScreen.setSelectedComponent(LatestUpdates);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
-    private void Username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Username_FieldActionPerformed
-
-    private void Gender_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Gender_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Gender_FieldActionPerformed
-
-    private void Contactnumber_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contactnumber_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Contactnumber_FieldActionPerformed
-
     private void AddUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddUserbuttonActionPerformed
-
-    private void CCCD_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCD_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CCCD_FieldActionPerformed
 
     private void RemoveBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbuttonActionPerformed
         try{
             int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this book from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (confirm == JOptionPane.YES_OPTION){
-                Admin.REMOVEBOOKS(removeID_Field.getText());
+                if (Admin.REMOVEBOOKS(removeID_Field.getText()) == true){
+                    JOptionPane.showMessageDialog(null, "Book removed successfully!","Book removed", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else 
+                {
+                    JOptionPane.showMessageDialog(null, "Book does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                    removeID_Field.requestFocus();
+                }
                 removeID_Field.setText("");
             }
             else{
@@ -1555,10 +1503,6 @@ public class menu extends javax.swing.JFrame {
     private void RemoveUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveUserbuttonActionPerformed
-
-    private void Quantity_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Quantity_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Quantity_FieldActionPerformed
 
     private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
         try {
@@ -1597,26 +1541,6 @@ public class menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AddBookbuttonActionPerformed
 
-    private void Author_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Author_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Author_FieldActionPerformed
-
-    private void Category_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Category_FieldActionPerformed
-
-    private void Publisher_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Publisher_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Publisher_FieldActionPerformed
-
-    private void Bookname_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bookname_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Bookname_FieldActionPerformed
-
-    private void ID_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ID_FieldActionPerformed
-
     private void FindAuthor_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindAuthor_FieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FindAuthor_FieldActionPerformed
@@ -1648,14 +1572,6 @@ public class menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_FindBookbuttonActionPerformed
 
-    private void CCCDReaderUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCDReaderUpdate_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CCCDReaderUpdate_FieldActionPerformed
-
-    private void UpdateUserInfo_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfo_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateUserInfo_FieldActionPerformed
-
     private void UpdateUserInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UpdateUserInfobuttonActionPerformed
@@ -1668,17 +1584,41 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CategoryUpdateRadiobuttonActionPerformed
 
-    private void UpdateBookInfo_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookInfo_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateBookInfo_FieldActionPerformed
-
     private void UpdateBookInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookInfobuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateBookInfobuttonActionPerformed
+    
+    try{
+       String id = IDBookUpdate_Field.getText();
+        String updated_info = UpdateBookInfo_Field.getText();
+        String query = null;
+        if (id.isEmpty() || updated_info.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both the Book ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        //chọn thuộc tính update
+        if (NameBookUpdateRadiobutton.isSelected()) {
+            query = "name";
+        } else if (CategoryUpdateRadiobutton.isSelected()) {
+            query = "category";
+        } else if (QuantityUpdateRadiobutton.isSelected()) {
+            query = "quantity";
+        } else if (AuthorUpdateRadiobutton.isSelected()) {
+            query = "author";
+        } else if (PublisherUpdateRadiobutton.isSelected()) {
+            query = "publisher";
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    private void IDBookUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDBookUpdate_FieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDBookUpdate_FieldActionPerformed
+        //gọi hàm update
+        Admin.UPDATEBOOKS(id, query, updated_info);
+
+        JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE); 
+    }catch (IOException e){
+        
+    }
+    
+    }//GEN-LAST:event_UpdateBookInfobuttonActionPerformed
 
     private void AuthorUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AuthorUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
@@ -1696,13 +1636,134 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NameUpdateRadiobuttonActionPerformed
 
-    private void BookIDTicket_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDTicket_FieldActionPerformed
+    private void FindIDBook_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindIDBook_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BookIDTicket_FieldActionPerformed
+    }//GEN-LAST:event_FindIDBook_FieldActionPerformed
 
-    private void CCCDTicket_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CCCDTicket_FieldActionPerformed
+    private void FindIDBook_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindIDBook_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String id = FindIDBook_Field.getText();
+            String category = FindCategory_Field.getText();
+            String name = FindName_Field.getText();
+            String author = FindAuthor_Field.getText();
+
+            id = id.isEmpty() ? null : id;
+            category = category.isEmpty() ? null : category;
+            name = name.isEmpty() ? null : name;
+            author = author.isEmpty() ? null : author;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Books> filteredBooks = Admin.FINDBOOKS(id, name, category, author);
+            DefaultTableModel model = (DefaultTableModel) FindTable.getModel();
+            model.setRowCount(0);
+            for (Books book : filteredBooks) {
+            model.addRow(new Object[]{
+                book.getID(),
+                book.getName(),
+                book.getCategory(),
+                book.getPublisher(),
+                book.getAuthor(),
+                book.getQuantity()
+            });
+           }
+        }
+    }//GEN-LAST:event_FindIDBook_FieldKeyPressed
+
+    private void FindName_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindName_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String id = FindIDBook_Field.getText();
+            String category = FindCategory_Field.getText();
+            String name = FindName_Field.getText();
+            String author = FindAuthor_Field.getText();
+
+            id = id.isEmpty() ? null : id;
+            category = category.isEmpty() ? null : category;
+            name = name.isEmpty() ? null : name;
+            author = author.isEmpty() ? null : author;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Books> filteredBooks = Admin.FINDBOOKS(id, name, category, author);
+            DefaultTableModel model = (DefaultTableModel) FindTable.getModel();
+            model.setRowCount(0);
+            for (Books book : filteredBooks) {
+            model.addRow(new Object[]{
+                book.getID(),
+                book.getName(),
+                book.getCategory(),
+                book.getPublisher(),
+                book.getAuthor(),
+                book.getQuantity()
+            });
+           }
+        }
+    }//GEN-LAST:event_FindName_FieldKeyPressed
+
+    private void FindCategory_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindCategory_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String id = FindIDBook_Field.getText();
+            String category = FindCategory_Field.getText();
+            String name = FindName_Field.getText();
+            String author = FindAuthor_Field.getText();
+
+            id = id.isEmpty() ? null : id;
+            category = category.isEmpty() ? null : category;
+            name = name.isEmpty() ? null : name;
+            author = author.isEmpty() ? null : author;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Books> filteredBooks = Admin.FINDBOOKS(id, name, category, author);
+            DefaultTableModel model = (DefaultTableModel) FindTable.getModel();
+            model.setRowCount(0);
+            for (Books book : filteredBooks) {
+            model.addRow(new Object[]{
+                book.getID(),
+                book.getName(),
+                book.getCategory(),
+                book.getPublisher(),
+                book.getAuthor(),
+                book.getQuantity()
+            });
+           }
+        }
+    }//GEN-LAST:event_FindCategory_FieldKeyPressed
+
+    private void FindAuthor_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindAuthor_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String id = FindIDBook_Field.getText();
+            String category = FindCategory_Field.getText();
+            String name = FindName_Field.getText();
+            String author = FindAuthor_Field.getText();
+
+            id = id.isEmpty() ? null : id;
+            category = category.isEmpty() ? null : category;
+            name = name.isEmpty() ? null : name;
+            author = author.isEmpty() ? null : author;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Books> filteredBooks = Admin.FINDBOOKS(id, name, category, author);
+            DefaultTableModel model = (DefaultTableModel) FindTable.getModel();
+            model.setRowCount(0);
+            for (Books book : filteredBooks) {
+            model.addRow(new Object[]{
+                book.getID(),
+                book.getName(),
+                book.getCategory(),
+                book.getPublisher(),
+                book.getAuthor(),
+                book.getQuantity()
+            });
+           }
+        }
+    }//GEN-LAST:event_FindAuthor_FieldKeyPressed
+
+    private void NameBookUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameBookUpdateRadiobuttonActionPerformed
+        
+    }//GEN-LAST:event_NameBookUpdateRadiobuttonActionPerformed
+
+    private void QuantityUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CCCDTicket_FieldActionPerformed
+    }//GEN-LAST:event_QuantityUpdateRadiobuttonActionPerformed
+
+    private void IDBookUpdate_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDBookUpdate_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDBookUpdate_FieldActionPerformed
+    
     public JTextField getRemoveID_Field(){
         return removeID_Field;
     }

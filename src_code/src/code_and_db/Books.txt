@@ -1,54 +1,186 @@
-001
+013
 The Great Gatsby
 Fiction
-Scribner
+Charles Scribner's Sons
 F. Scott Fitzgerald
-10
-002
-To Kill a Mockingbird
-Fiction
-J.B. Lippincott & Co.
-Harper Lee
+12
+015
+War and Peace
+Historical
+The Russian Messenger
+Leo Tolstoy
 5
-003
-A Brief History of Time
-Science
-Bantam Books
-Stephen Hawking
-7
-006
-1984
+016
+Pride and Prejudice
+Romance
+T. Egerton
+Jane Austen
+25
+017
+The Catcher in the Rye
 Fiction
-Secker & Warburg
-George Orwell
-15
-007
+Little, Brown and Company
+J.D. Salinger
+10
+018
 The Hobbit
 Fantasy
 George Allen & Unwin
 J.R.R. Tolkien
-20
-008
-The Lean Startup
-Business
-Crown Publishing Group
-Eric Ries
-12
-009
-The Power of Habit
-Self-help
-Random House
-Charles Duhigg
-10
-010
-The Alchemist
-Fiction
-HarperOne
-Paulo Coelho
 18
-B456
-Doraemon
-Comic
+019
+The Lord of the Rings
+Fantasy
+George Allen & Unwin
+J.R.R. Tolkien
+10
+020
+Harry Potter and the Sorcerer's Stone
+Fantasy
+Bloomsbury
+J.K. Rowling
+30
+021
+The Da Vinci Code
+Thriller
+Doubleday
+Dan Brown
+22
+022
+The Hunger Games
+Dystopian
+Scholastic Press
+Suzanne Collins
+30
+023
+The Fault in Our Stars
+Romance
+Dutton Books
+John Green
+18
+024
+The Chronicles of Narnia
+Fantasy
+HarperCollins
+C.S. Lewis
+25
+025
+The Girl with the Dragon Tattoo
+Mystery
+Norstedts Förlag
+Stieg Larsson
+15
+026
+Gone Girl
+Thriller
+Crown Publishing Group
+Gillian Flynn
+20
+027
+The Shining
+Horror
+Doubleday
+Stephen King
+12
+028
+The Handmaid's Tale
+Dystopian
+McClelland & Stewart
+Margaret Atwood
+10
+029
+The Kite Runner
+Drama
+Riverhead Books
+Khaled Hosseini
+18
+030
+Life of Pi
+Adventure
+Knopf Canada
+Yann Martel
+14
+031
+The Book Thief
+Historical
+Picador
+Markus Zusak
+16
+033
+Brave New World
+Dystopian
+Chatto & Windus
+Aldous Huxley
+22
+034
+The Road
+Post-apocalyptic
+Alfred A. Knopf
+Cormac McCarthy
+8
+035
+The Secret Garden
+Children's
+Frederick Warne & Co.
+Frances Hodgson Burnett
+12
+036
+The Little Prince
+Children's
+Reynal & Hitchcock
+Antoine de Saint-Exupéry
+20
+038
+The Count of Monte Cristo
+Adventure
+Penguin Classics
+Alexandre Dumas
+10
+039
+The Odyssey
+Epic
+Penguin Classics
+Homer
+18
+040
+The Iliad
+Epic
+Penguin Classics
+Homer
+18
+012
+Eminem
+Dystopian
+Secker & Warburg
+George Orwell
+20
+099
+The Rare One
+War
 KimDong
-Fujiko
+Robbie
 100
+098
+Art of Wars
+War
+ChineseFound
+Sun Tzu
+100
+014
+Robbie
+Adventure
+Harper & Brothers
+Herman Melville
+8
+032
+The Catch-22
+Comedy
+Simon & Schuster
+Joseph Heller
+10
+011
+To Kill a Mockingbird
+Dystopian
+J.B. Lippincott & Co.
+Harper Lee
+15

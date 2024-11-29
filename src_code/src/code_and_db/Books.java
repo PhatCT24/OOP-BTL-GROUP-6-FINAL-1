@@ -71,4 +71,33 @@ public class Books {
     public static void AddToStorage(Books book){
         books.add(book);
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public static void setBooks(ArrayList<Books> books) {
+        Books.books = books;
+    }
+    
 }

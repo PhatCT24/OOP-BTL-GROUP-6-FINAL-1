@@ -6,6 +6,8 @@ package gui;
 
 import code_and_db.Admin;
 import code_and_db.Books;
+import code_and_db.Reader;
+import code_and_db.Ticket;
 import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.ArrayList;
@@ -108,13 +110,15 @@ public class menu extends javax.swing.JFrame {
         FindUserCCCD = new javax.swing.JLabel();
         FindUserCCCD_Field = new javax.swing.JTextField();
         FindGender = new javax.swing.JLabel();
-        FindGender_Field = new javax.swing.JTextField();
+        FindUserGender_Field = new javax.swing.JTextField();
         FindUserName = new javax.swing.JLabel();
         FindUserName_Field = new javax.swing.JTextField();
         FindUserbutton = new javax.swing.JButton();
         FindUserTablepane = new javax.swing.JPanel();
         FindUserScrollPane = new javax.swing.JScrollPane();
         FindUserTable = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
+        FindUserContact_number_Field = new javax.swing.JTextField();
         UpdateReaders = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         CCCDReaderUpdate = new javax.swing.JLabel();
@@ -136,8 +140,8 @@ public class menu extends javax.swing.JFrame {
         NameBookUpdateRadiobutton = new javax.swing.JRadioButton();
         UpdateBookInfo_Field = new javax.swing.JTextField();
         UpdateBookInfobutton = new javax.swing.JButton();
-        AuthorUpdateRadiobutton = new javax.swing.JRadioButton();
         PublisherUpdateRadiobutton = new javax.swing.JRadioButton();
+        AuthorUpdateRadiobutton = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         BorrowTicket = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -447,7 +451,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddBooksLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -599,6 +603,16 @@ public class menu extends javax.swing.JFrame {
         jLabel8.setText("ADD READER");
 
         Username_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Username_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Username_FieldActionPerformed(evt);
+            }
+        });
+        Username_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Username_FieldKeyPressed(evt);
+            }
+        });
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Username.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -609,12 +623,22 @@ public class menu extends javax.swing.JFrame {
         Gender.setText("Gender");
 
         Gender_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Gender_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Gender_FieldKeyPressed(evt);
+            }
+        });
 
         Contact_number.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Contact_number.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Contact_number.setText("Contact Number");
 
         Contactnumber_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Contactnumber_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Contactnumber_FieldKeyPressed(evt);
+            }
+        });
 
         AddUserbutton.setBackground(new java.awt.Color(102, 0, 0));
         AddUserbutton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -631,6 +655,11 @@ public class menu extends javax.swing.JFrame {
         CCCD.setText("CCCD");
 
         CCCD_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CCCD_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CCCD_FieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AddReadersLayout = new javax.swing.GroupLayout(AddReaders);
         AddReaders.setLayout(AddReadersLayout);
@@ -645,7 +674,7 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Gender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addComponent(Username_Field))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AddReadersLayout.createSequentialGroup()
                         .addComponent(Contact_number)
@@ -696,11 +725,29 @@ public class menu extends javax.swing.JFrame {
         FindUserCCCD.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         FindUserCCCD.setText("CCCD");
 
+        FindUserCCCD_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindUserCCCD_FieldKeyPressed(evt);
+            }
+        });
+
         FindGender.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         FindGender.setText("Gender");
 
+        FindUserGender_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindUserGender_FieldKeyPressed(evt);
+            }
+        });
+
         FindUserName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         FindUserName.setText("Name");
+
+        FindUserName_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindUserName_FieldKeyPressed(evt);
+            }
+        });
 
         FindUserbutton.setBackground(new java.awt.Color(102, 0, 0));
         FindUserbutton.setForeground(new java.awt.Color(242, 242, 242));
@@ -748,16 +795,31 @@ public class menu extends javax.swing.JFrame {
         );
         FindUserTablepaneLayout.setVerticalGroup(
             FindUserTablepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindUserTablepaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(FindUserScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(FindUserScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
         );
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel15.setText("CNumber");
+
+        FindUserContact_number_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                FindUserContact_number_FieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FindReadersLayout = new javax.swing.GroupLayout(FindReaders);
         FindReaders.setLayout(FindReadersLayout);
         FindReadersLayout.setHorizontalGroup(
             FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindReadersLayout.createSequentialGroup()
+                .addComponent(FindUserTablepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(FindReadersLayout.createSequentialGroup()
+                .addGap(282, 282, 282)
+                .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(FindReadersLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -765,42 +827,44 @@ public class menu extends javax.swing.JFrame {
                     .addComponent(FindGender))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FindGender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                    .addComponent(FindUserGender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                     .addComponent(FindUserCCCD_Field))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(FindUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FindUserbutton, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                    .addComponent(FindUserName_Field))
-                .addGap(83, 83, 83))
-            .addGroup(FindReadersLayout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(FindReadersLayout.createSequentialGroup()
-                .addComponent(FindUserTablepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(FindUserName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindUserContact_number_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(104, 104, 104))
         );
         FindReadersLayout.setVerticalGroup(
             FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FindReadersLayout.createSequentialGroup()
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FindUserCCCD)
-                    .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(FindUserCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FindUserName)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FindGender)
-                    .addComponent(FindGender_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(FindUserTablepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                    .addGroup(FindReadersLayout.createSequentialGroup()
+                        .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FindUserCCCD)
+                            .addComponent(FindUserCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FindGender)
+                            .addComponent(FindUserGender_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(FindReadersLayout.createSequentialGroup()
+                        .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FindUserName_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FindUserName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(FindReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FindUserContact_number_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(FindUserbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(FindUserTablepane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         MenuMainScreen.addTab("find users", FindReaders);
@@ -810,6 +874,12 @@ public class menu extends javax.swing.JFrame {
 
         CCCDReaderUpdate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         CCCDReaderUpdate.setText("CCCD");
+
+        CCCDReaderUpdate_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CCCDReaderUpdate_FieldKeyPressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Choose the attribute you want to update:");
@@ -843,6 +913,12 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        UpdateUserInfo_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateUserInfo_FieldActionPerformed(evt);
+            }
+        });
+
         UpdateUserInfobutton.setBackground(new java.awt.Color(102, 0, 0));
         UpdateUserInfobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         UpdateUserInfobutton.setForeground(new java.awt.Color(242, 242, 242));
@@ -850,6 +926,11 @@ public class menu extends javax.swing.JFrame {
         UpdateUserInfobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateUserInfobuttonActionPerformed(evt);
+            }
+        });
+        UpdateUserInfobutton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UpdateUserInfobuttonKeyPressed(evt);
             }
         });
 
@@ -911,7 +992,7 @@ public class menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CCCDReaderUpdate_Field))
                             .addComponent(jLabel11))))
-                .addGap(0, 240, Short.MAX_VALUE))
+                .addGap(0, 238, Short.MAX_VALUE))
         );
         UpdateReadersLayout.setVerticalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -940,6 +1021,11 @@ public class menu extends javax.swing.JFrame {
         IDBookUpdate_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IDBookUpdate_FieldActionPerformed(evt);
+            }
+        });
+        IDBookUpdate_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                IDBookUpdate_FieldKeyPressed(evt);
             }
         });
 
@@ -973,6 +1059,11 @@ public class menu extends javax.swing.JFrame {
         });
 
         UpdateBookInfo_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UpdateBookInfo_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UpdateBookInfo_FieldKeyPressed(evt);
+            }
+        });
 
         UpdateBookInfobutton.setBackground(new java.awt.Color(102, 0, 0));
         UpdateBookInfobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -981,15 +1072,6 @@ public class menu extends javax.swing.JFrame {
         UpdateBookInfobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateBookInfobuttonActionPerformed(evt);
-            }
-        });
-
-        ChooseUpdateBookbuttongroup.add(AuthorUpdateRadiobutton);
-        AuthorUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        AuthorUpdateRadiobutton.setText("Author");
-        AuthorUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AuthorUpdateRadiobuttonActionPerformed(evt);
             }
         });
 
@@ -1002,6 +1084,15 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        ChooseUpdateBookbuttongroup.add(AuthorUpdateRadiobutton);
+        AuthorUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        AuthorUpdateRadiobutton.setText("Author");
+        AuthorUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AuthorUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout UpdateBookpanelLayout = new javax.swing.GroupLayout(UpdateBookpanel);
         UpdateBookpanel.setLayout(UpdateBookpanelLayout);
         UpdateBookpanelLayout.setHorizontalGroup(
@@ -1009,15 +1100,15 @@ public class menu extends javax.swing.JFrame {
             .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(QuantityUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CategoryUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                         .addComponent(NameBookUpdateRadiobutton)
                         .addGap(107, 107, 107)
                         .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AuthorUpdateRadiobutton)
-                            .addComponent(PublisherUpdateRadiobutton)))
-                    .addComponent(QuantityUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CategoryUpdateRadiobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                            .addComponent(PublisherUpdateRadiobutton))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                         .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1030,24 +1121,24 @@ public class menu extends javax.swing.JFrame {
             UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameBookUpdateRadiobutton)
-                    .addComponent(AuthorUpdateRadiobutton))
+                .addComponent(NameBookUpdateRadiobutton)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PublisherUpdateRadiobutton))
+                        .addGap(27, 27, 27)
+                        .addComponent(AuthorUpdateRadiobutton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(UpdateBookInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(QuantityUpdateRadiobutton))
+                        .addGap(22, 22, 22))
                     .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CategoryUpdateRadiobutton)
-                            .addComponent(PublisherUpdateRadiobutton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateBookInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(QuantityUpdateRadiobutton))
-                .addGap(22, 22, 22))
+                        .addComponent(CategoryUpdateRadiobutton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1188,6 +1279,11 @@ public class menu extends javax.swing.JFrame {
         CCCDUser.setText("CCCD");
 
         UserRemove_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UserRemove_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UserRemove_FieldKeyPressed(evt);
+            }
+        });
 
         RemoveUserbutton.setBackground(new java.awt.Color(102, 0, 0));
         RemoveUserbutton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -1215,7 +1311,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(RemoveReadersLayout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(jLabel9)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         RemoveReadersLayout.setVerticalGroup(
             RemoveReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1260,6 +1356,11 @@ public class menu extends javax.swing.JFrame {
         ID_BOOK.setText("ID");
 
         removeID_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        removeID_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                removeID_FieldKeyPressed(evt);
+            }
+        });
 
         RemoveBookbutton.setBackground(new java.awt.Color(102, 0, 0));
         RemoveBookbutton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -1276,16 +1377,17 @@ public class menu extends javax.swing.JFrame {
         RemoveBooksLayout.setHorizontalGroup(
             RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RemoveBooksLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(ID_BOOK)
-                .addGap(18, 18, 18)
-                .addComponent(removeID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(RemoveBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
-            .addGroup(RemoveBooksLayout.createSequentialGroup()
-                .addGap(273, 273, 273)
-                .addComponent(jLabel6)
+                .addGroup(RemoveBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RemoveBooksLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(ID_BOOK)
+                        .addGap(18, 18, 18)
+                        .addComponent(removeID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
+                        .addComponent(RemoveBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RemoveBooksLayout.createSequentialGroup()
+                        .addGap(273, 273, 273)
+                        .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RemoveBooksLayout.setVerticalGroup(
@@ -1391,6 +1493,23 @@ public class menu extends javax.swing.JFrame {
 
     private void FindReaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindReaderActionPerformed
         MenuMainScreen.setSelectedComponent(FindReaders);
+        DefaultTableModel readersTable = new DefaultTableModel(
+        new Object[]{"CCCD", "Name", "Gender", "Contact Number"}, 0
+    );
+        Collections.sort(Reader.ReadersList(), new Comparator<Reader>(){
+            public int compare(Reader r1, Reader r2){
+                return r1.getCccd().compareTo(r2.getCccd());
+            }
+        });
+        for (Reader r : Reader.ReadersList()) {
+        readersTable.addRow(new Object[]{
+            r.getCccd(),
+            r.getName(),
+            r.getGender(),
+            r.getContact_number(),
+        });
+    }
+        FindUserTable.setModel(readersTable);
     }//GEN-LAST:event_FindReaderActionPerformed
 
     private void UpdateReaderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateReaderActionPerformed
@@ -1402,7 +1521,34 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void AddUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserbuttonActionPerformed
-        // TODO add your handling code here:
+        if (Username_Field.getText().isEmpty() || Gender_Field.getText().isEmpty() || CCCD_Field.getText().isEmpty() || Contactnumber_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            Username.requestFocus();
+        }else{
+            int ok = 0;
+            String cccd = CCCD_Field.getText();
+            String name = Username_Field.getText();
+            String gender = Gender_Field.getText();
+            String contact_number = Contactnumber_Field.getText();
+            
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    JOptionPane.showMessageDialog(null, "There's already an user with the same CCCD. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    CCCD_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Reader newReader = new Reader(cccd, name, gender, contact_number);
+                Admin.ADDREADERS(newReader);
+                JOptionPane.showMessageDialog(null, "Reader added to the library's database!","AddReader", JOptionPane.INFORMATION_MESSAGE);
+                CCCD_Field.setText("");
+                Username_Field.setText("");
+                Gender_Field.setText("");
+                Contactnumber_Field.setText("");
+            }
+        }
     }//GEN-LAST:event_AddUserbuttonActionPerformed
 
     private void RemoveBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbuttonActionPerformed
@@ -1428,7 +1574,21 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_RemoveBookbuttonActionPerformed
 
     private void RemoveUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveUserbuttonActionPerformed
-        // TODO add your handling code here:
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this reader from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (confirm == JOptionPane.YES_OPTION){
+            if (Admin.REMOVEREADERS(UserRemove_Field.getText()) == true){
+                JOptionPane.showMessageDialog(null, "Reader removed successfully!","Book removed", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Reader does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                UserRemove_Field.requestFocus();
+            }
+            UserRemove_Field.setText("");
+        }
+        else{
+            UserRemove_Field.requestFocus();
+        }
     }//GEN-LAST:event_RemoveUserbuttonActionPerformed
 
     private void AddBookbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookbuttonActionPerformed
@@ -1499,10 +1659,6 @@ public class menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_FindBookbuttonActionPerformed
 
-    private void UpdateUserInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateUserInfobuttonActionPerformed
-
     private void ContactNumberUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberUpdateRadiobuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContactNumberUpdateRadiobuttonActionPerformed
@@ -1514,7 +1670,7 @@ public class menu extends javax.swing.JFrame {
     private void UpdateBookInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBookInfobuttonActionPerformed
     
     try{
-       String id = IDBookUpdate_Field.getText();
+        String id = IDBookUpdate_Field.getText();
         String updated_info = UpdateBookInfo_Field.getText();
         String query = null;
         if (id.isEmpty() || updated_info.isEmpty()) {
@@ -1536,11 +1692,21 @@ public class menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        //gọi hàm update
-        Admin.UPDATEBOOKS(id, query, updated_info);
-
-        JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE); 
+        boolean ok = false;      
+        for (Books b : Books.storage()){
+            if (b.getID().equals(id)){
+                ok = true;
+                
+                break;
+            }
+        }
+        if (ok == false){
+            JOptionPane.showMessageDialog(this, "Book does not exists", "Error", JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Admin.UPDATEBOOKS(id, query, updated_info);
+                JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
     }catch (IOException e){
         
     }
@@ -1692,12 +1858,524 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_IDBookUpdate_FieldActionPerformed
 
     private void FindUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindUserbuttonActionPerformed
-        // TODO add your handling code here:
+        String cccd = FindUserCCCD_Field.getText();
+        String name = FindUserName_Field.getText();
+        String gender = FindUserGender_Field.getText();
+        String contact_number = FindUserContact_number_Field.getText();
+        
+        cccd = cccd.isEmpty() ? null : cccd;
+        gender = gender.isEmpty() ? null : gender;
+        name = name.isEmpty() ? null : name;
+        contact_number = contact_number.isEmpty() ? null : contact_number;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Reader> filteredReaders = Admin.FINDREADERS(cccd, name, gender, contact_number);
+        DefaultTableModel model = (DefaultTableModel) FindUserTable.getModel();
+        model.setRowCount(0);
+        for (Reader reader : filteredReaders) {
+        model.addRow(new Object[]{
+            reader.getCccd(),
+            reader.getName(),
+            reader.getGender(),
+            reader.getContact_number(),
+        });
+    }
     }//GEN-LAST:event_FindUserbuttonActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void Username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Username_FieldActionPerformed
+
+    private void Username_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Username_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (Username_Field.getText().isEmpty() || Gender_Field.getText().isEmpty() || CCCD_Field.getText().isEmpty() || Contactnumber_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            Username.requestFocus();
+        }else{
+            int ok = 0;
+            String cccd = CCCD_Field.getText();
+            String name = Username_Field.getText();
+            String gender = Gender_Field.getText();
+            String contact_number = Contactnumber_Field.getText();
+            
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    JOptionPane.showMessageDialog(null, "There's already an user with the same CCCD. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    CCCD_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Reader newReader = new Reader(cccd, name, gender, contact_number);
+                Admin.ADDREADERS(newReader);
+                JOptionPane.showMessageDialog(null, "Reader added to the library's database!","AddReader", JOptionPane.INFORMATION_MESSAGE);
+                CCCD_Field.setText("");
+                Username_Field.setText("");
+                Gender_Field.setText("");
+                Contactnumber_Field.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_Username_FieldKeyPressed
+
+    private void Gender_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Gender_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (Username_Field.getText().isEmpty() || Gender_Field.getText().isEmpty() || CCCD_Field.getText().isEmpty() || Contactnumber_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            Username.requestFocus();
+        }else{
+            int ok = 0;
+            String cccd = CCCD_Field.getText();
+            String name = Username_Field.getText();
+            String gender = Gender_Field.getText();
+            String contact_number = Contactnumber_Field.getText();
+            
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    JOptionPane.showMessageDialog(null, "There's already an user with the same CCCD. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    CCCD_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Reader newReader = new Reader(cccd, name, gender, contact_number);
+                Admin.ADDREADERS(newReader);
+                JOptionPane.showMessageDialog(null, "Reader added to the library's database!","AddReader", JOptionPane.INFORMATION_MESSAGE);
+                CCCD_Field.setText("");
+                Username_Field.setText("");
+                Gender_Field.setText("");
+                Contactnumber_Field.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_Gender_FieldKeyPressed
+
+    private void CCCD_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CCCD_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (Username_Field.getText().isEmpty() || Gender_Field.getText().isEmpty() || CCCD_Field.getText().isEmpty() || Contactnumber_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            Username.requestFocus();
+        }else{
+            int ok = 0;
+            String cccd = CCCD_Field.getText();
+            String name = Username_Field.getText();
+            String gender = Gender_Field.getText();
+            String contact_number = Contactnumber_Field.getText();
+            
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    JOptionPane.showMessageDialog(null, "There's already an user with the same CCCD. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    CCCD_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Reader newReader = new Reader(cccd, name, gender, contact_number);
+                Admin.ADDREADERS(newReader);
+                JOptionPane.showMessageDialog(null, "Reader added to the library's database!","AddReader", JOptionPane.INFORMATION_MESSAGE);
+                CCCD_Field.setText("");
+                Username_Field.setText("");
+                Gender_Field.setText("");
+                Contactnumber_Field.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_CCCD_FieldKeyPressed
+
+    private void Contactnumber_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contactnumber_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (Username_Field.getText().isEmpty() || Gender_Field.getText().isEmpty() || CCCD_Field.getText().isEmpty() || Contactnumber_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            Username.requestFocus();
+        }else{
+            int ok = 0;
+            String cccd = CCCD_Field.getText();
+            String name = Username_Field.getText();
+            String gender = Gender_Field.getText();
+            String contact_number = Contactnumber_Field.getText();
+            
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    JOptionPane.showMessageDialog(null, "There's already an user with the same CCCD. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    CCCD_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Reader newReader = new Reader(cccd, name, gender, contact_number);
+                Admin.ADDREADERS(newReader);
+                JOptionPane.showMessageDialog(null, "Reader added to the library's database!","AddReader", JOptionPane.INFORMATION_MESSAGE);
+                CCCD_Field.setText("");
+                Username_Field.setText("");
+                Gender_Field.setText("");
+                Contactnumber_Field.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_Contactnumber_FieldKeyPressed
+
+    private void removeID_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_removeID_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+            int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this book from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (confirm == JOptionPane.YES_OPTION){
+                if (Admin.REMOVEBOOKS(removeID_Field.getText()) == true){
+                    JOptionPane.showMessageDialog(null, "Book removed successfully!","Book removed", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else 
+                {
+                    JOptionPane.showMessageDialog(null, "Book does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                    removeID_Field.requestFocus();
+                }
+                removeID_Field.setText("");
+            }
+            else{
+                removeID_Field.requestFocus();
+            }
+        }catch (IOException e){
+            
+        }
+        }
+    }//GEN-LAST:event_removeID_FieldKeyPressed
+
+    private void UserRemove_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserRemove_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this reader from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (confirm == JOptionPane.YES_OPTION){
+            if (Admin.REMOVEREADERS(UserRemove_Field.getText()) == true){
+                JOptionPane.showMessageDialog(null, "Reader removed successfully!","Book removed", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Reader does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                UserRemove_Field.requestFocus();
+            }
+            UserRemove_Field.setText("");
+        }
+        else{
+            UserRemove_Field.requestFocus();
+        }
+        }
+    }//GEN-LAST:event_UserRemove_FieldKeyPressed
+
+    private void FindUserCCCD_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindUserCCCD_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = FindUserCCCD_Field.getText();
+        String name = FindUserName_Field.getText();
+        String gender = FindUserGender_Field.getText();
+        String contact_number = FindUserContact_number_Field.getText();
+        
+        cccd = cccd.isEmpty() ? null : cccd;
+        gender = gender.isEmpty() ? null : gender;
+        name = name.isEmpty() ? null : name;
+        contact_number = contact_number.isEmpty() ? null : contact_number;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Reader> filteredReaders = Admin.FINDREADERS(cccd, name, gender, contact_number);
+        DefaultTableModel model = (DefaultTableModel) FindUserTable.getModel();
+        model.setRowCount(0);
+        for (Reader reader : filteredReaders) {
+        model.addRow(new Object[]{
+            reader.getCccd(),
+            reader.getName(),
+            reader.getGender(),
+            reader.getContact_number(),
+        });
+    }
+        }
+    }//GEN-LAST:event_FindUserCCCD_FieldKeyPressed
+
+    private void FindUserGender_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindUserGender_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = FindUserCCCD_Field.getText();
+        String name = FindUserName_Field.getText();
+        String gender = FindUserGender_Field.getText();
+        String contact_number = FindUserContact_number_Field.getText();
+        
+        cccd = cccd.isEmpty() ? null : cccd;
+        gender = gender.isEmpty() ? null : gender;
+        name = name.isEmpty() ? null : name;
+        contact_number = contact_number.isEmpty() ? null : contact_number;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Reader> filteredReaders = Admin.FINDREADERS(cccd, name, gender, contact_number);
+        DefaultTableModel model = (DefaultTableModel) FindUserTable.getModel();
+        model.setRowCount(0);
+        for (Reader reader : filteredReaders) {
+        model.addRow(new Object[]{
+            reader.getCccd(),
+            reader.getName(),
+            reader.getGender(),
+            reader.getContact_number(),
+        });
+    }
+        }
+    }//GEN-LAST:event_FindUserGender_FieldKeyPressed
+
+    private void FindUserName_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindUserName_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = FindUserCCCD_Field.getText();
+        String name = FindUserName_Field.getText();
+        String gender = FindUserGender_Field.getText();
+        String contact_number = FindUserContact_number_Field.getText();
+        
+        cccd = cccd.isEmpty() ? null : cccd;
+        gender = gender.isEmpty() ? null : gender;
+        name = name.isEmpty() ? null : name;
+        contact_number = contact_number.isEmpty() ? null : contact_number;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Reader> filteredReaders = Admin.FINDREADERS(cccd, name, gender, contact_number);
+        DefaultTableModel model = (DefaultTableModel) FindUserTable.getModel();
+        model.setRowCount(0);
+        for (Reader reader : filteredReaders) {
+        model.addRow(new Object[]{
+            reader.getCccd(),
+            reader.getName(),
+            reader.getGender(),
+            reader.getContact_number(),
+        });
+    }
+        }
+    }//GEN-LAST:event_FindUserName_FieldKeyPressed
+
+    private void FindUserContact_number_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FindUserContact_number_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = FindUserCCCD_Field.getText();
+        String name = FindUserName_Field.getText();
+        String gender = FindUserGender_Field.getText();
+        String contact_number = FindUserContact_number_Field.getText();
+        
+        cccd = cccd.isEmpty() ? null : cccd;
+        gender = gender.isEmpty() ? null : gender;
+        name = name.isEmpty() ? null : name;
+        contact_number = contact_number.isEmpty() ? null : contact_number;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Reader> filteredReaders = Admin.FINDREADERS(cccd, name, gender, contact_number);
+        DefaultTableModel model = (DefaultTableModel) FindUserTable.getModel();
+        model.setRowCount(0);
+        for (Reader reader : filteredReaders) {
+        model.addRow(new Object[]{
+            reader.getCccd(),
+            reader.getName(),
+            reader.getGender(),
+            reader.getContact_number(),
+        });
+    }
+        }
+    }//GEN-LAST:event_FindUserContact_number_FieldKeyPressed
+
+    private void CCCDReaderUpdate_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CCCDReaderUpdate_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = CCCDReaderUpdate_Field.getText();
+            String updated_info = UpdateUserInfo_Field.getText();
+            String query = null;
+            if (cccd.isEmpty() || updated_info.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please fill in both the User ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            //chọn thuộc tính update
+            if (NameUpdateRadiobutton.isSelected()) {
+                query = "name";
+            } else if (ContactNumberUpdateRadiobutton.isSelected()) {
+                query = "contact_number";
+            } else if (GenderUpdateRadiobutton.isSelected()) {
+                query = "gender";
+            }  else {
+                JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            boolean ok = false;
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    ok = true;
+                    
+                    break;
+                }
+            }
+            if (ok == false){
+                JOptionPane.showMessageDialog(this, "Reader does not exist in the database", "Error", JOptionPane.ERROR_MESSAGE);
+            }else
+            {
+                Admin.UPDATEREADERS(cccd, query, updated_info);
+                JOptionPane.showMessageDialog(this, "Reader's information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_CCCDReaderUpdate_FieldKeyPressed
+
+    private void UpdateUserInfobuttonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UpdateUserInfobuttonKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String cccd = CCCDReaderUpdate_Field.getText();
+            String updated_info = UpdateUserInfo_Field.getText();
+            String query = null;
+            if (cccd.isEmpty() || updated_info.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please fill in both the User ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            //chọn thuộc tính update
+            if (NameUpdateRadiobutton.isSelected()) {
+                query = "name";
+            } else if (ContactNumberUpdateRadiobutton.isSelected()) {
+                query = "contact_number";
+            } else if (GenderUpdateRadiobutton.isSelected()) {
+                query = "gender";
+            }  else {
+                JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            boolean ok = false;
+            for (Reader r : Reader.ReadersList()){
+                if (r.getCccd().equals(cccd)){
+                    ok = true;
+                    
+                    break;
+                }
+            }
+            if (ok == false){
+                JOptionPane.showMessageDialog(this, "Reader does not exist in the database", "Error", JOptionPane.ERROR_MESSAGE);
+            }else
+            {
+                Admin.UPDATEREADERS(cccd, query, updated_info);
+                JOptionPane.showMessageDialog(this, "Reader's information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_UpdateUserInfobuttonKeyPressed
+
+    private void UpdateUserInfobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobuttonActionPerformed
+        String cccd = CCCDReaderUpdate_Field.getText();
+        String updated_info = UpdateUserInfo_Field.getText();
+        String query = null;
+        if (cccd.isEmpty() || updated_info.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both the User ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        //chọn thuộc tính update
+        if (NameUpdateRadiobutton.isSelected()) {
+            query = "name";
+        } else if (ContactNumberUpdateRadiobutton.isSelected()) {
+            query = "contact_number";
+        } else if (GenderUpdateRadiobutton.isSelected()) {
+            query = "gender";
+        }  else {
+            JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        boolean ok = false;
+        for (Reader r : Reader.ReadersList()){
+            if (r.getCccd().equals(cccd)){
+                ok = true;
+
+                break;
+            }
+        }
+        if (ok == false){
+            JOptionPane.showMessageDialog(this, "Reader does not exist in the database", "Error", JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Admin.UPDATEREADERS(cccd, query, updated_info);
+            JOptionPane.showMessageDialog(this, "Reader's information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_UpdateUserInfobuttonActionPerformed
+
+    private void UpdateUserInfo_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfo_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateUserInfo_FieldActionPerformed
+
+    private void UpdateBookInfo_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UpdateBookInfo_FieldKeyPressed
+       if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+        String id = IDBookUpdate_Field.getText();
+        String updated_info = UpdateBookInfo_Field.getText();
+        String query = null;
+        if (id.isEmpty() || updated_info.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both the Book ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        //chọn thuộc tính update
+        if (NameBookUpdateRadiobutton.isSelected()) {
+            query = "name";
+        } else if (CategoryUpdateRadiobutton.isSelected()) {
+            query = "category";
+        } else if (QuantityUpdateRadiobutton.isSelected()) {
+            query = "quantity";
+        } else if (AuthorUpdateRadiobutton.isSelected()) {
+            query = "author";
+        } else if (PublisherUpdateRadiobutton.isSelected()) {
+            query = "publisher";
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        boolean ok = false;      
+        for (Books b : Books.storage()){
+            if (b.getID().equals(id)){
+                ok = true;
+                
+                break;
+            }
+        }
+        if (ok == false){
+            JOptionPane.showMessageDialog(this, "Book does not exists", "Error", JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Admin.UPDATEBOOKS(id, query, updated_info);
+                JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }catch (IOException e){
+        
+    }
+        }
+    }//GEN-LAST:event_UpdateBookInfo_FieldKeyPressed
+
+    private void IDBookUpdate_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDBookUpdate_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            try{
+        String id = IDBookUpdate_Field.getText();
+        String updated_info = UpdateBookInfo_Field.getText();
+        String query = null;
+        if (id.isEmpty() || updated_info.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both the Book ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        //chọn thuộc tính update
+        if (NameBookUpdateRadiobutton.isSelected()) {
+            query = "name";
+        } else if (CategoryUpdateRadiobutton.isSelected()) {
+            query = "category";
+        } else if (QuantityUpdateRadiobutton.isSelected()) {
+            query = "quantity";
+        } else if (AuthorUpdateRadiobutton.isSelected()) {
+            query = "author";
+        } else if (PublisherUpdateRadiobutton.isSelected()) {
+            query = "publisher";
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        boolean ok = false;      
+        for (Books b : Books.storage()){
+            if (b.getID().equals(id)){
+                ok = true;
+                
+                break;
+            }
+        }
+        if (ok == false){
+            JOptionPane.showMessageDialog(this, "Book does not exists", "Error", JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Admin.UPDATEBOOKS(id, query, updated_info);
+                JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }catch (IOException e){
+        
+    }
+        }
+    }//GEN-LAST:event_IDBookUpdate_FieldKeyPressed
     
     public JTextField getRemoveID_Field(){
         return removeID_Field;
@@ -1778,7 +2456,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel FindCategory;
     private javax.swing.JTextField FindCategory_Field;
     private javax.swing.JLabel FindGender;
-    private javax.swing.JTextField FindGender_Field;
     private javax.swing.JTextField FindIDBook_Field;
     private javax.swing.JLabel FindIDBooks;
     private javax.swing.JTextField FindName_Field;
@@ -1789,6 +2466,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel FindTablepanel;
     private javax.swing.JLabel FindUserCCCD;
     private javax.swing.JTextField FindUserCCCD_Field;
+    private javax.swing.JTextField FindUserContact_number_Field;
+    private javax.swing.JTextField FindUserGender_Field;
     private javax.swing.JLabel FindUserName;
     private javax.swing.JTextField FindUserName_Field;
     private javax.swing.JScrollPane FindUserScrollPane;
@@ -1853,6 +2532,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

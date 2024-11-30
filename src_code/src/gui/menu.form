@@ -439,7 +439,7 @@
                                   <Component id="AddBookbutton" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
+                          <EmptySpace pref="69" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -830,7 +830,7 @@
                               <Component id="Gender_Field" pref="176" max="32767" attributes="0"/>
                               <Component id="Username_Field" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace pref="26" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="Contact_number" min="-2" max="-2" attributes="0"/>
@@ -901,6 +901,10 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Username_FieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Username_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Username">
                   <Properties>
@@ -926,6 +930,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Gender_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Contact_number">
                   <Properties>
@@ -942,6 +949,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Contactnumber_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="AddUserbutton">
                   <Properties>
@@ -975,6 +985,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CCCD_FieldKeyPressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -990,7 +1003,19 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="FindUserTablepane" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="FindUserbutton" min="-2" pref="168" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="FindUserCCCD" min="-2" max="-2" attributes="0"/>
@@ -998,26 +1023,20 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="FindGender_Field" pref="166" max="32767" attributes="0"/>
+                              <Component id="FindUserGender_Field" pref="166" max="32767" attributes="0"/>
                               <Component id="FindUserCCCD_Field" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="FindUserName" min="-2" pref="56" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="FindUserbutton" pref="168" max="32767" attributes="0"/>
-                              <Component id="FindUserName_Field" max="32767" attributes="0"/>
+                              <Component id="FindUserName" max="32767" attributes="0"/>
+                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
-                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="FindUserTablepane" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="FindUserName_Field" min="-2" pref="168" max="-2" attributes="0"/>
+                              <Component id="FindUserContact_number_Field" min="-2" pref="168" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1025,24 +1044,35 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="FindUserCCCD" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="FindUserCCCD_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="FindUserName_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="FindUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="FindUserCCCD" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FindUserCCCD_Field" min="-2" pref="31" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="FindGender" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FindUserGender_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="FindUserName_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="FindUserName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="FindUserContact_number_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="13" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FindGender" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FindGender_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="FindUserbutton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <Component id="FindUserbutton" min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Component id="FindUserTablepane" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1065,6 +1095,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FindUserCCCD_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindUserCCCD_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindGender">
                   <Properties>
@@ -1074,7 +1107,10 @@
                     <Property name="text" type="java.lang.String" value="Gender"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="FindGender_Field">
+                <Component class="javax.swing.JTextField" name="FindUserGender_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindUserGender_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="FindUserName">
                   <Properties>
@@ -1085,6 +1121,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FindUserName_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindUserName_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="FindUserbutton">
                   <Properties>
@@ -1113,11 +1152,7 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="FindUserScrollPane" pref="168" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="FindUserScrollPane" alignment="1" pref="168" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -1178,6 +1213,19 @@
                     </Container>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="jLabel15">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="18" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="CNumber"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="FindUserContact_number_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FindUserContact_number_FieldKeyPressed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="UpdateReaders">
@@ -1211,7 +1259,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="238" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1251,6 +1299,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CCCDReaderUpdate_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CCCDReaderUpdate_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -1363,6 +1414,9 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="UpdateUserInfo_Field">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateUserInfo_FieldActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="UpdateUserInfobutton">
                       <Properties>
@@ -1379,6 +1433,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateUserInfobuttonActionPerformed"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="UpdateUserInfobuttonKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1468,6 +1523,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IDBookUpdate_FieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="IDBookUpdate_FieldKeyPressed"/>
                   </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="UpdateBookpanel">
@@ -1485,7 +1541,9 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Component id="QuantityUpdateRadiobutton" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="CategoryUpdateRadiobutton" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="NameBookUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1493,10 +1551,8 @@
                                           <Component id="PublisherUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="QuantityUpdateRadiobutton" min="-2" pref="83" max="-2" attributes="0"/>
-                                  <Component id="CategoryUpdateRadiobutton" min="-2" pref="137" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="151" max="32767" attributes="0"/>
+                              <EmptySpace pref="153" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="UpdateBookInfo_Field" min="-2" pref="194" max="-2" attributes="0"/>
@@ -1514,30 +1570,29 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="NameBookUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AuthorUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="NameBookUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="UpdateBookInfo_Field" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="UpdateBookInfo_Field" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="PublisherUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                      <Component id="AuthorUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="UpdateBookInfobutton" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                          <Component id="QuantityUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="CategoryUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="PublisherUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="CategoryUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="UpdateBookInfobutton" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                                  <Component id="QuantityUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1591,6 +1646,9 @@
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="UpdateBookInfo_FieldKeyPressed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="UpdateBookInfobutton">
                       <Properties>
@@ -1609,20 +1667,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateBookInfobuttonActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="AuthorUpdateRadiobutton">
-                      <Properties>
-                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                          <ComponentRef name="ChooseUpdateBookbuttongroup"/>
-                        </Property>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Segoe UI" size="14" style="0"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Author"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AuthorUpdateRadiobuttonActionPerformed"/>
-                      </Events>
-                    </Component>
                     <Component class="javax.swing.JRadioButton" name="PublisherUpdateRadiobutton">
                       <Properties>
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -1635,6 +1679,20 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PublisherUpdateRadiobuttonActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="AuthorUpdateRadiobutton">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="ChooseUpdateBookbuttongroup"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Author"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AuthorUpdateRadiobuttonActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1879,7 +1937,7 @@
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="172" max="32767" attributes="0"/>
+                          <EmptySpace pref="173" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1922,6 +1980,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="UserRemove_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="RemoveUserbutton">
                   <Properties>
@@ -1994,17 +2055,20 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="ID_BOOK" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="removeID_Field" min="-2" pref="234" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          <Component id="RemoveBookbutton" min="-2" pref="96" max="-2" attributes="0"/>
-                          <EmptySpace pref="175" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                                  <Component id="ID_BOOK" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="removeID_Field" min="-2" pref="234" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                                  <Component id="RemoveBookbutton" min="-2" pref="96" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2048,6 +2112,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="removeID_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="RemoveBookbutton">
                   <Properties>

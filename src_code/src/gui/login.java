@@ -10,6 +10,7 @@ import javax.swing.*;
 
 import code_and_db.Admin;
 import code_and_db.Books;
+import code_and_db.Reader;
 import java.io.File;
 public class login extends javax.swing.JFrame {
 
@@ -168,6 +169,7 @@ public class login extends javax.swing.JFrame {
                     dispose();
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
                     Books.autoaddBooks();
+                    Reader.autoaddreaders();
                     new menu().setVisible(true);
                 }
                 else{
@@ -190,6 +192,7 @@ public class login extends javax.swing.JFrame {
                     dispose();
                     new menu().setVisible(true);
                     Books.autoaddBooks();
+                    Reader.autoaddreaders();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -209,6 +212,7 @@ public class login extends javax.swing.JFrame {
                     dispose();
                     new menu().setVisible(true);
                     Books.autoaddBooks();
+                    Reader.autoaddreaders();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -228,6 +232,7 @@ public class login extends javax.swing.JFrame {
                     new menu().setVisible(true);
                     dispose();
                     Books.autoaddBooks();
+                    Reader.autoaddreaders();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);

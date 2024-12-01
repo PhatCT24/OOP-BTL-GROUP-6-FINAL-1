@@ -13,7 +13,9 @@ import code_and_db.Books;
 import code_and_db.Reader;
 import java.io.File;
 public class login extends javax.swing.JFrame {
-
+    
+    
+    private static boolean ok = false;
     /**
      * Creates new form login
      */
@@ -168,8 +170,11 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     java.util.Arrays.fill(password_Field.getPassword(),' ');
-                    Books.autoaddBooks();
-                    Reader.autoaddreaders();
+                    if (!ok){
+                        Books.autoaddBooks();
+                        Reader.autoaddreaders();
+                        ok = true;
+                    }
                     new menu().setVisible(true);
                 }
                 else{
@@ -191,8 +196,11 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
-                    Books.autoaddBooks();
-                    Reader.autoaddreaders();
+                    if (!ok){
+                        Books.autoaddBooks();
+                        Reader.autoaddreaders();
+                        ok = true;
+                    }
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -211,8 +219,11 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     dispose();
                     new menu().setVisible(true);
-                    Books.autoaddBooks();
-                    Reader.autoaddreaders();
+                    if (!ok){
+                        Books.autoaddBooks();
+                        Reader.autoaddreaders();
+                        ok = true;
+                    }
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -231,8 +242,11 @@ public class login extends javax.swing.JFrame {
                 if (Admin.login(username_Field.getText(), new String(password_Field.getPassword()))){
                     new menu().setVisible(true);
                     dispose();
-                    Books.autoaddBooks();
-                    Reader.autoaddreaders();
+                    if (!ok){
+                        Books.autoaddBooks();
+                        Reader.autoaddreaders();
+                        ok = true;
+                    }
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Incorrect username or password!","Login Failed", JOptionPane.ERROR_MESSAGE);

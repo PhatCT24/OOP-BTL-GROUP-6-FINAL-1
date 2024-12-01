@@ -41,6 +41,7 @@ public class menu extends javax.swing.JFrame {
         StatusComboBox1.setVisible(false);
         UpdateTicketInfo_Field.setVisible(false);
     }
+    //set màu cho welcome panel
     private Color[] rainbowColors = {
         Color.RED,
         Color.ORANGE,
@@ -50,12 +51,13 @@ public class menu extends javax.swing.JFrame {
         Color.BLUE,
         Color.MAGENTA
     };
-    private int clrIndex = 0; 
+    private int clrIndex = 0; // đặt giá trị màu khởi tạo = 0
+    
     public void startColorAnimation(){
-        Timer timer = new Timer(300, new ActionListener() {
+        Timer timer = new Timer(300, new ActionListener() {// đặt timer đổi màu mỗi 0,2s
         @Override
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            // Cập nhật màu của JLabel hoặc JPanel
+            // Cập nhật màu của welcomelabel
             welcomelabel.setForeground(rainbowColors[clrIndex]);
             
             // Chuyển sang màu tiếp theo

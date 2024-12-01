@@ -11,6 +11,7 @@ import javax.swing.*;
 import code_and_db.Admin;
 import code_and_db.Books;
 import code_and_db.Reader;
+import code_and_db.Ticket;
 import java.io.File;
 public class login extends javax.swing.JFrame {
     
@@ -173,6 +174,7 @@ public class login extends javax.swing.JFrame {
                     if (!ok){
                         Books.autoaddBooks();
                         Reader.autoaddreaders();
+                        Ticket.autoaddTickets();
                         ok = true;
                     }
                     new menu().setVisible(true);
@@ -199,6 +201,7 @@ public class login extends javax.swing.JFrame {
                     if (!ok){
                         Books.autoaddBooks();
                         Reader.autoaddreaders();
+                        Ticket.autoaddTickets();
                         ok = true;
                     }
                 }
@@ -222,6 +225,7 @@ public class login extends javax.swing.JFrame {
                     if (!ok){
                         Books.autoaddBooks();
                         Reader.autoaddreaders();
+                        Ticket.autoaddTickets();
                         ok = true;
                     }
                 }
@@ -245,6 +249,7 @@ public class login extends javax.swing.JFrame {
                     if (!ok){
                         Books.autoaddBooks();
                         Reader.autoaddreaders();
+                        Ticket.autoaddTickets();
                         ok = true;
                     }
                 }

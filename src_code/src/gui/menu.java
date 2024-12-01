@@ -60,6 +60,11 @@ public class menu extends javax.swing.JFrame {
         UpdateReader = new javax.swing.JMenuItem();
         ChooseUpdateUserbuttongroup = new javax.swing.ButtonGroup();
         ChooseUpdateBookbuttongroup = new javax.swing.ButtonGroup();
+        TicketPopUpMenu = new javax.swing.JPopupMenu();
+        AddTicket = new javax.swing.JMenuItem();
+        RemoveTicket = new javax.swing.JMenuItem();
+        FindTicket = new javax.swing.JMenuItem();
+        UpdateTicket = new javax.swing.JMenuItem();
         menu_background = new javax.swing.JPanel();
         home_icon = new javax.swing.JLabel();
         ToLogOut = new javax.swing.JButton();
@@ -155,17 +160,6 @@ public class menu extends javax.swing.JFrame {
         PublisherUpdateRadiobutton = new javax.swing.JRadioButton();
         AuthorUpdateRadiobutton = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
-        BorrowTicket = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        CCCDTicket = new javax.swing.JLabel();
-        BookIDTicket_Field = new javax.swing.JTextField();
-        BookIDTicket = new javax.swing.JLabel();
-        CCCDTicket_Field = new javax.swing.JTextField();
-        TicketBorrowPanel = new javax.swing.JPanel();
-        TicketBorrowScrollPane = new javax.swing.JScrollPane();
-        TicketBorrowTable = new javax.swing.JTable();
-        ReturnBookbutton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         RemoveReaders = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         CCCDUser = new javax.swing.JLabel();
@@ -176,6 +170,23 @@ public class menu extends javax.swing.JFrame {
         ID_BOOK = new javax.swing.JLabel();
         removeID_Field = new javax.swing.JTextField();
         RemoveBookbutton = new javax.swing.JButton();
+        AddTickets = new javax.swing.JPanel();
+        RemoveTickets = new javax.swing.JPanel();
+        FindTickets = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        CCCDTicket = new javax.swing.JLabel();
+        BookIDTicket_Field = new javax.swing.JTextField();
+        BookIDTicket = new javax.swing.JLabel();
+        CCCDTicket_Field = new javax.swing.JTextField();
+        TicketBorrowPanel = new javax.swing.JPanel();
+        TicketBorrowScrollPane = new javax.swing.JScrollPane();
+        TicketBorrowTable = new javax.swing.JTable();
+        ReturnTicketButton = new javax.swing.JButton();
+        TicketID_Field = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        StatusComboBox = new javax.swing.JComboBox<>();
+        UpdateTickets = new javax.swing.JPanel();
 
         BookPopUpMenu.setBackground(new java.awt.Color(102, 0, 0));
         BookPopUpMenu.setForeground(new java.awt.Color(242, 242, 242));
@@ -246,6 +257,38 @@ public class menu extends javax.swing.JFrame {
             }
         });
         ReaderPopUpMenu.add(UpdateReader);
+
+        AddTicket.setText("Add a ticket");
+        AddTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddTicketActionPerformed(evt);
+            }
+        });
+        TicketPopUpMenu.add(AddTicket);
+
+        RemoveTicket.setText("Remove a ticket");
+        RemoveTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveTicketActionPerformed(evt);
+            }
+        });
+        TicketPopUpMenu.add(RemoveTicket);
+
+        FindTicket.setText("Find a ticket");
+        FindTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindTicketActionPerformed(evt);
+            }
+        });
+        TicketPopUpMenu.add(FindTicket);
+
+        UpdateTicket.setText("Update a ticket");
+        UpdateTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateTicketActionPerformed(evt);
+            }
+        });
+        TicketPopUpMenu.add(UpdateTicket);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1239,94 +1282,6 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("update books", UpdateBooks);
 
-        BorrowTicket.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel14.setText("BORROW TICKET");
-        BorrowTicket.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
-
-        CCCDTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        CCCDTicket.setText("CCCD");
-        BorrowTicket.add(CCCDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 39, -1, -1));
-
-        BookIDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BorrowTicket.add(BookIDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 156, 32));
-
-        BookIDTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        BookIDTicket.setText("Book_ID");
-        BorrowTicket.add(BookIDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
-
-        CCCDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BorrowTicket.add(CCCDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 37, 150, 32));
-
-        TicketBorrowTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "CCCD", "ID", "Borrow_date", "Return_date", "Status"
-            }
-        ));
-        TicketBorrowTable.setShowVerticalLines(true);
-        TicketBorrowScrollPane.setViewportView(TicketBorrowTable);
-
-        javax.swing.GroupLayout TicketBorrowPanelLayout = new javax.swing.GroupLayout(TicketBorrowPanel);
-        TicketBorrowPanel.setLayout(TicketBorrowPanelLayout);
-        TicketBorrowPanelLayout.setHorizontalGroup(
-            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TicketBorrowPanelLayout.createSequentialGroup()
-                .addComponent(TicketBorrowScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        TicketBorrowPanelLayout.setVerticalGroup(
-            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TicketBorrowPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TicketBorrowScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        BorrowTicket.add(TicketBorrowPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 230));
-
-        ReturnBookbutton.setBackground(new java.awt.Color(102, 0, 0));
-        ReturnBookbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ReturnBookbutton.setForeground(new java.awt.Color(242, 242, 242));
-        ReturnBookbutton.setText("Return");
-        BorrowTicket.add(ReturnBookbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 89, 31));
-
-        jButton3.setBackground(new java.awt.Color(102, 0, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(242, 242, 242));
-        jButton3.setText("Borrow");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        BorrowTicket.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 89, 31));
-
-        MenuMainScreen.addTab("add borrow", BorrowTicket);
-
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setText("REMOVE READERS");
 
@@ -1439,6 +1394,152 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.addTab("remove books", RemoveBooks);
 
+        javax.swing.GroupLayout AddTicketsLayout = new javax.swing.GroupLayout(AddTickets);
+        AddTickets.setLayout(AddTicketsLayout);
+        AddTicketsLayout.setHorizontalGroup(
+            AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 744, Short.MAX_VALUE)
+        );
+        AddTicketsLayout.setVerticalGroup(
+            AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("tab11", AddTickets);
+
+        javax.swing.GroupLayout RemoveTicketsLayout = new javax.swing.GroupLayout(RemoveTickets);
+        RemoveTickets.setLayout(RemoveTicketsLayout);
+        RemoveTicketsLayout.setHorizontalGroup(
+            RemoveTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 744, Short.MAX_VALUE)
+        );
+        RemoveTicketsLayout.setVerticalGroup(
+            RemoveTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("tab12", RemoveTickets);
+
+        FindTickets.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setText("FIND A TICKET");
+        FindTickets.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, -1));
+
+        CCCDTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        CCCDTicket.setText("CCCD");
+        FindTickets.add(CCCDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        BookIDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindTickets.add(BookIDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 160, 32));
+
+        BookIDTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        BookIDTicket.setText("Book_ID");
+        FindTickets.add(BookIDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
+
+        CCCDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        FindTickets.add(CCCDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 32));
+
+        TicketBorrowTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Ticket_ID", "CCCD", "Book_ID", "Borrow_date", "Return_date", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TicketBorrowTable.setShowVerticalLines(true);
+        TicketBorrowScrollPane.setViewportView(TicketBorrowTable);
+
+        javax.swing.GroupLayout TicketBorrowPanelLayout = new javax.swing.GroupLayout(TicketBorrowPanel);
+        TicketBorrowPanel.setLayout(TicketBorrowPanelLayout);
+        TicketBorrowPanelLayout.setHorizontalGroup(
+            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TicketBorrowPanelLayout.createSequentialGroup()
+                .addComponent(TicketBorrowScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        TicketBorrowPanelLayout.setVerticalGroup(
+            TicketBorrowPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TicketBorrowPanelLayout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(TicketBorrowScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        FindTickets.add(TicketBorrowPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, 180));
+
+        ReturnTicketButton.setBackground(new java.awt.Color(102, 0, 0));
+        ReturnTicketButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ReturnTicketButton.setForeground(new java.awt.Color(242, 242, 242));
+        ReturnTicketButton.setText("Find");
+        ReturnTicketButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnTicketButtonActionPerformed(evt);
+            }
+        });
+        FindTickets.add(ReturnTicketButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 200, 31));
+
+        TicketID_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TicketID_Field.setMinimumSize(new java.awt.Dimension(64, 26));
+        TicketID_Field.setPreferredSize(new java.awt.Dimension(64, 26));
+        FindTickets.add(TicketID_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 150, 30));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setText("TicketID");
+        FindTickets.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel17.setText("Status");
+        FindTickets.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, -1, -1));
+
+        StatusComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        StatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Returned", "Overdue", "Due Today", "Returned" }));
+        FindTickets.add(StatusComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 160, 30));
+
+        MenuMainScreen.addTab("add borrow", FindTickets);
+
+        javax.swing.GroupLayout UpdateTicketsLayout = new javax.swing.GroupLayout(UpdateTickets);
+        UpdateTickets.setLayout(UpdateTicketsLayout);
+        UpdateTicketsLayout.setHorizontalGroup(
+            UpdateTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 744, Short.MAX_VALUE)
+        );
+        UpdateTicketsLayout.setVerticalGroup(
+            UpdateTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        MenuMainScreen.addTab("tab13", UpdateTickets);
+
         javax.swing.GroupLayout content_menubackgroundLayout = new javax.swing.GroupLayout(content_menubackground);
         content_menubackground.setLayout(content_menubackgroundLayout);
         content_menubackgroundLayout.setHorizontalGroup(
@@ -1477,7 +1578,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ToBookMenuActionPerformed
 
     private void ToBorrowTicketMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToBorrowTicketMenuActionPerformed
-        MenuMainScreen.setSelectedComponent(BorrowTicket);
+        TicketPopUpMenu.show(ToBorrowTicketMenu, WIDTH + 139, WIDTH);
     }//GEN-LAST:event_ToBorrowTicketMenuActionPerformed
 
     
@@ -1914,10 +2015,6 @@ public class menu extends javax.swing.JFrame {
         });
     }
     }//GEN-LAST:event_FindUserbuttonActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_FieldActionPerformed
         // TODO add your handling code here:
@@ -2410,6 +2507,41 @@ public class menu extends javax.swing.JFrame {
     }
         }
     }//GEN-LAST:event_IDBookUpdate_FieldKeyPressed
+
+    private void AddTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTicketActionPerformed
+        MenuMainScreen.setSelectedComponent(AddTickets);
+    }//GEN-LAST:event_AddTicketActionPerformed
+
+    private void RemoveTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTicketActionPerformed
+        MenuMainScreen.setSelectedComponent(RemoveTickets);
+    }//GEN-LAST:event_RemoveTicketActionPerformed
+
+    private void FindTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindTicketActionPerformed
+        MenuMainScreen.setSelectedComponent(FindTickets);
+        DefaultTableModel ticketTable = new DefaultTableModel(
+        new Object[]{"TicketID", "CCCD", "BookID", "Borrow Date", "Return Date", "Status"}, 0
+    );
+        Collections.sort(Ticket.getTicketList(), new Comparator<Ticket>(){
+            @Override
+            public int compare(Ticket b1, Ticket b2){
+                return b1.getTicketID().compareTo(b2.getTicketID());
+            }
+        });
+        for (Ticket t : Ticket.getTicketList()) {
+        ticketTable.addRow(new Object[]{
+            t.getTicketID(),t.getReaderCCCD(),t.getBookID(),t.getBorrow_dateAsString(),t.getReturn_dateAsString(),t.getStatus()
+        });
+    }
+    TicketBorrowTable.setModel(ticketTable);
+    }//GEN-LAST:event_FindTicketActionPerformed
+
+    private void UpdateTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTicketActionPerformed
+        MenuMainScreen.setSelectedComponent(UpdateTickets);
+    }//GEN-LAST:event_UpdateTicketActionPerformed
+
+    private void ReturnTicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnTicketButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReturnTicketButtonActionPerformed
     
     public JTextField getRemoveID_Field(){
         return removeID_Field;
@@ -2456,6 +2588,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel AddBooks;
     private javax.swing.JMenuItem AddReader;
     private javax.swing.JPanel AddReaders;
+    private javax.swing.JMenuItem AddTicket;
+    private javax.swing.JPanel AddTickets;
     private javax.swing.JButton AddUserbutton;
     private javax.swing.JLabel Author;
     private javax.swing.JRadioButton AuthorUpdateRadiobutton;
@@ -2465,7 +2599,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu BookPopUpMenu;
     private javax.swing.JLabel Book_Name;
     private javax.swing.JTextField Bookname_Field;
-    private javax.swing.JPanel BorrowTicket;
     private javax.swing.JLabel CCCD;
     private javax.swing.JLabel CCCDReaderUpdate;
     private javax.swing.JTextField CCCDReaderUpdate_Field;
@@ -2498,6 +2631,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane FindScrollpane;
     private javax.swing.JTable FindTable;
     private javax.swing.JPanel FindTablepanel;
+    private javax.swing.JMenuItem FindTicket;
+    private javax.swing.JPanel FindTickets;
     private javax.swing.JLabel FindUserCCCD;
     private javax.swing.JTextField FindUserCCCD_Field;
     private javax.swing.JTextField FindUserContact_number_Field;
@@ -2532,11 +2667,16 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel RemoveBooks;
     private javax.swing.JMenuItem RemoveReader;
     private javax.swing.JPanel RemoveReaders;
+    private javax.swing.JMenuItem RemoveTicket;
+    private javax.swing.JPanel RemoveTickets;
     private javax.swing.JButton RemoveUserbutton;
-    private javax.swing.JButton ReturnBookbutton;
+    private javax.swing.JButton ReturnTicketButton;
+    private javax.swing.JComboBox<String> StatusComboBox;
     private javax.swing.JPanel TicketBorrowPanel;
     private javax.swing.JScrollPane TicketBorrowScrollPane;
     private javax.swing.JTable TicketBorrowTable;
+    private javax.swing.JTextField TicketID_Field;
+    private javax.swing.JPopupMenu TicketPopUpMenu;
     private javax.swing.JButton ToBookMenu;
     private javax.swing.JButton ToBorrowTicketMenu;
     private javax.swing.JButton ToCustomerMenu;
@@ -2548,6 +2688,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel UpdateBooks;
     private javax.swing.JMenuItem UpdateReader;
     private javax.swing.JPanel UpdateReaders;
+    private javax.swing.JMenuItem UpdateTicket;
+    private javax.swing.JPanel UpdateTickets;
     private javax.swing.JTextField UpdateUserInfo_Field;
     private javax.swing.JButton UpdateUserInfobutton;
     private javax.swing.JPanel UpdateUserpanel;
@@ -2559,7 +2701,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2567,6 +2708,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

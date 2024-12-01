@@ -13,6 +13,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import javax.swing.ImageIcon;
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -29,8 +31,14 @@ public class menu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setSmoothScale();
     }
-
+    public void setSmoothScale(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\DELL\\Documents\\GitHub\\OOP-BTL-GROUP-6-FINAL-1\\src_code\\src\\resources\\main menu background.gif");
+        Image img = icon.getImage();
+        Image scaledImg = img.getScaledInstance(menubackground.getWidth(), menubackground.getHeight(), Image.SCALE_DEFAULT);
+        menubackground.setIcon(new ImageIcon(scaledImg));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,8 +73,10 @@ public class menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         MenuMainScreen = new javax.swing.JTabbedPane();
-        LatestUpdates = new javax.swing.JPanel();
+        Welcome = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        menubackground = new javax.swing.JLabel();
         AddBooks = new javax.swing.JPanel();
         Bookname_Field = new javax.swing.JTextField();
         Book_Name = new javax.swing.JLabel();
@@ -372,25 +382,45 @@ public class menu extends javax.swing.JFrame {
         MenuMainScreen.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("LATEST UPDATES");
+        jLabel1.setText("WELCOME TO GROUP 6 LIBRARY");
 
-        javax.swing.GroupLayout LatestUpdatesLayout = new javax.swing.GroupLayout(LatestUpdates);
-        LatestUpdates.setLayout(LatestUpdatesLayout);
-        LatestUpdatesLayout.setHorizontalGroup(
-            LatestUpdatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LatestUpdatesLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(554, Short.MAX_VALUE))
+        menubackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Documents\\GitHub\\OOP-BTL-GROUP-6-FINAL-1\\src_code\\src\\resources\\main menu background.gif")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menubackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        LatestUpdatesLayout.setVerticalGroup(
-            LatestUpdatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LatestUpdatesLayout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(menubackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
+        );
+
+        javax.swing.GroupLayout WelcomeLayout = new javax.swing.GroupLayout(Welcome);
+        Welcome.setLayout(WelcomeLayout);
+        WelcomeLayout.setHorizontalGroup(
+            WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(WelcomeLayout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(238, Short.MAX_VALUE))
+        );
+        WelcomeLayout.setVerticalGroup(
+            WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(WelcomeLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 394, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        MenuMainScreen.addTab("main", LatestUpdates);
+        MenuMainScreen.addTab("main", Welcome);
 
         Book_Name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Book_Name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -472,7 +502,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddBooksLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -695,7 +725,7 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Gender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addComponent(Username_Field))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AddReadersLayout.createSequentialGroup()
                         .addComponent(Contact_number)
@@ -1017,7 +1047,7 @@ public class menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CCCDReaderUpdate_Field))
                             .addComponent(jLabel11))))
-                .addGap(0, 249, Short.MAX_VALUE))
+                .addGap(0, 240, Short.MAX_VALUE))
         );
         UpdateReadersLayout.setVerticalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1133,7 +1163,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AuthorUpdateRadiobutton)
                             .addComponent(PublisherUpdateRadiobutton))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                         .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1336,7 +1366,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(RemoveReadersLayout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(jLabel9)))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         RemoveReadersLayout.setVerticalGroup(
             RemoveReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1521,7 +1551,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateReaderActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
-        MenuMainScreen.setSelectedComponent(LatestUpdates);
+        MenuMainScreen.setSelectedComponent(Welcome);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void AddUserbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserbuttonActionPerformed
@@ -2487,7 +2517,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField IDBookUpdate_Field;
     private javax.swing.JLabel ID_BOOK;
     private javax.swing.JTextField ID_Field;
-    private javax.swing.JPanel LatestUpdates;
     private javax.swing.JTabbedPane MenuMainScreen;
     private javax.swing.JRadioButton NameBookUpdateRadiobutton;
     private javax.swing.JRadioButton NameUpdateRadiobutton;
@@ -2525,6 +2554,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField UserRemove_Field;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField Username_Field;
+    private javax.swing.JPanel Welcome;
     private javax.swing.JPanel content_menubackground;
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
@@ -2545,7 +2575,9 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu_background;
+    private javax.swing.JLabel menubackground;
     private javax.swing.JTextField removeID_Field;
     // End of variables declaration//GEN-END:variables
 }

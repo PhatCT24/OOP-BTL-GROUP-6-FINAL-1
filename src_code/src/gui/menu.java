@@ -34,7 +34,7 @@ public class menu extends javax.swing.JFrame {
         setSmoothScale();
     }
     public void setSmoothScale(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\DELL\\Documents\\GitHub\\OOP-BTL-GROUP-6-FINAL-1\\src_code\\src\\resources\\main menu background.gif");
+        ImageIcon icon = new ImageIcon("src/resources/main menu background.gif");
         Image img = icon.getImage();
         Image scaledImg = img.getScaledInstance(menubackground.getWidth(), menubackground.getHeight(), Image.SCALE_DEFAULT);
         menubackground.setIcon(new ImageIcon(scaledImg));
@@ -384,7 +384,7 @@ public class menu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("WELCOME TO GROUP 6 LIBRARY");
 
-        menubackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Documents\\GitHub\\OOP-BTL-GROUP-6-FINAL-1\\src_code\\src\\resources\\main menu background.gif")); // NOI18N
+        menubackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/main menu background.gif"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

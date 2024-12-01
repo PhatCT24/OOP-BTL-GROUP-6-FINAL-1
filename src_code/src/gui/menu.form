@@ -432,8 +432,8 @@
                       <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="287" max="-2" attributes="0"/>
-                          <EmptySpace pref="238" max="32767" attributes="0"/>
+                          <Component id="welcomelabel" min="-2" pref="287" max="-2" attributes="0"/>
+                          <EmptySpace pref="249" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -441,7 +441,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="welcomelabel" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel1" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -450,7 +450,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="welcomelabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -470,7 +470,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="menubackground" pref="302" max="32767" attributes="0"/>
+                              <Component id="menubackground" pref="370" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -551,7 +551,7 @@
                                   <Component id="AddBookbutton" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
+                          <EmptySpace pref="79" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -942,7 +942,7 @@
                               <Component id="Gender_Field" pref="176" max="32767" attributes="0"/>
                               <Component id="Username_Field" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace pref="36" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="Contact_number" min="-2" max="-2" attributes="0"/>
@@ -1376,7 +1376,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="251" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1669,7 +1669,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="151" max="32767" attributes="0"/>
+                              <EmptySpace pref="162" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="UpdateBookInfo_Field" min="-2" pref="194" max="-2" attributes="0"/>
@@ -1687,17 +1687,15 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="NameBookUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="NameBookUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PublisherUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="UpdateBookInfo_Field" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                          <Component id="PublisherUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="AuthorUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="UpdateBookInfo_Field" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="UpdateBookInfobutton" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                                           <Component id="QuantityUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1706,7 +1704,10 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Component id="CategoryUpdateRadiobutton" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="CategoryUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AuthorUpdateRadiobutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1851,7 +1852,7 @@
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="172" max="32767" attributes="0"/>
+                          <EmptySpace pref="183" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2022,43 +2023,52 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" pref="171" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="AddTicketbutton" min="-2" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="TicketID" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="ADDTicketCCCD" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddReturn_date" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="AddReturn_Date_Field" alignment="0" max="32767" attributes="0"/>
-                              <Component id="ADDTicketCCCD_Field" alignment="0" max="32767" attributes="0"/>
-                              <Component id="AddTicketID_Field" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="64" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="AddBook_ID" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddBorrow_Date" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="AddBorrow_Date_Field" min="-2" pref="168" max="-2" attributes="0"/>
-                                      <Component id="AddBook_ID_Ticket_Field" min="-2" pref="168" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" pref="171" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="AddTicketbutton" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="TicketID" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ADDTicketCCCD" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AddReturn_date" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="AddReturn_Date_Field" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ADDTicketCCCD_Field" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="AddTicketID_Field" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="AddBook_ID" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="AddBorrow_Date" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="AddNoteTicket" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="AddBorrow_Date_Field" min="-2" pref="168" max="-2" attributes="0"/>
+                                              <Component id="AddBook_ID_Ticket_Field" min="-2" pref="168" max="-2" attributes="0"/>
+                                              <Component id="AddNoteTicket_Field" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                          <EmptySpace pref="89" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2066,34 +2076,30 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel18" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="AddReturn_date" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="AddTicketID_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="TicketID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="AddBook_ID_Ticket_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="AddBook_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="ADDTicketCCCD_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="ADDTicketCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="AddBorrow_Date_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="AddBorrow_Date" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="AddReturn_Date_Field" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Component id="AddTicketbutton" min="-2" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="AddTicketID_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="TicketID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddBook_ID_Ticket_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="AddBook_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="ADDTicketCCCD_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="ADDTicketCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddBorrow_Date_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="AddBorrow_Date" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="AddReturn_Date_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="AddReturn_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AddNoteTicket_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="AddNoteTicket" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                          <Component id="AddTicketbutton" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2183,6 +2189,17 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddTicketbuttonActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JTextField" name="AddNoteTicket_Field">
+                </Component>
+                <Component class="javax.swing.JLabel" name="AddNoteTicket">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="18" style="0"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="text" type="java.lang.String" value="Note"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="RemoveTickets">
@@ -2212,7 +2229,7 @@
                                   <Component id="RemoveBookbutton1" min="-2" pref="96" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="146" max="32767" attributes="0"/>
+                          <EmptySpace pref="157" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2227,7 +2244,7 @@
                               <Component id="ID_BOOK1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="RemoveBookbutton1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="272" max="32767" attributes="0"/>
+                          <EmptySpace pref="340" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2541,7 +2558,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="UpdateUserpanel1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UpdateTicketpanel" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -2550,12 +2567,12 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                                  <Component id="TicketUpdatelabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TicketIDUpdate" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TicketUpdate_Field" min="-2" pref="167" max="-2" attributes="0"/>
+                                  <Component id="TicketIDUpdate_Field" min="-2" pref="167" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="271" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="282" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
@@ -2570,13 +2587,13 @@
                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="TicketUpdate_Field" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="TicketUpdatelabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TicketIDUpdate_Field" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="TicketIDUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="UpdateUserpanel1" min="-2" pref="202" max="-2" attributes="0"/>
+                          <Component id="UpdateTicketpanel" min="-2" pref="202" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2591,7 +2608,7 @@
                     <Property name="text" type="java.lang.String" value="Choose the attribute you want to update:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="TicketUpdatelabel">
+                <Component class="javax.swing.JLabel" name="TicketIDUpdate">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
@@ -2599,12 +2616,12 @@
                     <Property name="text" type="java.lang.String" value="TicketID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="TicketUpdate_Field">
+                <Component class="javax.swing.JTextField" name="TicketIDUpdate_Field">
                   <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TicketUpdate_FieldKeyPressed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TicketIDUpdate_FieldKeyPressed"/>
                   </Events>
                 </Component>
-                <Container class="javax.swing.JPanel" name="UpdateUserpanel1">
+                <Container class="javax.swing.JPanel" name="UpdateTicketpanel">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">

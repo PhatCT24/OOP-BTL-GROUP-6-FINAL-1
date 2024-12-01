@@ -15,9 +15,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.Timer;
 /**
  *
  * @author DELL
@@ -32,9 +36,33 @@ public class menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setSmoothScale();
+        startColorAnimation();
         //đặt trạng thái panel của updateticket
         StatusComboBox1.setVisible(false);
         UpdateTicketInfo_Field.setVisible(false);
+    }
+    private Color[] rainbowColors = {
+        Color.RED,
+        Color.ORANGE,
+        Color.YELLOW,
+        Color.GREEN,
+        Color.CYAN,
+        Color.BLUE,
+        Color.MAGENTA
+    };
+    private int clrIndex = 0; 
+    public void startColorAnimation(){
+        Timer timer = new Timer(300, new ActionListener() {
+        @Override
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            // Cập nhật màu của JLabel hoặc JPanel
+            welcomelabel.setForeground(rainbowColors[clrIndex]);
+            
+            // Chuyển sang màu tiếp theo
+            clrIndex = (clrIndex + 1) % rainbowColors.length;
+        }
+    });
+    timer.start(); // Bắt đầu Timer
     }
     public void setSmoothScale(){
         ImageIcon icon = new ImageIcon("src/resources/main menu background.gif");
@@ -83,7 +111,7 @@ public class menu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         MenuMainScreen = new javax.swing.JTabbedPane();
         Welcome = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        welcomelabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         menubackground = new javax.swing.JLabel();
         AddBooks = new javax.swing.JPanel();
@@ -187,6 +215,8 @@ public class menu extends javax.swing.JFrame {
         AddBook_ID_Ticket_Field = new javax.swing.JTextField();
         AddBook_ID = new javax.swing.JLabel();
         AddTicketbutton = new javax.swing.JButton();
+        AddNoteTicket_Field = new javax.swing.JTextField();
+        AddNoteTicket = new javax.swing.JLabel();
         RemoveTickets = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         ID_BOOK1 = new javax.swing.JLabel();
@@ -208,9 +238,9 @@ public class menu extends javax.swing.JFrame {
         StatusComboBox = new javax.swing.JComboBox<>();
         UpdateTickets = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        TicketUpdatelabel = new javax.swing.JLabel();
-        TicketUpdate_Field = new javax.swing.JTextField();
-        UpdateUserpanel1 = new javax.swing.JPanel();
+        TicketIDUpdate = new javax.swing.JLabel();
+        TicketIDUpdate_Field = new javax.swing.JTextField();
+        UpdateTicketpanel = new javax.swing.JPanel();
         BookIDUpdateradiobutton = new javax.swing.JRadioButton();
         Borrow_dateUpdateradiobutton = new javax.swing.JRadioButton();
         CCCDUpdateradiobutton = new javax.swing.JRadioButton();
@@ -457,8 +487,8 @@ public class menu extends javax.swing.JFrame {
 
         MenuMainScreen.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("WELCOME TO GROUP 6 LIBRARY");
+        welcomelabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        welcomelabel.setText("WELCOME TO GROUP 6 LIBRARY");
 
         menubackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/main menu background.gif"))); // NOI18N
 
@@ -472,7 +502,7 @@ public class menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(menubackground, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+                .addComponent(menubackground, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout WelcomeLayout = new javax.swing.GroupLayout(Welcome);
@@ -482,14 +512,14 @@ public class menu extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(WelcomeLayout.createSequentialGroup()
                 .addGap(219, 219, 219)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addComponent(welcomelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         WelcomeLayout.setVerticalGroup(
             WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WelcomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(welcomelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -577,7 +607,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddBooksLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -800,7 +830,7 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Gender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addComponent(Username_Field))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AddReadersLayout.createSequentialGroup()
                         .addComponent(Contact_number)
@@ -1122,7 +1152,7 @@ public class menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CCCDReaderUpdate_Field))
                             .addComponent(jLabel11))))
-                .addGap(0, 240, Short.MAX_VALUE))
+                .addGap(0, 251, Short.MAX_VALUE))
         );
         UpdateReadersLayout.setVerticalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1238,7 +1268,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AuthorUpdateRadiobutton)
                             .addComponent(PublisherUpdateRadiobutton))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                         .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1251,23 +1281,23 @@ public class menu extends javax.swing.JFrame {
             UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(NameBookUpdateRadiobutton)
+                .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NameBookUpdateRadiobutton)
+                    .addComponent(PublisherUpdateRadiobutton))
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PublisherUpdateRadiobutton))
-                        .addGap(27, 27, 27)
-                        .addComponent(AuthorUpdateRadiobutton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
                         .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(UpdateBookInfobutton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(QuantityUpdateRadiobutton))
                         .addGap(22, 22, 22))
                     .addGroup(UpdateBookpanelLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(CategoryUpdateRadiobutton)
+                        .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CategoryUpdateRadiobutton)
+                            .addComponent(AuthorUpdateRadiobutton))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -1353,7 +1383,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(RemoveReadersLayout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(jLabel9)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
         RemoveReadersLayout.setVerticalGroup(
             RemoveReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1466,66 +1496,75 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        AddNoteTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AddNoteTicket.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AddNoteTicket.setText("Note");
+
         javax.swing.GroupLayout AddTicketsLayout = new javax.swing.GroupLayout(AddTickets);
         AddTickets.setLayout(AddTicketsLayout);
         AddTicketsLayout.setHorizontalGroup(
             AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTicketsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(291, 291, 291))
             .addGroup(AddTicketsLayout.createSequentialGroup()
-                .addGap(272, 272, 272)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(AddTicketsLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TicketID)
-                    .addComponent(ADDTicketCCCD)
-                    .addComponent(AddReturn_date))
-                .addGap(18, 18, 18)
-                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(AddReturn_Date_Field, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddTicketID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddBook_ID, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AddBorrow_Date, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddTicketsLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(287, 287, 287)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddTicketsLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TicketID)
+                            .addComponent(ADDTicketCCCD)
+                            .addComponent(AddReturn_date))
+                        .addGap(18, 18, 18)
+                        .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(AddReturn_Date_Field, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddTicketID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
                         .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddBook_ID_Ticket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(AddTicketsLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(88, 88, 88))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTicketsLayout.createSequentialGroup()
+                                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AddBook_ID, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(AddBorrow_Date, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(180, 180, 180))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTicketsLayout.createSequentialGroup()
+                                .addComponent(AddNoteTicket)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AddBook_ID_Ticket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AddNoteTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         AddTicketsLayout.setVerticalGroup(
             AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddTicketsLayout.createSequentialGroup()
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AddTicketsLayout.createSequentialGroup()
-                        .addComponent(AddReturn_date)
-                        .addGap(171, 171, 171))
-                    .addGroup(AddTicketsLayout.createSequentialGroup()
-                        .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AddTicketID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TicketID)
-                            .addComponent(AddBook_ID_Ticket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddBook_ID))
-                        .addGap(18, 18, 18)
-                        .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ADDTicketCCCD)
-                            .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddBorrow_Date))
-                        .addGap(18, 18, 18)
-                        .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AddReturn_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(159, 159, 159))))
+                .addGap(37, 37, 37)
+                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddTicketID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TicketID)
+                    .addComponent(AddBook_ID_Ticket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBook_ID))
+                .addGap(18, 18, 18)
+                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ADDTicketCCCD)
+                    .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBorrow_Date))
+                .addGap(18, 18, 18)
+                .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddReturn_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddReturn_date)
+                    .addComponent(AddNoteTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddNoteTicket))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         MenuMainScreen.addTab("tab11", AddTickets);
@@ -1569,7 +1608,7 @@ public class menu extends javax.swing.JFrame {
                         .addComponent(removeID_Field1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(RemoveBookbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         RemoveTicketsLayout.setVerticalGroup(
             RemoveTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1581,7 +1620,7 @@ public class menu extends javax.swing.JFrame {
                     .addComponent(removeID_Field1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ID_BOOK1)
                     .addComponent(RemoveBookbutton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("tab12", RemoveTickets);
@@ -1694,17 +1733,17 @@ public class menu extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel20.setText("Choose the attribute you want to update:");
 
-        TicketUpdatelabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        TicketUpdatelabel.setText("TicketID");
+        TicketIDUpdate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TicketIDUpdate.setText("TicketID");
 
-        TicketUpdate_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+        TicketIDUpdate_Field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                TicketUpdate_FieldKeyPressed(evt);
+                TicketIDUpdate_FieldKeyPressed(evt);
             }
         });
 
-        UpdateUserpanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        UpdateUserpanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UpdateTicketpanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        UpdateTicketpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ChooseUpdateTicketbuttongroup.add(BookIDUpdateradiobutton);
         BookIDUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1714,7 +1753,7 @@ public class menu extends javax.swing.JFrame {
                 BookIDUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(BookIDUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 90, 137, -1));
+        UpdateTicketpanel.add(BookIDUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 90, 137, -1));
 
         ChooseUpdateTicketbuttongroup.add(Borrow_dateUpdateradiobutton);
         Borrow_dateUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1724,7 +1763,7 @@ public class menu extends javax.swing.JFrame {
                 Borrow_dateUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(Borrow_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 159, -1, -1));
+        UpdateTicketpanel.add(Borrow_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 159, -1, -1));
 
         ChooseUpdateTicketbuttongroup.add(CCCDUpdateradiobutton);
         CCCDUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1734,14 +1773,14 @@ public class menu extends javax.swing.JFrame {
                 CCCDUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(CCCDUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 24, -1, -1));
+        UpdateTicketpanel.add(CCCDUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 24, -1, -1));
 
         UpdateTicketInfo_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateTicketInfo_FieldActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(UpdateTicketInfo_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 181, 36));
+        UpdateTicketpanel.add(UpdateTicketInfo_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 181, 36));
 
         UpdateUserInfobutton1.setBackground(new java.awt.Color(102, 0, 0));
         UpdateUserInfobutton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1757,7 +1796,7 @@ public class menu extends javax.swing.JFrame {
                 UpdateUserInfobutton1KeyPressed(evt);
             }
         });
-        UpdateUserpanel1.add(UpdateUserInfobutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 143, 114, 41));
+        UpdateTicketpanel.add(UpdateUserInfobutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 143, 114, 41));
 
         ChooseUpdateTicketbuttongroup.add(Return_dateUpdateradiobutton);
         Return_dateUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1767,7 +1806,7 @@ public class menu extends javax.swing.JFrame {
                 Return_dateUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(Return_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 24, -1, -1));
+        UpdateTicketpanel.add(Return_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 24, -1, -1));
 
         ChooseUpdateTicketbuttongroup.add(StatusUpdateradiobutton);
         StatusUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1777,7 +1816,7 @@ public class menu extends javax.swing.JFrame {
                 StatusUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(StatusUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 90, 137, -1));
+        UpdateTicketpanel.add(StatusUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 90, 137, -1));
 
         StatusComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         StatusComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Returned", "Overdue", "Due Today", "Returned" }));
@@ -1786,7 +1825,7 @@ public class menu extends javax.swing.JFrame {
                 StatusComboBox1ActionPerformed(evt);
             }
         });
-        UpdateUserpanel1.add(StatusComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 160, 30));
+        UpdateTicketpanel.add(StatusComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 160, 30));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel21.setText("UPDATE TICKET");
@@ -1795,7 +1834,7 @@ public class menu extends javax.swing.JFrame {
         UpdateTickets.setLayout(UpdateTicketsLayout);
         UpdateTicketsLayout.setHorizontalGroup(
             UpdateTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(UpdateUserpanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(UpdateTicketpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(UpdateTicketsLayout.createSequentialGroup()
                 .addGroup(UpdateTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(UpdateTicketsLayout.createSequentialGroup()
@@ -1803,10 +1842,10 @@ public class menu extends javax.swing.JFrame {
                         .addComponent(jLabel20))
                     .addGroup(UpdateTicketsLayout.createSequentialGroup()
                         .addGap(225, 225, 225)
-                        .addComponent(TicketUpdatelabel)
+                        .addComponent(TicketIDUpdate)
                         .addGap(18, 18, 18)
-                        .addComponent(TicketUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 271, Short.MAX_VALUE))
+                        .addComponent(TicketIDUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 282, Short.MAX_VALUE))
             .addGroup(UpdateTicketsLayout.createSequentialGroup()
                 .addGap(279, 279, 279)
                 .addComponent(jLabel21)
@@ -1818,12 +1857,12 @@ public class menu extends javax.swing.JFrame {
                 .addComponent(jLabel21)
                 .addGap(18, 18, 18)
                 .addGroup(UpdateTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TicketUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TicketUpdatelabel))
+                    .addComponent(TicketIDUpdate_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TicketIDUpdate))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel20)
                 .addGap(19, 19, 19)
-                .addComponent(UpdateUserpanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UpdateTicketpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2848,9 +2887,9 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveBookbutton1ActionPerformed
 
-    private void TicketUpdate_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TicketUpdate_FieldKeyPressed
+    private void TicketIDUpdate_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TicketIDUpdate_FieldKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TicketUpdate_FieldKeyPressed
+    }//GEN-LAST:event_TicketIDUpdate_FieldKeyPressed
 
     private void BookIDUpdateradiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookIDUpdateradiobuttonActionPerformed
         StatusComboBox1.setVisible(false);
@@ -2942,6 +2981,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel AddBooks;
     private javax.swing.JLabel AddBorrow_Date;
     private javax.swing.JTextField AddBorrow_Date_Field;
+    private javax.swing.JLabel AddNoteTicket;
+    private javax.swing.JTextField AddNoteTicket_Field;
     private javax.swing.JMenuItem AddReader;
     private javax.swing.JPanel AddReaders;
     private javax.swing.JTextField AddReturn_Date_Field;
@@ -3045,10 +3086,10 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane TicketBorrowScrollPane;
     private javax.swing.JTable TicketBorrowTable;
     private javax.swing.JLabel TicketID;
+    private javax.swing.JLabel TicketIDUpdate;
+    private javax.swing.JTextField TicketIDUpdate_Field;
     private javax.swing.JTextField TicketID_Field;
     private javax.swing.JPopupMenu TicketPopUpMenu;
-    private javax.swing.JTextField TicketUpdate_Field;
-    private javax.swing.JLabel TicketUpdatelabel;
     private javax.swing.JButton ToBookMenu;
     private javax.swing.JButton ToBorrowTicketMenu;
     private javax.swing.JButton ToCustomerMenu;
@@ -3062,12 +3103,12 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel UpdateReaders;
     private javax.swing.JMenuItem UpdateTicket;
     private javax.swing.JTextField UpdateTicketInfo_Field;
+    private javax.swing.JPanel UpdateTicketpanel;
     private javax.swing.JPanel UpdateTickets;
     private javax.swing.JTextField UpdateUserInfo_Field;
     private javax.swing.JButton UpdateUserInfobutton;
     private javax.swing.JButton UpdateUserInfobutton1;
     private javax.swing.JPanel UpdateUserpanel;
-    private javax.swing.JPanel UpdateUserpanel1;
     private javax.swing.JTextField UserRemove_Field;
     private javax.swing.JLabel Username;
     private javax.swing.JTextField Username_Field;
@@ -3076,7 +3117,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPanel design_by;
     private javax.swing.JLabel group_6;
     private javax.swing.JLabel home_icon;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -3102,5 +3142,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JLabel menubackground;
     private javax.swing.JTextField removeID_Field;
     private javax.swing.JTextField removeID_Field1;
+    private javax.swing.JLabel welcomelabel;
     // End of variables declaration//GEN-END:variables
 }

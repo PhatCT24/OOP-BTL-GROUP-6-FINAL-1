@@ -2023,11 +2023,6 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="AddTicketbutton" min="-2" pref="148" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -2044,7 +2039,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="AddReturn_Date_Field" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="ADDTicketCCCD_Field" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="AddTicketCCCD_Field" alignment="0" max="32767" attributes="0"/>
                                       <Component id="AddTicketID_Field" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -2067,8 +2062,12 @@
                                       </Group>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Component id="AddTicketbutton" min="-2" pref="148" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="89" max="32767" attributes="0"/>
+                          <EmptySpace pref="79" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2085,7 +2084,7 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ADDTicketCCCD_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="AddTicketCCCD_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="ADDTicketCCCD" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="AddBorrow_Date_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="AddBorrow_Date" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2097,9 +2096,9 @@
                               <Component id="AddNoteTicket_Field" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="AddNoteTicket" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="AddTicketbutton" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <EmptySpace pref="61" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2126,6 +2125,7 @@
                 <Component class="javax.swing.JTextField" name="AddTicketID_Field">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddTicketID_FieldActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddTicketID_FieldKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="TicketID">
@@ -2146,9 +2146,15 @@
                     <Property name="text" type="java.lang.String" value="CCCD"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="ADDTicketCCCD_Field">
+                <Component class="javax.swing.JTextField" name="AddTicketCCCD_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddTicketCCCD_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AddReturn_Date_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddReturn_Date_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddBorrow_Date">
                   <Properties>
@@ -2160,8 +2166,14 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AddBorrow_Date_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddBorrow_Date_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AddBook_ID_Ticket_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddBook_ID_Ticket_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddBook_ID">
                   <Properties>
@@ -2190,6 +2202,9 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="AddNoteTicket_Field">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AddNoteTicket_FieldKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="AddNoteTicket">
                   <Properties>
@@ -2340,6 +2355,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BookIDTicket_FieldKeyPressed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="550" y="40" width="160" height="32"/>
@@ -2365,6 +2383,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CCCDTicket_FieldKeyPressed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="110" y="40" width="150" height="32"/>
@@ -2489,6 +2510,9 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TicketID_FieldKeyPressed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="110" y="90" width="150" height="30"/>
@@ -2527,11 +2551,12 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Not Returned"/>
-                        <StringItem index="1" value="Overdue"/>
-                        <StringItem index="2" value="Due Today"/>
-                        <StringItem index="3" value="Returned"/>
+                      <StringArray count="5">
+                        <StringItem index="0" value="&lt;none&gt;"/>
+                        <StringItem index="1" value="Not Returned"/>
+                        <StringItem index="2" value="Overdue"/>
+                        <StringItem index="3" value="Due Today"/>
+                        <StringItem index="4" value="Returned"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2661,7 +2686,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Borrow_date"/>
+                        <Property name="text" type="java.lang.String" value="Borrow_date(dd/MM/yyyy)"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Borrow_dateUpdateradiobuttonActionPerformed"/>
@@ -2697,7 +2722,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="410" y="40" width="181" height="36"/>
+                          <AbsoluteConstraints x="490" y="40" width="181" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2720,7 +2745,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="442" y="143" width="114" height="41"/>
+                          <AbsoluteConstraints x="530" y="140" width="114" height="41"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2732,14 +2757,14 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Return_date"/>
+                        <Property name="text" type="java.lang.String" value="Return_date(dd/MM/yyyy)"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Return_dateUpdateradiobuttonActionPerformed"/>
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="163" y="24" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="220" y="20" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2758,7 +2783,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="163" y="90" width="137" height="-1"/>
+                          <AbsoluteConstraints x="220" y="90" width="137" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2784,7 +2809,26 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="420" y="40" width="160" height="30"/>
+                          <AbsoluteConstraints x="500" y="40" width="160" height="30"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="javax.swing.JRadioButton" name="NoteUpdateRadiobutton">
+                      <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="ChooseUpdateTicketbuttongroup"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Note"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NoteUpdateRadiobuttonActionPerformed"/>
+                      </Events>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="220" y="160" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>

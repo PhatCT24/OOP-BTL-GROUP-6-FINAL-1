@@ -18,6 +18,8 @@ import java.awt.Image;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -210,7 +212,7 @@ public class menu extends javax.swing.JFrame {
         AddTicketID_Field = new javax.swing.JTextField();
         TicketID = new javax.swing.JLabel();
         ADDTicketCCCD = new javax.swing.JLabel();
-        ADDTicketCCCD_Field = new javax.swing.JTextField();
+        AddTicketCCCD_Field = new javax.swing.JTextField();
         AddReturn_Date_Field = new javax.swing.JTextField();
         AddBorrow_Date = new javax.swing.JLabel();
         AddBorrow_Date_Field = new javax.swing.JTextField();
@@ -251,6 +253,7 @@ public class menu extends javax.swing.JFrame {
         Return_dateUpdateradiobutton = new javax.swing.JRadioButton();
         StatusUpdateradiobutton = new javax.swing.JRadioButton();
         StatusComboBox1 = new javax.swing.JComboBox<>();
+        NoteUpdateRadiobutton = new javax.swing.JRadioButton();
         jLabel21 = new javax.swing.JLabel();
 
         BookPopUpMenu.setBackground(new java.awt.Color(102, 0, 0));
@@ -1471,6 +1474,11 @@ public class menu extends javax.swing.JFrame {
                 AddTicketID_FieldActionPerformed(evt);
             }
         });
+        AddTicketID_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddTicketID_FieldKeyPressed(evt);
+            }
+        });
 
         TicketID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TicketID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1480,9 +1488,33 @@ public class menu extends javax.swing.JFrame {
         ADDTicketCCCD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ADDTicketCCCD.setText("CCCD");
 
+        AddTicketCCCD_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddTicketCCCD_FieldKeyPressed(evt);
+            }
+        });
+
+        AddReturn_Date_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddReturn_Date_FieldKeyPressed(evt);
+            }
+        });
+
         AddBorrow_Date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         AddBorrow_Date.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AddBorrow_Date.setText("Borrow_date");
+
+        AddBorrow_Date_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddBorrow_Date_FieldKeyPressed(evt);
+            }
+        });
+
+        AddBook_ID_Ticket_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddBook_ID_Ticket_FieldKeyPressed(evt);
+            }
+        });
 
         AddBook_ID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         AddBook_ID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1498,6 +1530,12 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
+        AddNoteTicket_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                AddNoteTicket_FieldKeyPressed(evt);
+            }
+        });
+
         AddNoteTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         AddNoteTicket.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AddNoteTicket.setText("Note");
@@ -1506,10 +1544,6 @@ public class menu extends javax.swing.JFrame {
         AddTickets.setLayout(AddTicketsLayout);
         AddTicketsLayout.setHorizontalGroup(
             AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTicketsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(291, 291, 291))
             .addGroup(AddTicketsLayout.createSequentialGroup()
                 .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddTicketsLayout.createSequentialGroup()
@@ -1524,7 +1558,7 @@ public class menu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(AddReturn_Date_Field, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddTicketCCCD_Field, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AddTicketID_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(79, 79, 79)
                         .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1539,8 +1573,11 @@ public class menu extends javax.swing.JFrame {
                                 .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(AddBook_ID_Ticket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AddNoteTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                                    .addComponent(AddNoteTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(AddTicketsLayout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         AddTicketsLayout.setVerticalGroup(
             AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1554,7 +1591,7 @@ public class menu extends javax.swing.JFrame {
                     .addComponent(AddBook_ID))
                 .addGap(18, 18, 18)
                 .addGroup(AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ADDTicketCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddTicketCCCD_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ADDTicketCCCD)
                     .addComponent(AddBorrow_Date_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddBorrow_Date))
@@ -1564,9 +1601,9 @@ public class menu extends javax.swing.JFrame {
                     .addComponent(AddReturn_date)
                     .addComponent(AddNoteTicket_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddNoteTicket))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("tab11", AddTickets);
@@ -1638,6 +1675,11 @@ public class menu extends javax.swing.JFrame {
         FindTickets.add(CCCDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         BookIDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        BookIDTicket_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BookIDTicket_FieldKeyPressed(evt);
+            }
+        });
         FindTickets.add(BookIDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 160, 32));
 
         BookIDTicket.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -1645,6 +1687,11 @@ public class menu extends javax.swing.JFrame {
         FindTickets.add(BookIDTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
 
         CCCDTicket_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CCCDTicket_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                CCCDTicket_FieldKeyPressed(evt);
+            }
+        });
         FindTickets.add(CCCDTicket_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 32));
 
         TicketBorrowTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1716,6 +1763,11 @@ public class menu extends javax.swing.JFrame {
         FindTickets.add(ReturnTicketButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 200, 31));
 
         TicketID_Field.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        TicketID_Field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TicketID_FieldKeyPressed(evt);
+            }
+        });
         FindTickets.add(TicketID_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 150, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -1727,7 +1779,7 @@ public class menu extends javax.swing.JFrame {
         FindTickets.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, -1, -1));
 
         StatusComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        StatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Returned", "Overdue", "Due Today", "Returned" }));
+        StatusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<none>", "Not Returned", "Overdue", "Due Today", "Returned" }));
         FindTickets.add(StatusComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 160, 30));
 
         MenuMainScreen.addTab("add borrow", FindTickets);
@@ -1759,7 +1811,7 @@ public class menu extends javax.swing.JFrame {
 
         ChooseUpdateTicketbuttongroup.add(Borrow_dateUpdateradiobutton);
         Borrow_dateUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Borrow_dateUpdateradiobutton.setText("Borrow_date");
+        Borrow_dateUpdateradiobutton.setText("Borrow_date(dd/MM/yyyy)");
         Borrow_dateUpdateradiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Borrow_dateUpdateradiobuttonActionPerformed(evt);
@@ -1782,7 +1834,7 @@ public class menu extends javax.swing.JFrame {
                 UpdateTicketInfo_FieldActionPerformed(evt);
             }
         });
-        UpdateTicketpanel.add(UpdateTicketInfo_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 181, 36));
+        UpdateTicketpanel.add(UpdateTicketInfo_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 181, 36));
 
         UpdateUserInfobutton1.setBackground(new java.awt.Color(102, 0, 0));
         UpdateUserInfobutton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1798,17 +1850,17 @@ public class menu extends javax.swing.JFrame {
                 UpdateUserInfobutton1KeyPressed(evt);
             }
         });
-        UpdateTicketpanel.add(UpdateUserInfobutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 143, 114, 41));
+        UpdateTicketpanel.add(UpdateUserInfobutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 114, 41));
 
         ChooseUpdateTicketbuttongroup.add(Return_dateUpdateradiobutton);
         Return_dateUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Return_dateUpdateradiobutton.setText("Return_date");
+        Return_dateUpdateradiobutton.setText("Return_date(dd/MM/yyyy)");
         Return_dateUpdateradiobutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Return_dateUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateTicketpanel.add(Return_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 24, -1, -1));
+        UpdateTicketpanel.add(Return_dateUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         ChooseUpdateTicketbuttongroup.add(StatusUpdateradiobutton);
         StatusUpdateradiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1818,7 +1870,7 @@ public class menu extends javax.swing.JFrame {
                 StatusUpdateradiobuttonActionPerformed(evt);
             }
         });
-        UpdateTicketpanel.add(StatusUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 90, 137, -1));
+        UpdateTicketpanel.add(StatusUpdateradiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 137, -1));
 
         StatusComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         StatusComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Returned", "Overdue", "Due Today", "Returned" }));
@@ -1827,7 +1879,17 @@ public class menu extends javax.swing.JFrame {
                 StatusComboBox1ActionPerformed(evt);
             }
         });
-        UpdateTicketpanel.add(StatusComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 160, 30));
+        UpdateTicketpanel.add(StatusComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 160, 30));
+
+        ChooseUpdateTicketbuttongroup.add(NoteUpdateRadiobutton);
+        NoteUpdateRadiobutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NoteUpdateRadiobutton.setText("Note");
+        NoteUpdateRadiobutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoteUpdateRadiobuttonActionPerformed(evt);
+            }
+        });
+        UpdateTicketpanel.add(NoteUpdateRadiobutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel21.setText("UPDATE TICKET");
@@ -2120,8 +2182,7 @@ public class menu extends javax.swing.JFrame {
             book.getAuthor(),
             book.getQuantity()
         });
-    }        
-        
+    }
     }//GEN-LAST:event_FindBookbuttonActionPerformed
 
     private void ContactNumberUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactNumberUpdateRadiobuttonActionPerformed
@@ -2849,7 +2910,7 @@ public class menu extends javax.swing.JFrame {
     private void FindTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindTicketActionPerformed
         MenuMainScreen.setSelectedComponent(FindTickets);
         DefaultTableModel ticketTable = new DefaultTableModel(
-        new Object[]{"TicketID", "CCCD", "BookID", "Borrow Date", "Return Date", "Status"}, 0
+        new Object[]{"TicketID", "CCCD", "BookID", "Borrow Date", "Return Date", "Status", "Note"}, 0
     );
         Collections.sort(Ticket.getTicketList(), new Comparator<Ticket>(){
             @Override
@@ -2859,7 +2920,7 @@ public class menu extends javax.swing.JFrame {
         });
         for (Ticket t : Ticket.getTicketList()) {
         ticketTable.addRow(new Object[]{
-            t.getTicketID(),t.getReaderCCCD(),t.getBookID(),t.getBorrow_dateAsString(),t.getReturn_dateAsString(),t.getStatus()
+            t.getTicketID(),t.getReaderCCCD(),t.getBookID(),t.getBorrow_dateAsString(),t.getReturn_dateAsString(),t.getStatus(),t.getNote()
         });
     }
     TicketBorrowTable.setModel(ticketTable);
@@ -2870,11 +2931,125 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateTicketActionPerformed
 
     private void ReturnTicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnTicketButtonActionPerformed
-        // TODO add your handling code here:
+        String readerID = CCCDTicket_Field.getText();
+        String bookID = BookIDTicket_Field.getText();
+        String ticketID = TicketID_Field.getText();
+        String status = (String)StatusComboBox.getSelectedItem();
+        
+        
+        
+        readerID = readerID.isEmpty() ? null : readerID;
+        bookID = bookID.isEmpty() ? null : bookID;
+        ticketID = ticketID.isEmpty() ? null : ticketID;
+        status = (status == null || status.equals("<none>")) ? null : status;
+        // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+        ArrayList<Ticket> filteredTickets = Admin.FINDTICKETS(ticketID, readerID, bookID, status);
+        DefaultTableModel model = (DefaultTableModel) TicketBorrowTable.getModel();
+        model.setRowCount(0);
+        for (Ticket ticket : filteredTickets) {
+        model.addRow(new Object[]{
+            ticket.getTicketID(),
+            ticket.getReaderCCCD(),
+            ticket.getBookID(),
+            ticket.getBorrow_dateAsString(),
+            ticket.getReturn_dateAsString(),
+            ticket.getStatus(),
+            ticket.getNote()
+        });
+    }
+        TicketBorrowTable.setModel(model);
     }//GEN-LAST:event_ReturnTicketButtonActionPerformed
+    public String setString(String s){
+        String[] a = s.split("/");
+        s = "";
+        while (a[0].length() < 2) a[0] = "0" + a[0];
+        s += a[0] + "/";
+        while (a[1].length() < 2) a[1] = "0" + a[1];
+        s += a[1] + "/";
+        while (a[2].length() < 4) a[2] = "0" + a[2];
+        s += a[2];
 
+        return s;
+    }
     private void AddTicketbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTicketbuttonActionPerformed
-        // TODO add your handling code here:
+        if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                        break;
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
     }//GEN-LAST:event_AddTicketbuttonActionPerformed
 
     private void AddTicketID_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTicketID_FieldActionPerformed
@@ -2883,10 +3058,49 @@ public class menu extends javax.swing.JFrame {
 
     private void removeID_Field1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_removeID_Field1KeyPressed
         // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this ticket from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (confirm == JOptionPane.YES_OPTION){
+            if (Admin.REMOVETICKETS(removeID_Field1.getText()) == true){
+                JOptionPane.showMessageDialog(null, "Ticket removed successfully!","Ticket removed", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.equals(removeID_Field1.getText())){
+                        b.setQuantity(b.getQuantity()+1);
+                    }
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Ticket does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                removeID_Field.requestFocus();
+            }
+            removeID_Field.setText("");
+        }
+        else{
+            removeID_Field.requestFocus();
+        }
+        }
     }//GEN-LAST:event_removeID_Field1KeyPressed
 
     private void RemoveBookbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbutton1ActionPerformed
-        // TODO add your handling code here:
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this ticket from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (confirm == JOptionPane.YES_OPTION){
+            String id = removeID_Field1.getText();
+            if (Admin.REMOVETICKETS(removeID_Field1.getText()) == true){
+                
+                JOptionPane.showMessageDialog(null, "Ticket removed successfully!","Ticket removed", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Ticket does not exist!","Error", JOptionPane.ERROR_MESSAGE);
+                removeID_Field.requestFocus();
+            }
+            removeID_Field.setText("");
+        }
+        else{
+            removeID_Field.requestFocus();
+        }
     }//GEN-LAST:event_RemoveBookbutton1ActionPerformed
 
     private void TicketIDUpdate_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TicketIDUpdate_FieldKeyPressed
@@ -2913,7 +3127,47 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateTicketInfo_FieldActionPerformed
 
     private void UpdateUserInfobutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobutton1ActionPerformed
-        // TODO add your handling code here:
+        String id = TicketIDUpdate_Field.getText();
+        String updated_info = UpdateTicketInfo_Field.getText();
+        String status_update = (String)StatusComboBox1.getSelectedItem();
+        String query = null;
+        if ((id.isEmpty() || updated_info.isEmpty()) && !StatusUpdateradiobutton.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both the Ticket ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        //chọn thuộc tính update
+        if (CCCDUpdateradiobutton.isSelected()) {
+            query = "cccd";
+        } else if (BookIDUpdateradiobutton.isSelected()) {
+            query = "bookID";
+        } else if (Borrow_dateUpdateradiobutton.isSelected()) {
+            query = "borrow_date";
+        } else if (Return_dateUpdateradiobutton.isSelected()) {
+            query = "return_date";
+        } else if (StatusUpdateradiobutton.isSelected()) {
+            query = "status";
+            updated_info = status_update;
+        } else if (NoteUpdateRadiobutton.isSelected()){
+            query = "note";
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        boolean ok = false;      
+        for (Ticket t : Ticket.getTicketList()){
+            if (t.getTicketID().equals(id)){
+                ok = true;
+                break;
+            }
+        }
+        if (ok == false){
+            JOptionPane.showMessageDialog(this, "Ticket ID does not match with the database", "Error", JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Admin.UPDATETICKETS(id, query, updated_info);
+            JOptionPane.showMessageDialog(this, "Ticket information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_UpdateUserInfobutton1ActionPerformed
 
     private void UpdateUserInfobutton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UpdateUserInfobutton1KeyPressed
@@ -2933,6 +3187,607 @@ public class menu extends javax.swing.JFrame {
     private void StatusComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatusComboBox1ActionPerformed
 
     }//GEN-LAST:event_StatusComboBox1ActionPerformed
+
+    private void NoteUpdateRadiobuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoteUpdateRadiobuttonActionPerformed
+        StatusComboBox1.setVisible(false);
+        UpdateTicketInfo_Field.setVisible(true);
+    }//GEN-LAST:event_NoteUpdateRadiobuttonActionPerformed
+
+    private void AddTicketID_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddTicketID_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
+        }
+    }//GEN-LAST:event_AddTicketID_FieldKeyPressed
+
+    private void AddBook_ID_Ticket_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddBook_ID_Ticket_FieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
+        }
+    }//GEN-LAST:event_AddBook_ID_Ticket_FieldKeyPressed
+
+    private void AddTicketCCCD_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddTicketCCCD_FieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
+        }
+    }//GEN-LAST:event_AddTicketCCCD_FieldKeyPressed
+
+    private void AddBorrow_Date_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddBorrow_Date_FieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }        
+        }
+    }//GEN-LAST:event_AddBorrow_Date_FieldKeyPressed
+
+    private void AddReturn_Date_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddReturn_Date_FieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
+        }
+    }//GEN-LAST:event_AddReturn_Date_FieldKeyPressed
+
+    private void AddNoteTicket_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AddNoteTicket_FieldKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (AddTicketID_Field.getText().isEmpty() || AddBook_ID_Ticket_Field.getText().isEmpty() || AddTicketCCCD_Field.getText().isEmpty() || AddBorrow_Date_Field.getText().isEmpty() || AddReturn_Date_Field.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields must be filled in", "Error", JOptionPane.ERROR_MESSAGE);
+            AddTicketID_Field.requestFocus();
+        }else{
+            int ok = 0;
+            int okcccd = 0;
+            int okbookid = 0;
+            String ticketID = AddTicketID_Field.getText();
+            String bookID = AddBook_ID_Ticket_Field.getText();
+            String cccd = AddTicketCCCD_Field.getText();
+            String borrow_date_as_string = setString(AddBorrow_Date_Field.getText());
+            String return_date_as_string = setString(AddReturn_Date_Field.getText());
+            String note = AddNoteTicket_Field.getText().isEmpty() ? "<no note>" : AddNoteTicket_Field.getText(); //if note field is empty, note = "<no note>", otherwise note = textfield
+            LocalDate borrow_date = LocalDate.parse(borrow_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            LocalDate return_date = LocalDate.parse(return_date_as_string, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            String status = "";
+            for (Reader r : Reader.ReadersList()){
+                if (cccd.equals(r.getCccd())){
+                    okcccd = 1; 
+                    break;
+                }
+            }
+            for (Books b : Books.storage()){
+                if (bookID.equals(b.getID()) && b.getQuantity() != 0){
+                    okbookid = 1;
+                    break;
+                }
+            }
+            if (return_date.isBefore(borrow_date) || return_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Return date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (borrow_date.isAfter(return_date) || borrow_date.isBefore(LocalDate.now())){
+                JOptionPane.showMessageDialog(null, "Borrow date is invalid","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okcccd == 0){
+                JOptionPane.showMessageDialog(null, "Ticket must be created for a registered Reader. Please check the ReaderID","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else if (okbookid == 0){
+                JOptionPane.showMessageDialog(null, "This book does not exist or is not available for request","Error", JOptionPane.ERROR_MESSAGE);
+                AddTicketID_Field.requestFocus();
+                return;
+            }
+            else{
+                if (return_date.isAfter(LocalDate.now())) status = "Not Returned";
+                else if (return_date.equals(LocalDate.now())) status = "Due Today";
+            }
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    JOptionPane.showMessageDialog(null, "There's already a ticket with the same ID. Please change ID","Error", JOptionPane.ERROR_MESSAGE);
+                    AddTicketID_Field.requestFocus();
+                    ok++;
+                    break;
+                }
+            }
+            if (ok == 0){
+                Ticket ticket = new Ticket(ticketID, cccd, bookID, borrow_date, return_date, status, note);
+                Admin.ADDTICKETS(ticket);
+                JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        b.setQuantity(b.getQuantity()-1);
+                    }
+                }
+                AddTicketID_Field.setText("");
+                AddBook_ID_Ticket_Field.setText("");
+                AddTicketCCCD_Field.setText("");
+                AddBorrow_Date_Field.setText("");
+                AddReturn_Date_Field.setText("");
+                AddNoteTicket_Field.setText("");
+            }
+        }
+        }
+    }//GEN-LAST:event_AddNoteTicket_FieldKeyPressed
+
+    private void CCCDTicket_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CCCDTicket_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String readerID = CCCDTicket_Field.getText();
+            String bookID = BookIDTicket_Field.getText();
+            String ticketID = TicketID_Field.getText();
+            String status = (String)StatusComboBox.getSelectedItem();
+
+            readerID = readerID.isEmpty() ? null : readerID;
+            bookID = bookID.isEmpty() ? null : bookID;
+            ticketID = ticketID.isEmpty() ? null : ticketID;
+            status = (status == null || status.equals("<none>")) ? null : status;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Ticket> filteredTickets = Admin.FINDTICKETS(ticketID, readerID, bookID, status);
+            for (Ticket t : filteredTickets){
+                System.out.print(t + " ");
+            }
+            DefaultTableModel model = (DefaultTableModel) TicketBorrowTable.getModel();
+            model.setRowCount(0);
+            for (Ticket ticket : filteredTickets) {
+            model.addRow(new Object[]{
+                ticket.getTicketID(),
+                ticket.getReaderCCCD(),
+                ticket.getBookID(),
+                ticket.getBorrow_dateAsString(),
+                ticket.getReturn_dateAsString(),
+                ticket.getStatus(),
+                ticket.getNote()
+            });
+        }
+            TicketBorrowTable.setModel(model);
+        }
+    }//GEN-LAST:event_CCCDTicket_FieldKeyPressed
+
+    private void TicketID_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TicketID_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String readerID = CCCDTicket_Field.getText();
+            String bookID = BookIDTicket_Field.getText();
+            String ticketID = TicketID_Field.getText();
+            String status = (String)StatusComboBox.getSelectedItem();
+
+            readerID = readerID.isEmpty() ? null : readerID;
+            bookID = bookID.isEmpty() ? null : bookID;
+            ticketID = ticketID.isEmpty() ? null : ticketID;
+            status = (status == null || status.equals("<none>")) ? null : status;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Ticket> filteredTickets = Admin.FINDTICKETS(ticketID, readerID, bookID, status);
+            for (Ticket t : filteredTickets){
+                System.out.print(t + " ");
+            }
+            DefaultTableModel model = (DefaultTableModel) TicketBorrowTable.getModel();
+            model.setRowCount(0);
+            for (Ticket ticket : filteredTickets) {
+            model.addRow(new Object[]{
+                ticket.getTicketID(),
+                ticket.getReaderCCCD(),
+                ticket.getBookID(),
+                ticket.getBorrow_dateAsString(),
+                ticket.getReturn_dateAsString(),
+                ticket.getStatus(),
+                ticket.getNote()
+            });
+        }
+            TicketBorrowTable.setModel(model);
+        }
+    }//GEN-LAST:event_TicketID_FieldKeyPressed
+
+    private void BookIDTicket_FieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BookIDTicket_FieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String readerID = CCCDTicket_Field.getText();
+            String bookID = BookIDTicket_Field.getText();
+            String ticketID = TicketID_Field.getText();
+            String status = (String)StatusComboBox.getSelectedItem();
+
+            readerID = readerID.isEmpty() ? null : readerID;
+            bookID = bookID.isEmpty() ? null : bookID;
+            ticketID = ticketID.isEmpty() ? null : ticketID;
+            status = (status == null || status.equals("<none>")) ? null : status;
+            // check xem mỗi field có trống không, nếu trống thì gán giá trị null cho nó
+            ArrayList<Ticket> filteredTickets = Admin.FINDTICKETS(ticketID, readerID, bookID, status);
+            for (Ticket t : filteredTickets){
+                System.out.print(t + " ");
+            }
+            DefaultTableModel model = (DefaultTableModel) TicketBorrowTable.getModel();
+            model.setRowCount(0);
+            for (Ticket ticket : filteredTickets) {
+            model.addRow(new Object[]{
+                ticket.getTicketID(),
+                ticket.getReaderCCCD(),
+                ticket.getBookID(),
+                ticket.getBorrow_dateAsString(),
+                ticket.getReturn_dateAsString(),
+                ticket.getStatus(),
+                ticket.getNote()
+            });
+        }
+            TicketBorrowTable.setModel(model);
+        }
+    }//GEN-LAST:event_BookIDTicket_FieldKeyPressed
     
     public JTextField getRemoveID_Field(){
         return removeID_Field;
@@ -2975,7 +3830,6 @@ public class menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ADDTicketCCCD;
-    private javax.swing.JTextField ADDTicketCCCD_Field;
     private javax.swing.JMenuItem AddBook;
     private javax.swing.JLabel AddBook_ID;
     private javax.swing.JTextField AddBook_ID_Ticket_Field;
@@ -2990,6 +3844,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTextField AddReturn_Date_Field;
     private javax.swing.JLabel AddReturn_date;
     private javax.swing.JMenuItem AddTicket;
+    private javax.swing.JTextField AddTicketCCCD_Field;
     private javax.swing.JTextField AddTicketID_Field;
     private javax.swing.JButton AddTicketbutton;
     private javax.swing.JPanel AddTickets;
@@ -3063,6 +3918,7 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JTabbedPane MenuMainScreen;
     private javax.swing.JRadioButton NameBookUpdateRadiobutton;
     private javax.swing.JRadioButton NameUpdateRadiobutton;
+    private javax.swing.JRadioButton NoteUpdateRadiobutton;
     private javax.swing.JLabel Publisher;
     private javax.swing.JRadioButton PublisherUpdateRadiobutton;
     private javax.swing.JTextField Publisher_Field;

@@ -16,6 +16,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 import gui.menu;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 /**
  *
@@ -213,6 +215,101 @@ public class Admin {
         else if (query.equals("contact_number")){
             REMOVEREADERS(filteredReader.getCccd());
             ADDREADERS(new Reader(newCccd, newName, newGender, updated_info));
+        }
+    }
+    public static void ADDTICKETS(Ticket ticket){
+        try (FileWriter fw = new FileWriter("src/code_and_db/Ticket.txt", true)){
+            Ticket.addToTicketList(ticket); //thêm vào csdl là một ArrayList
+            fw.write(ticket.getTicketID() + "\n" + ticket.getReaderCCCD() + "\n" + ticket.getBookID() + "\n" + ticket.getBorrow_dateAsString() + "\n" + ticket.getReturn_dateAsString() + "\n" + ticket.getStatus() + "\n" + ticket.getNote() + "\n");
+            fw.flush();// viết vào file data của sách
+            
+        } catch (IOException ex) { 
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "An error occurred while writing to the file.", "Error", JOptionPane.ERROR_MESSAGE); 
+        }
+    }
+    public static boolean REMOVETICKETS(String ticketID){
+        boolean deleteNextLines = false;
+        try { 
+            BufferedReader br = new BufferedReader(new FileReader("src/code_and_db/Ticket.txt")); 
+            ArrayList<String> lines = new ArrayList<>(); 
+            String line; 
+            int linesToDelete = 6; //data của mỗi reader chiếm 3 dòng để xóa, không tính cccd
+            while ((line = br.readLine()) != null) { //đọc cho đến hết file
+                if (line.trim().equals(ticketID)) { //tìm ID ticket
+                    deleteNextLines = true; //có thể xóa ticket
+                    continue; 
+                } 
+                if (deleteNextLines && linesToDelete > 0) { //nếu như có thể xóa và số dòng cần xóa >0
+                    linesToDelete--; //skip dòng (xóa dòng)
+                    continue; 
+                } 
+                lines.add(line); //thêm những dòng data của sách khác không được xóa
+            } br.close(); 
+            BufferedWriter bw = new BufferedWriter(new FileWriter("src/code_and_db/Ticket.txt")); 
+            for (String l : lines) { //cả hàm BufferredWriter dùng để viết lại vào file data của các sách không bị xóa đã được lưu trong ArrayList<String> lines
+                bw.write(l); 
+                bw.newLine(); 
+            } bw.close();
+            if (deleteNextLines == true){//check xem có sách trong database để xóa không
+                for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(ticketID)){
+                    Ticket.getTicketList().remove(t);
+                    break; //xóa khỏi arraylist
+                    }
+                }
+            }            
+        } catch (IOException ex ) {
+            JOptionPane.showMessageDialog(null, "An error occurred while trying to delete the ticket", "Error", JOptionPane.ERROR_MESSAGE); 
+        }
+        return deleteNextLines;
+    }
+    public static ArrayList<Ticket> FINDTICKETS(String ticketID, String cccd, String bookID, String status){
+        return (ArrayList<Ticket>) Ticket.getTicketList().stream() 
+        .filter(ticket -> 
+            (ticketID == null || ticket.getTicketID().equalsIgnoreCase(ticketID)) && 
+            (cccd == null || ticket.getReaderCCCD().toLowerCase().contains(cccd.toLowerCase())) &&
+            (bookID == null || ticket.getBookID().toLowerCase().contains(bookID.toLowerCase())) &&
+            (status == null || ticket.getStatus().toLowerCase().contains(status.toLowerCase())) 
+        )
+        .collect(Collectors.toList());
+    }
+    public static void UPDATETICKETS(String ticketID, String query, String updated_info){
+        Ticket filteredTicket = Ticket.getTicketList().stream().filter(ticket -> {
+                return ticket.getTicketID().equals(ticketID);
+        }).findFirst().orElse(null);
+        
+        String newTicketID = filteredTicket.getTicketID();
+        String newReaderID = filteredTicket.getReaderCCCD();
+        String newBookID = filteredTicket.getBookID();
+        LocalDate newBorrowDate = filteredTicket.getBorrow_date();
+        LocalDate newReturnDate = filteredTicket.getReturn_date();
+        String newStatus = filteredTicket.getStatus();
+        String newNote = filteredTicket.getNote();
+       
+        if (query.equals("cccd")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, updated_info, newBookID, newBorrowDate, newReturnDate , newStatus, newNote));
+        }
+        else if (query.equals("bookID")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, updated_info, newBorrowDate, newReturnDate , newStatus, newNote));
+        }
+        else if (query.equals("borrow_date")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, LocalDate.parse(updated_info, DateTimeFormatter.ofPattern("dd/MM/yyyy")), newReturnDate , newStatus, newNote));
+        }
+        else if (query.equals("return_date")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, newBorrowDate, LocalDate.parse(updated_info, DateTimeFormatter.ofPattern("dd/MM/yyyy")), newStatus, newNote));
+        }
+        else if (query.equals("status")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, newBorrowDate, newReturnDate , updated_info, newNote));
+        }
+        else if (query.equals("note")){
+            REMOVETICKETS(filteredTicket.getTicketID());
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, newBorrowDate, newReturnDate , newStatus, updated_info));
         }
     }
 }              

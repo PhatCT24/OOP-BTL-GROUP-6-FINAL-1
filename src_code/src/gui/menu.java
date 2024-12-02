@@ -1990,11 +1990,7 @@ public class menu extends javax.swing.JFrame {
         DefaultTableModel bookTable = new DefaultTableModel(
         new Object[]{"ID", "Name", "Category", "Publisher", "Author", "Quantity"}, 0
     );
-        Collections.sort(Books.storage(), new Comparator<Books>(){
-            public int compare(Books b1, Books b2){
-                return b1.getID().compareTo(b2.getID());
-            }
-        });
+        Collections.sort(Books.storage());
         for (Books b : Books.storage()) {
         bookTable.addRow(new Object[]{
             b.getID(),
@@ -2025,11 +2021,7 @@ public class menu extends javax.swing.JFrame {
         DefaultTableModel readersTable = new DefaultTableModel(
         new Object[]{"CCCD", "Name", "Gender", "Contact Number"}, 0
     );
-        Collections.sort(Reader.ReadersList(), new Comparator<Reader>(){
-            public int compare(Reader r1, Reader r2){
-                return r1.getCccd().compareTo(r2.getCccd());
-            }
-        });
+        Collections.sort(Reader.ReadersList());
         for (Reader r : Reader.ReadersList()) {
         readersTable.addRow(new Object[]{
             r.getCccd(),
@@ -2914,12 +2906,7 @@ public class menu extends javax.swing.JFrame {
         DefaultTableModel ticketTable = new DefaultTableModel(
         new Object[]{"TicketID", "CCCD", "BookID", "Borrow Date", "Return Date", "Status", "Note"}, 0
     );
-        Collections.sort(Ticket.getTicketList(), new Comparator<Ticket>(){
-            @Override
-            public int compare(Ticket b1, Ticket b2){
-                return b1.getTicketID().compareTo(b2.getTicketID());
-            }
-        });
+        Collections.sort(Ticket.getTicketList());
         for (Ticket t : Ticket.getTicketList()) {
         ticketTable.addRow(new Object[]{
             t.getTicketID(),t.getReaderCCCD(),t.getBookID(),t.getBorrow_dateAsString(),t.getReturn_dateAsString(),t.getStatus(),t.getNote()

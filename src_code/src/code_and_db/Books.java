@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author TRAN XUAN THANH
  */
-public class Books {
+public class Books implements Comparable<Books>{
     private String id;
     private String name;
     private String category;
@@ -43,6 +43,8 @@ public class Books {
         this.author = author;
         this.quantity = Integer.parseInt(quantity);
     }
+    
+    
     public String getID(){
         return id;
     }
@@ -98,6 +100,11 @@ public class Books {
 
     public static void setBooks(ArrayList<Books> books) {
         Books.books = books;
+    }
+
+    @Override
+    public int compareTo(Books o) {
+        return this.getID().compareTo(o.getID());
     }
     
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author TRAN XUAN THANH
  */
-public class Reader {
+public class Reader implements Comparable<Reader>{
     private String cccd;
     private String name;
     private String gender;
@@ -78,5 +78,10 @@ public class Reader {
 
     public static void setReaders(ArrayList<Reader> readers) {
         Reader.readers = readers;
+    }
+
+    @Override
+    public int compareTo(Reader o) {
+        return this.getCccd().compareTo(o.getCccd());
     }
 }

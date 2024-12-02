@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author TRAN XUAN THANH
  */
-public class Ticket {
+public class Ticket implements Comparable<Ticket>{
     private String ticketID;
     private String readerCCCD;
     private String bookID;
@@ -119,5 +119,10 @@ public class Ticket {
     @Override
     public String toString(){
         return ticketID + " " + readerCCCD + " " + bookID + " " + borrow_date + " " + return_date + " " + status  + " " + note;
+    }
+
+    @Override
+    public int compareTo(Ticket o) {
+        return this.getTicketID().compareTo(o.getTicketID());
     }
 }

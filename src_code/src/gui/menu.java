@@ -2922,7 +2922,7 @@ public class menu extends javax.swing.JFrame {
     private void ReturnTicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnTicketButtonActionPerformed
         String readerID = CCCDTicket_Field.getText();
         String bookID = BookIDTicket_Field.getText();
-        String ticketID = TicketID_Field.getText();
+        String ticketID = TicketID_Field.getText().toUpperCase();
         String status = (String)StatusComboBox.getSelectedItem();
         
         
@@ -3092,7 +3092,7 @@ public class menu extends javax.swing.JFrame {
     private void RemoveBookbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBookbutton1ActionPerformed
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this ticket from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (confirm == JOptionPane.YES_OPTION){
-            String id = removeID_Field1.getText();
+            String id = removeID_Field1.getText().toUpperCase();
             String bookID = "";
             String getBookQuantity = "";
             for (Ticket t : Ticket.getTicketList()){
@@ -3150,7 +3150,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateTicketInfo_FieldActionPerformed
 
     private void UpdateUserInfobutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserInfobutton1ActionPerformed
-        String id = TicketIDUpdate_Field.getText();
+        String id = TicketIDUpdate_Field.getText().toUpperCase();
         String updated_info = UpdateTicketInfo_Field.getText();
         String status_update = (String)StatusComboBox1.getSelectedItem();
         String query = null;

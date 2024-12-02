@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -3038,7 +3040,11 @@ public class menu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
                     if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
+                        try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         break;
                     }
                 }
@@ -3060,14 +3066,28 @@ public class menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this ticket from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (confirm == JOptionPane.YES_OPTION){
+        if (confirm == JOptionPane.YES_OPTION){
+            String id = removeID_Field1.getText();
+            String bookID = "";
+            String getBookQuantity = "";
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(id)){
+                    bookID = t.getBookID();
+                }
+            }
             if (Admin.REMOVETICKETS(removeID_Field1.getText()) == true){
-                JOptionPane.showMessageDialog(null, "Ticket removed successfully!","Ticket removed", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.equals(removeID_Field1.getText())){
-                        b.setQuantity(b.getQuantity()+1);
+                    if (b.getID().equals(bookID)){
+                        getBookQuantity = String.valueOf(b.getQuantity() + 1);   
                     }
                 }
+                try {
+                    Admin.UPDATEBOOKS(bookID, "quantity", getBookQuantity);
+                } catch (IOException ex) {
+                    Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(null, "Ticket removed successfully!","Ticket removed", JOptionPane.INFORMATION_MESSAGE);
+
             }
             else
             {
@@ -3086,8 +3106,24 @@ public class menu extends javax.swing.JFrame {
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to remove this ticket from the database?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (confirm == JOptionPane.YES_OPTION){
             String id = removeID_Field1.getText();
+            String bookID = "";
+            String getBookQuantity = "";
+            for (Ticket t : Ticket.getTicketList()){
+                if (t.getTicketID().equals(id)){
+                    bookID = t.getBookID();
+                }
+            }
             if (Admin.REMOVETICKETS(removeID_Field1.getText()) == true){
-                
+                for (Books b : Books.storage()){
+                    if (b.getID().equals(bookID)){
+                        getBookQuantity = String.valueOf(b.getQuantity() + 1);   
+                    }
+                }
+                try {
+                    Admin.UPDATEBOOKS(bookID, "quantity", getBookQuantity);
+                } catch (IOException ex) {
+                    Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "Ticket removed successfully!","Ticket removed", JOptionPane.INFORMATION_MESSAGE);
 
             }
@@ -3260,9 +3296,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");
@@ -3343,9 +3382,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");
@@ -3426,9 +3468,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");
@@ -3509,9 +3554,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");
@@ -3592,9 +3640,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");
@@ -3675,9 +3726,12 @@ public class menu extends javax.swing.JFrame {
                 Admin.ADDTICKETS(ticket);
                 JOptionPane.showMessageDialog(null, "Ticket added to the library's database!","AddTicket", JOptionPane.INFORMATION_MESSAGE);
                 for (Books b : Books.storage()){
-                    if (b.getID().equals(bookID)){
-                        b.setQuantity(b.getQuantity()-1);
-                    }
+                    try {
+                            Admin.UPDATEBOOKS(b.getID(), "quantity", String.valueOf(b.getQuantity()-1));
+                        } catch (IOException ex) {
+                            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    break;
                 }
                 AddTicketID_Field.setText("");
                 AddBook_ID_Ticket_Field.setText("");

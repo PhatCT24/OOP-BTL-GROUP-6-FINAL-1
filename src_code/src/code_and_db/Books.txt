@@ -172,12 +172,6 @@ Dystopian
 J.B. Lippincott & Co.
 Harper Lee
 15
-001
-test
-testing
-tester
-testor
-100
 014
 Adventure Time
 Adventure
@@ -190,3 +184,9 @@ Epic
 Penguin Classics
 Homer
 18
+001
+test
+testing
+tester
+testor
+99

@@ -66,7 +66,7 @@ public class Admin {
                     deleteNextLines = true; //có thể xóa sách
                     continue; 
                 } 
-                if (deleteNextLines && linesToDelete > 0) { //nếu như có thể xóa và số dòng cần xóa >0
+                if (deleteNextLines && linesToDelete > 0) {  //deleteNextLines xet xem co dung id sach de bat dau xoa du lieu sach, linestodelete = so dong ma data sach chiem
                     linesToDelete--; //skip dòng (xóa dòng)
                     continue; 
                 } 
@@ -104,7 +104,7 @@ public class Admin {
     public static void UPDATEBOOKS(String id, String query, String updated_info) throws IOException{
         Books filteredBook = Books.storage().stream().filter(book -> {
             return book.getID().equals(id);
-        }).findFirst().orElse(null);
+        }).findFirst().orElse(null); 
         
         String newID = filteredBook.getID();
         String newName = filteredBook.getName();
@@ -114,8 +114,7 @@ public class Admin {
         int newQuantity = filteredBook.getQuantity();
         if (query.equals("name")){
             REMOVEBOOKS(filteredBook.getID());
-            ADDBOOKS(new Books(newID, updated_info, newCategory, newPublisher, newAuthor, String.valueOf(newQuantity)));
-            
+            ADDBOOKS(new Books(newID, updated_info, newCategory, newPublisher, newAuthor, String.valueOf(newQuantity)));    
         }
         else if (query.equals("category")){
             REMOVEBOOKS(filteredBook.getID());
@@ -234,14 +233,14 @@ public class Admin {
             BufferedReader br = new BufferedReader(new FileReader("src/code_and_db/Ticket.txt")); 
             ArrayList<String> lines = new ArrayList<>(); 
             String line; 
-            int linesToDelete = 6; //data của mỗi reader chiếm 3 dòng để xóa, không tính cccd
-            while ((line = br.readLine()) != null) { //đọc cho đến hết file
-                if (line.trim().equals(ticketID)) { //tìm ID ticket
-                    deleteNextLines = true; //có thể xóa ticket
+            int linesToDelete = 6; 
+            while ((line = br.readLine()) != null) { 
+                if (line.trim().equals(ticketID)) { 
+                    deleteNextLines = true;
                     continue; 
                 } 
-                if (deleteNextLines && linesToDelete > 0) { //nếu như có thể xóa và số dòng cần xóa >0
-                    linesToDelete--; //skip dòng (xóa dòng)
+                if (deleteNextLines && linesToDelete > 0) { 
+                    linesToDelete--; 
                     continue; 
                 } 
                 lines.add(line); //thêm những dòng data của sách khác không được xóa
@@ -297,11 +296,11 @@ public class Admin {
         }
         else if (query.equals("borrow_date")){
             REMOVETICKETS(filteredTicket.getTicketID());
-            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, LocalDate.parse(updated_info, DateTimeFormatter.ofPattern("dd/MM/yyyy")), newReturnDate , newStatus, newNote));
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, LocalDate.parse(Ticket.normalize(updated_info), DateTimeFormatter.ofPattern("dd/MM/yyyy")), newReturnDate , newStatus, newNote));
         }
         else if (query.equals("return_date")){
             REMOVETICKETS(filteredTicket.getTicketID());
-            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, newBorrowDate, LocalDate.parse(updated_info, DateTimeFormatter.ofPattern("dd/MM/yyyy")), newStatus, newNote));
+            ADDTICKETS(new Ticket(newTicketID, newReaderID, newBookID, newBorrowDate, LocalDate.parse(Ticket.normalize(updated_info), DateTimeFormatter.ofPattern("dd/MM/yyyy")), newStatus, newNote));
         }
         else if (query.equals("status")){
             REMOVETICKETS(filteredTicket.getTicketID());

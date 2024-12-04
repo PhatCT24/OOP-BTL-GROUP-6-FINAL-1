@@ -4,12 +4,6 @@ Fiction
 Charles Scribner's Sons
 F. Scott Fitzgerald
 12
-015
-War and Peace
-Historical
-The Russian Messenger
-Leo Tolstoy
-5
 016
 Pride and Prejudice
 Romance
@@ -76,12 +70,6 @@ Thriller
 Crown Publishing Group
 Gillian Flynn
 20
-027
-The Shining
-Horror
-Doubleday
-Stephen King
-12
 028
 The Handmaid's Tale
 Dystopian
@@ -130,30 +118,12 @@ Children's
 Reynal & Hitchcock
 Antoine de Saint-Exupéry
 20
-038
-The Count of Monte Cristo
-Adventure
-Penguin Classics
-Alexandre Dumas
-10
-039
-The Odyssey
-Epic
-Penguin Classics
-Homer
-18
 012
 Eminem
 Dystopian
 Secker & Warburg
 George Orwell
 20
-099
-The Rare One
-War
-KimDong
-Robbie
-100
 098
 Art of Wars
 War
@@ -166,27 +136,51 @@ Comedy
 Simon & Schuster
 Joseph Heller
 10
-011
-To Kill a Mockingbird
-Dystopian
-J.B. Lippincott & Co.
-Harper Lee
-15
-014
-Adventure Time
-Adventure
-Harper & Brothers
-Herman Melville
-8
-040
-Family
-Epic
-Penguin Classics
-Homer
-18
 001
 test
 testing
 tester
 testor
-99
+98
+011
+To Kill a Mockingbird
+Dystopian
+J.B. Lippincott & Co.
+Harper Lee
+14
+099
+The Rare One
+War
+KimDong
+Robbie
+0
+039
+The Odyssey
+Epic
+Penguin Classics
+Homer
+17
+027
+The Shining
+Horror
+Doubleday
+Stephen King
+10
+014
+Adventure Time
+Adventure
+Harper & Brothers
+Herman Melville
+7
+038
+The Count of Monte Cristo
+Adventure
+Penguin Classics
+Alexandre Dumas
+9
+040
+Family
+Epic
+Penguin Classics
+Homer
+17

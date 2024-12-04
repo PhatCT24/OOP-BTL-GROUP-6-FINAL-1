@@ -2,6 +2,55 @@ T01
 001
 025
 02/12/2024
-19/12/2024
+04/12/2024
 Returned
 <no note>
+T02
+014
+027
+15/12/2024
+02/01/2025
+Not Returned
+<no note>
+T05
+013
+027
+05/12/2024
+06/12/2024
+Not Returned
+for an event
+T06
+014
+014
+06/01/2025
+05/03/2025
+Not Returned
+<no note>
+T03
+002
+001
+05/12/2024
+06/12/2024
+Returned
+<no note>
+T07
+001
+038
+05/12/2024
+05/12/2024
+Due Today
+for school event
+T08
+001
+040
+06/12/2024
+06/12/2024
+Not Returned
+<no note>
+T04
+005
+039
+06/12/2024
+09/01/2025
+Not Returned
+for exams

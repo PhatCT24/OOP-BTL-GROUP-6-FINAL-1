@@ -107,7 +107,7 @@ public class menu extends javax.swing.JFrame {
         home_icon = new javax.swing.JLabel();
         ToLogOut = new javax.swing.JButton();
         ToBorrowTicketMenu = new javax.swing.JButton();
-        ToCustomerMenu = new javax.swing.JButton();
+        ToReaderMenu = new javax.swing.JButton();
         ToBookMenu = new javax.swing.JButton();
         HomeButton = new javax.swing.JButton();
         content_menubackground = new javax.swing.JPanel();
@@ -389,14 +389,14 @@ public class menu extends javax.swing.JFrame {
             }
         });
 
-        ToCustomerMenu.setBackground(new java.awt.Color(102, 0, 0));
-        ToCustomerMenu.setForeground(new java.awt.Color(255, 255, 255));
-        ToCustomerMenu.setText("READERS");
-        ToCustomerMenu.setBorder(null);
-        ToCustomerMenu.setContentAreaFilled(false);
-        ToCustomerMenu.addActionListener(new java.awt.event.ActionListener() {
+        ToReaderMenu.setBackground(new java.awt.Color(102, 0, 0));
+        ToReaderMenu.setForeground(new java.awt.Color(255, 255, 255));
+        ToReaderMenu.setText("READERS");
+        ToReaderMenu.setBorder(null);
+        ToReaderMenu.setContentAreaFilled(false);
+        ToReaderMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToCustomerMenuActionPerformed(evt);
+                ToReaderMenuActionPerformed(evt);
             }
         });
 
@@ -433,7 +433,7 @@ public class menu extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
             .addComponent(ToLogOut, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
             .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ToCustomerMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ToReaderMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ToBookMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menu_backgroundLayout.setVerticalGroup(
@@ -447,7 +447,7 @@ public class menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(ToBookMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ToCustomerMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ToReaderMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ToBorrowTicketMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
@@ -614,7 +614,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddBooksLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(AddBookbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         AddBooksLayout.setVerticalGroup(
             AddBooksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -837,7 +837,7 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Gender_Field, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addComponent(Username_Field))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(AddReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AddReadersLayout.createSequentialGroup()
                         .addComponent(Contact_number)
@@ -1159,7 +1159,7 @@ public class menu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CCCDReaderUpdate_Field))
                             .addComponent(jLabel11))))
-                .addGap(0, 251, Short.MAX_VALUE))
+                .addGap(0, 249, Short.MAX_VALUE))
         );
         UpdateReadersLayout.setVerticalGroup(
             UpdateReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1275,7 +1275,7 @@ public class menu extends javax.swing.JFrame {
                         .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AuthorUpdateRadiobutton)
                             .addComponent(PublisherUpdateRadiobutton))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addGroup(UpdateBookpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateBookpanelLayout.createSequentialGroup()
                         .addComponent(UpdateBookInfo_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1390,7 +1390,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(RemoveReadersLayout.createSequentialGroup()
                         .addGap(260, 260, 260)
                         .addComponent(jLabel9)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         RemoveReadersLayout.setVerticalGroup(
             RemoveReadersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1506,6 +1506,11 @@ public class menu extends javax.swing.JFrame {
         AddBorrow_Date.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AddBorrow_Date.setText("Borrow_date");
 
+        AddBorrow_Date_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBorrow_Date_FieldActionPerformed(evt);
+            }
+        });
         AddBorrow_Date_Field.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 AddBorrow_Date_FieldKeyPressed(evt);
@@ -1579,7 +1584,7 @@ public class menu extends javax.swing.JFrame {
                     .addGroup(AddTicketsLayout.createSequentialGroup()
                         .addGap(298, 298, 298)
                         .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         AddTicketsLayout.setVerticalGroup(
             AddTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1605,7 +1610,7 @@ public class menu extends javax.swing.JFrame {
                     .addComponent(AddNoteTicket))
                 .addGap(36, 36, 36)
                 .addComponent(AddTicketbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         MenuMainScreen.addTab("tab11", AddTickets);
@@ -1958,9 +1963,9 @@ public class menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //Side bar
-    private void ToCustomerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToCustomerMenuActionPerformed
-        ReaderPopUpMenu.show(ToCustomerMenu, WIDTH + 139, WIDTH);
-    }//GEN-LAST:event_ToCustomerMenuActionPerformed
+    private void ToReaderMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToReaderMenuActionPerformed
+        ReaderPopUpMenu.show(ToReaderMenu, WIDTH + 139, WIDTH);
+    }//GEN-LAST:event_ToReaderMenuActionPerformed
 
     private void ToLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToLogOutActionPerformed
         dispose();
@@ -2216,7 +2221,6 @@ public class menu extends javax.swing.JFrame {
         for (Books b : Books.storage()){
             if (b.getID().equals(id)){
                 ok = true;
-                
                 break;
             }
         }
@@ -2225,7 +2229,7 @@ public class menu extends javax.swing.JFrame {
         }else
         {
             Admin.UPDATEBOOKS(id, query, updated_info);
-                JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Book information updated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }catch (IOException e){
         
@@ -2979,13 +2983,13 @@ public class menu extends javax.swing.JFrame {
             String status = "";
             for (Reader r : Reader.ReadersList()){
                 if (cccd.equals(r.getCccd())){
-                    okcccd = 1; 
+                    okcccd = 1; //tim thay nguoi dung
                     break;
                 }
             }
             for (Books b : Books.storage()){
                 if (bookID.equals(b.getID()) && b.getQuantity() != 0){
-                    okbookid = 1;
+                    okbookid = 1; //tim thay sach'
                     break;
                 }
             }
@@ -3158,6 +3162,17 @@ public class menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please fill in both the Ticket ID and the new information.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        boolean ok = false;
+        LocalDate getBorrowDate = null;
+        LocalDate getReturnDate = null;
+        for (Ticket t : Ticket.getTicketList()){
+            if (t.getTicketID().equals(id)){
+                ok = true;
+                getBorrowDate = t.getBorrow_date();
+                getReturnDate = t.getReturn_date();
+                break;
+            }
+        }
         //chọn thuộc tính update
         if (CCCDUpdateradiobutton.isSelected()) {
             query = "cccd";
@@ -3177,12 +3192,14 @@ public class menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please select an attribute to update.", "Selection Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        boolean ok = false;      
-        for (Ticket t : Ticket.getTicketList()){
-            if (t.getTicketID().equals(id)){
-                ok = true;
-                break;
-            }
+              
+        if (query.equals("borrow_date") && LocalDate.parse(Ticket.normalize(updated_info),DateTimeFormatter.ofPattern("dd/MM/yyyy")).isAfter(getReturnDate)){
+            JOptionPane.showMessageDialog(this, "Borrow date cannot be after Return date", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if (query.equals("return_date") && LocalDate.parse(Ticket.normalize(updated_info),DateTimeFormatter.ofPattern("dd/MM/yyyy")).isBefore(getBorrowDate)){
+            JOptionPane.showMessageDialog(this, "Return date cannot be before Borrow date", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         if (ok == false){
             JOptionPane.showMessageDialog(this, "Ticket ID does not match with the database", "Error", JOptionPane.ERROR_MESSAGE);
@@ -3829,6 +3846,10 @@ public class menu extends javax.swing.JFrame {
             TicketBorrowTable.setModel(model);
         }
     }//GEN-LAST:event_BookIDTicket_FieldKeyPressed
+
+    private void AddBorrow_Date_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBorrow_Date_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddBorrow_Date_FieldActionPerformed
     
     public JTextField getRemoveID_Field(){
         return removeID_Field;
@@ -3991,8 +4012,8 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu TicketPopUpMenu;
     private javax.swing.JButton ToBookMenu;
     private javax.swing.JButton ToBorrowTicketMenu;
-    private javax.swing.JButton ToCustomerMenu;
     private javax.swing.JButton ToLogOut;
+    private javax.swing.JButton ToReaderMenu;
     private javax.swing.JMenuItem UpdateBook;
     private javax.swing.JTextField UpdateBookInfo_Field;
     private javax.swing.JButton UpdateBookInfobutton;

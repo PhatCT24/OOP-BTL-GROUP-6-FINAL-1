@@ -80,6 +80,17 @@ public class Ticket implements Comparable<Ticket>{
     public String getReturn_dateAsString(){
         return getReturn_date().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
+    public static String normalize(String s){
+        String[] a = s.split("/");
+        s = "";
+        while (a[0].length() < 2) a[0] = "0" + a[0];
+        s += a[0] + "/";
+        while (a[1].length() < 2) a[1] = "0" + a[1];
+        s += a[1] + "/";
+        while (a[2].length() < 4) a[2] = "0" + a[2];
+        s += a[2];
+        return s;
+    }
     
     public static ArrayList<Ticket> getTicketList(){
         for (Ticket t : tickets){

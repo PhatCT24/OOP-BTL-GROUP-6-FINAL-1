@@ -19,10 +19,7 @@ import gui.menu;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
-/**
- *
- * @author TRAN XUAN THANH
- */
+
 public class Admin {
 
     private String username;

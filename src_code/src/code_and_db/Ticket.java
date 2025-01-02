@@ -8,11 +8,9 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author TRAN XUAN THANH
- */
+
 public class Ticket implements Comparable<Ticket>{
     private String ticketID;
     private String readerCCCD;
@@ -81,15 +79,19 @@ public class Ticket implements Comparable<Ticket>{
         return getReturn_date().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
     public static String normalize(String s){
-        String[] a = s.split("/");
-        s = "";
-        while (a[0].length() < 2) a[0] = "0" + a[0];
-        s += a[0] + "/";
-        while (a[1].length() < 2) a[1] = "0" + a[1];
-        s += a[1] + "/";
-        while (a[2].length() < 4) a[2] = "0" + a[2];
-        s += a[2];
-        return s;
+        try{
+            String[] a = s.split("/");
+            s = "";
+            while (a[0].length() < 2) a[0] = "0" + a[0];
+            s += a[0] + "/";
+            while (a[1].length() < 2) a[1] = "0" + a[1];
+            s += a[1] + "/";
+            while (a[2].length() < 4) a[2] = "0" + a[2];
+            s += a[2];
+            return s;
+        }catch(Exception e){
+            return "";
+        }
     }
     
     public static ArrayList<Ticket> getTicketList(){

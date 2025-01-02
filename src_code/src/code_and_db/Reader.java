@@ -9,10 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author TRAN XUAN THANH
- */
+
 public class Reader implements Comparable<Reader>{
     private String cccd;
     private String name;

@@ -1947,6 +1947,11 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1960,7 +1965,9 @@
                               <Component id="ID_BOOK" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="RemoveBookbutton" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="321" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="150" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2008,6 +2015,26 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveBookbuttonActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="nigga 1"/>
+                        <StringItem index="1" value="2 "/>
+                        <StringItem index="2" value="4 "/>
+                        <StringItem index="3" value="3"/>
+                        <StringItem index="4" value="5"/>
+                        <StringItem index="5" value=" "/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -2584,27 +2611,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="UpdateTicketpanel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UpdateTicketpanel" alignment="0" pref="744" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                                  <Component id="TicketIDUpdate" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TicketIDUpdate_Field" min="-2" pref="167" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="282" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                          <Component id="TicketIDUpdate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="18" max="32767" attributes="0"/>
+                          <Component id="TicketIDUpdate_Field" min="-2" pref="167" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -2616,24 +2636,15 @@
                               <Component id="TicketIDUpdate_Field" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="TicketIDUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="113" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="UpdateTicketpanel" min="-2" pref="202" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel20">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="18" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Choose the attribute you want to update:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="TicketIDUpdate">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2675,7 +2686,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="23" y="90" width="137" height="-1"/>
+                          <AbsoluteConstraints x="20" y="60" width="137" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2694,7 +2705,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="23" y="159" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="20" y="90" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2713,7 +2724,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="23" y="24" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="20" y="30" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2723,7 +2734,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="490" y="40" width="181" height="36"/>
+                          <AbsoluteConstraints x="460" y="120" width="181" height="36"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2746,7 +2757,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="530" y="140" width="114" height="41"/>
+                          <AbsoluteConstraints x="490" y="60" width="114" height="41"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2765,7 +2776,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="20" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="220" y="30" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2784,7 +2795,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="90" width="137" height="-1"/>
+                          <AbsoluteConstraints x="220" y="60" width="137" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2810,7 +2821,7 @@
                       </AuxValues>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="500" y="40" width="160" height="30"/>
+                          <AbsoluteConstraints x="470" y="10" width="160" height="30"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2829,7 +2840,7 @@
                       </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="220" y="160" width="-1" height="-1"/>
+                          <AbsoluteConstraints x="220" y="90" width="-1" height="-1"/>
                         </Constraint>
                       </Constraints>
                     </Component>
@@ -2843,6 +2854,36 @@
                     <Property name="text" type="java.lang.String" value="UPDATE TICKET"/>
                   </Properties>
                 </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="UPDTable">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="7" rowCount="4">
+                                <Column editable="true" title="ID" type="java.lang.Object"/>
+                                <Column editable="true" title="CCCD" type="java.lang.Object"/>
+                                <Column editable="true" title="BookID" type="java.lang.Object"/>
+                                <Column editable="true" title="Borrow_date" type="java.lang.Object"/>
+                                <Column editable="true" title="Return_date" type="java.lang.Object"/>
+                                <Column editable="true" title="status" type="java.lang.Object"/>
+                                <Column editable="true" title="note" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>

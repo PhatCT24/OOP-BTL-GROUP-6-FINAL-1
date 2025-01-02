@@ -12,10 +12,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author TRAN XUAN THANH
- */
+
 public class Books implements Comparable<Books>{
     private String id;
     private String name;
